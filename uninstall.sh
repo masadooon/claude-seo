@@ -2,22 +2,22 @@
 set -euo pipefail
 
 main() {
-    echo "→ Uninstalling Claude SEO..."
+    echo "→ Claude SEO をアンインストールしています..."
 
-    # Remove main skill
+    # メインスキルを削除
     rm -rf "${HOME}/.claude/skills/seo"
 
-    # Remove sub-skills
+    # サブスキルを削除
     for skill in seo-audit seo-competitor-pages seo-content seo-geo seo-hreflang seo-images seo-page seo-plan seo-programmatic seo-schema seo-sitemap seo-technical; do
         rm -rf "${HOME}/.claude/skills/${skill}"
     done
 
-    # Remove agents
+    # エージェントを削除
     for agent in seo-technical seo-content seo-schema seo-sitemap seo-performance seo-visual; do
         rm -f "${HOME}/.claude/agents/${agent}.md"
     done
 
-    echo "✓ Claude SEO uninstalled."
+    echo "✓ Claude SEO のアンインストールが完了しました。"
 }
 
 main "$@"

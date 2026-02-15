@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Parse HTML and extract SEO-relevant elements.
+HTMLを解析してSEO関連の要素を抽出する。
 
-Usage:
+使い方:
     python parse_html.py page.html
     python parse_html.py --url https://example.com
 """
@@ -17,20 +17,20 @@ from urllib.parse import urljoin, urlparse
 try:
     from bs4 import BeautifulSoup
 except ImportError:
-    print("Error: beautifulsoup4 required. Install with: pip install beautifulsoup4")
+    print("エラー: beautifulsoup4 が必要です。次のコマンドでインストールしてください: pip install beautifulsoup4")
     sys.exit(1)
 
 
 def parse_html(html: str, base_url: Optional[str] = None) -> dict:
     """
-    Parse HTML and extract SEO-relevant elements.
+    HTMLを解析してSEO関連の要素を抽出する。
 
     Args:
-        html: HTML content to parse
-        base_url: Base URL for resolving relative links
+        html: 解析対象のHTMLコンテンツ
+        base_url: 相対リンクを解決するためのベースURL
 
     Returns:
-        Dictionary with extracted SEO data
+        抽出されたSEOデータを含む辞書
     """
     soup = BeautifulSoup(html, "lxml" if "lxml" in sys.modules else "html.parser")
 
@@ -54,12 +54,12 @@ def parse_html(html: str, base_url: Optional[str] = None) -> dict:
         "hreflang": [],
     }
 
-    # Title
+    # タイトル
     title_tag = soup.find("title")
     if title_tag:
         result["title"] = title_tag.get_text(strip=True)
 
-    # Meta tags
+    # メタタグ
     for meta in soup.find_all("meta"):
         name = meta.get("name", "").lower()
         property_attr = meta.get("property", "").lower()
@@ -92,14 +92,14 @@ def parse_html(html: str, base_url: Optional[str] = None) -> dict:
                 "href": link.get("href"),
             })
 
-    # Headings
+    # 見出し
     for tag in ["h1", "h2", "h3"]:
         for heading in soup.find_all(tag):
             text = heading.get_text(strip=True)
             if text:
                 result[tag].append(text)
 
-    # Images
+    # 画像
     for img in soup.find_all("img"):
         src = img.get("src", "")
         if base_url and src:
@@ -113,7 +113,7 @@ def parse_html(html: str, base_url: Optional[str] = None) -> dict:
             "loading": img.get("loading"),
         })
 
-    # Links
+    # リンク
     if base_url:
         base_domain = urlparse(base_url).netloc
 
@@ -144,7 +144,7 @@ def parse_html(html: str, base_url: Optional[str] = None) -> dict:
         except (json.JSONDecodeError, TypeError):
             pass
 
-    # Word count (visible text only)
+    # 単語数（表示テキストのみ）
     for element in soup(["script", "style", "nav", "footer", "header"]):
         element.decompose()
 
@@ -156,10 +156,10 @@ def parse_html(html: str, base_url: Optional[str] = None) -> dict:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Parse HTML for SEO analysis")
-    parser.add_argument("file", nargs="?", help="HTML file to parse")
-    parser.add_argument("--url", "-u", help="Base URL for resolving links")
-    parser.add_argument("--json", "-j", action="store_true", help="Output as JSON")
+    parser = argparse.ArgumentParser(description="SEO分析のためにHTMLを解析する")
+    parser.add_argument("file", nargs="?", help="解析対象のHTMLファイル")
+    parser.add_argument("--url", "-u", help="リンク解決用のベースURL")
+    parser.add_argument("--json", "-j", action="store_true", help="JSON形式で出力する")
 
     args = parser.parse_args()
 
@@ -174,16 +174,16 @@ def main():
     if args.json:
         print(json.dumps(result, indent=2))
     else:
-        print(f"Title: {result['title']}")
-        print(f"Meta Description: {result['meta_description']}")
+        print(f"タイトル: {result['title']}")
+        print(f"メタディスクリプション: {result['meta_description']}")
         print(f"Canonical: {result['canonical']}")
-        print(f"H1 Tags: {len(result['h1'])}")
-        print(f"H2 Tags: {len(result['h2'])}")
-        print(f"Images: {len(result['images'])}")
-        print(f"Internal Links: {len(result['links']['internal'])}")
-        print(f"External Links: {len(result['links']['external'])}")
-        print(f"Schema Blocks: {len(result['schema'])}")
-        print(f"Word Count: {result['word_count']}")
+        print(f"H1タグ数: {len(result['h1'])}")
+        print(f"H2タグ数: {len(result['h2'])}")
+        print(f"画像数: {len(result['images'])}")
+        print(f"内部リンク数: {len(result['links']['internal'])}")
+        print(f"外部リンク数: {len(result['links']['external'])}")
+        print(f"Schemaブロック数: {len(result['schema'])}")
+        print(f"単語数: {result['word_count']}")
 
 
 if __name__ == "__main__":

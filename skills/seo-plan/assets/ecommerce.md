@@ -1,16 +1,16 @@
 <!-- Updated: 2026-02-07 -->
-# E-commerce SEO Strategy Template
+# ECサイト SEO戦略テンプレート
 
-## Industry Characteristics
+## 業界の特徴
 
-- High transaction intent
-- Product comparison behavior
-- Price sensitivity
-- Visual-first decision making
-- Seasonal demand patterns
-- Competitive marketplace listings
+- 高いトランザクション意図
+- 商品比較行動
+- 価格感度の高さ
+- ビジュアル重視の意思決定
+- 季節的な需要パターン
+- 競争の激しいマーケットプレイス掲載
 
-## Recommended Site Architecture
+## 推奨サイト構造
 
 ```
 /
@@ -43,26 +43,26 @@
 └── /faq
 ```
 
-## Schema Recommendations
+## schema の推奨事項
 
-| Page Type | Schema Types |
+| ページ種別 | schema タイプ |
 |-----------|-------------|
-| Product Page | Product, Offer, AggregateRating, Review, BreadcrumbList |
-| Category Page | CollectionPage, ItemList, BreadcrumbList |
-| Brand Page | Brand, Organization |
-| Blog | Article, BlogPosting |
+| 商品ページ | Product, Offer, AggregateRating, Review, BreadcrumbList |
+| カテゴリページ | CollectionPage, ItemList, BreadcrumbList |
+| ブランドページ | Brand, Organization |
+| ブログ | Article, BlogPosting |
 
-### Additional E-commerce Schema (2025)
+### ECサイト向け追加 schema（2025年）
 
-- **ProductGroup**: Use for products with variants (size, color). Wraps individual Product entries with `variesBy` and `hasVariant` properties. See `schema/templates.json`.
-- **Certification**: For product certifications (Energy Star, safety, organic). Replaced EnergyConsumptionDetails (April 2025). Use `hasCertification` on Product.
-- **OfferShippingDetails**: Include shipping rate, handling time, and transit time. Critical for Merchant Center eligibility.
+- **ProductGroup**: バリエーション（サイズ、カラー）のある商品に使用。個別の Product エントリを `variesBy` と `hasVariant` プロパティでラップする。`schema/templates.json` を参照。
+- **Certification**: 製品認証（Energy Star、安全性、オーガニック）向け。EnergyConsumptionDetails を置き換え（2025年4月）。Product に `hasCertification` を使用。
+- **OfferShippingDetails**: 送料、処理時間、配送時間を含める。Google Merchant Center の掲載要件に不可欠。
 
-> **Google Merchant Center Free Listings:** Products can appear in Google Shopping for free. Ensure Product structured data is in the initial server-rendered HTML (not JavaScript-injected) with required properties: `name`, `image`, `price`, `priceCurrency`, `availability`.
+> **Google Merchant Center 無料リスティング:** 商品は Google ショッピングに無料で表示可能。Product 構造化データが初回サーバーレンダリングされた HTML に含まれていること（JavaScript による注入ではない）。必須プロパティ: `name`, `image`, `price`, `priceCurrency`, `availability`。
 
-> **JS Rendering Note:** Product structured data should be in initial server-rendered HTML — not dynamically injected via JavaScript (per December 2025 Google JS SEO guidance).
+> **JS レンダリングに関する注意:** Product 構造化データは初回サーバーレンダリングされた HTML に含める必要がある。JavaScript で動的に注入しないこと（2025年12月の Google JS SEO ガイダンスに基づく）。
 
-### Product Schema Example
+### Product schema の例
 ```json
 {
   "@context": "https://schema.org",
@@ -90,78 +90,78 @@
 }
 ```
 
-## Content Requirements
+## コンテンツ要件
 
-### Product Pages (min 400 words)
-- Unique product descriptions (not manufacturer copy)
-- Feature highlights
-- Use cases / who it's for
-- Specifications table
-- Size/fit guide (for apparel)
-- Care instructions
-- Customer reviews
+### 商品ページ（最低400語）
+- ユニークな商品説明（メーカーのコピーをそのまま使わない）
+- 特徴のハイライト
+- ユースケース / 対象ユーザー
+- スペック表
+- サイズ・フィットガイド（アパレルの場合）
+- お手入れ方法
+- カスタマーレビュー
 
-### Category Pages (min 400 words)
-- Category introduction
-- Buying guide excerpt
-- Featured products
-- Subcategory links
-- Filter/sort options
+### カテゴリページ（最低400語）
+- カテゴリの紹介文
+- 購入ガイドの抜粋
+- おすすめ商品
+- サブカテゴリへのリンク
+- フィルター・並び替えオプション
 
-## Technical Considerations
+## 技術的考慮事項
 
-### Pagination
-- Use rel="next"/rel="prev" or load-more
-- Ensure all products are crawlable
-- Canonical to main category page
+### ページネーション
+- rel="next"/rel="prev" またはもっと読み込むボタンを使用
+- すべての商品がクロール可能であることを確認
+- メインカテゴリページへの canonical 設定
 
-### Faceted Navigation
-- Noindex filter combinations that create duplicate content
-- Use canonical tags appropriately
-- Ensure popular filters are indexable
+### ファセットナビゲーション
+- 重複コンテンツを生成するフィルターの組み合わせには noindex を設定
+- canonical タグを適切に使用
+- 人気のフィルターはインデックス可能にする
 
-### Product Variations
-- Single URL for parent product with variants
-- Or separate URLs with canonical to parent
-- Structured data for all variants
+### 商品バリエーション
+- バリエーションを持つ親商品に単一 URL を使用
+- または個別 URL に親への canonical を設定
+- すべてのバリエーションに構造化データを設定
 
-## Content Priorities
+## コンテンツの優先順位
 
-### High Priority
-1. Category pages (top level)
-2. Best-selling product pages
-3. Homepage
-4. Buying guides for main categories
+### 高優先度
+1. カテゴリページ（トップレベル）
+2. 売れ筋商品ページ
+3. ホームページ
+4. 主要カテゴリの購入ガイド
 
-### Medium Priority
-1. Subcategory pages
-2. Brand pages
-3. Comparison content
-4. Seasonal landing pages
+### 中優先度
+1. サブカテゴリページ
+2. ブランドページ
+3. 比較コンテンツ
+4. 季節ごとのランディングページ
 
-### Blog Topics
-- Buying guides ("How to Choose...")
-- Product comparisons
-- Trend reports
-- Use cases and inspiration
-- Care and maintenance guides
+### ブログトピック
+- 購入ガイド（「〜の選び方」）
+- 商品比較
+- トレンドレポート
+- ユースケースとインスピレーション
+- お手入れ・メンテナンスガイド
 
-## Key Metrics to Track
+## 追跡すべき主要指標
 
-- Revenue from organic search
-- Product page rankings
-- Category page rankings
-- Click-through rate (rich results)
-- Average order value from organic
+- オーガニック検索からの収益
+- 商品ページのランキング
+- カテゴリページのランキング
+- クリック率（リッチリザルト）
+- オーガニック経由の平均注文額
 
-## Generative Engine Optimization (GEO) for E-commerce
+## ECサイト向け Generative Engine Optimization（GEO）
 
-AI search platforms increasingly answer product queries directly. Optimize for AI citation:
+AI 検索プラットフォームは商品クエリに直接回答するケースが増えている。AI による引用に最適化するために以下を実施:
 
-- [ ] Include clear product specifications, dimensions, materials in structured format
-- [ ] Use ProductGroup schema for variant products
-- [ ] Provide original product photography with descriptive alt text
-- [ ] Include genuine customer review content (AggregateRating schema)
-- [ ] Maintain consistent product entity data across all platforms (site, Amazon, Merchant Center)
-- [ ] Structure comparison content with clear feature tables AI can parse
-- [ ] Add detailed FAQ content for common product questions
+- [ ] 商品スペック、寸法、素材を構造化フォーマットで明確に記載する
+- [ ] バリエーション商品には ProductGroup schema を使用する
+- [ ] オリジナルの商品写真に説明的な alt テキストを付ける
+- [ ] 本物のカスタマーレビューコンテンツを含める（AggregateRating schema）
+- [ ] すべてのプラットフォーム（自社サイト、Amazon、Google Merchant Center）で一貫した商品エンティティデータを維持する
+- [ ] AI がパースできる明確な機能比較テーブルで比較コンテンツを構成する
+- [ ] よくある商品の質問に対する詳細な FAQ コンテンツを追加する

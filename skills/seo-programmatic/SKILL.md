@@ -2,162 +2,162 @@
 ---
 name: seo-programmatic
 description: >
-  Programmatic SEO planning and analysis for pages generated at scale from data
-  sources. Covers template engines, URL patterns, internal linking automation,
-  thin content safeguards, and index bloat prevention. Use when user says
-  "programmatic SEO", "pages at scale", "dynamic pages", "template pages",
-  "generated pages", or "data-driven SEO".
+  データソースから大規模に生成されるページのためのProgrammatic SEOの計画と分析。
+  テンプレートエンジン、URLパターン、内部リンクの自動化、
+  低品質コンテンツの防止策、インデックス肥大化の防止をカバーします。ユーザーが
+  「programmatic SEO」「大規模ページ」「動的ページ」「テンプレートページ」
+  「生成ページ」「データ駆動型SEO」と言った場合に使用してください。
 ---
 
-# Programmatic SEO Analysis & Planning
+# Programmatic SEO 分析・計画
 
-Build and audit SEO pages generated at scale from structured data sources.
-Enforces quality gates to prevent thin content penalties and index bloat.
+構造化データソースから大規模に生成されるSEOページの構築と監査を行います。
+低品質コンテンツペナルティやインデックス肥大化を防止するための品質ゲートを適用します。
 
-## Data Source Assessment
+## データソースの評価
 
-Evaluate the data powering programmatic pages:
-- **CSV/JSON files**: Row count, column uniqueness, missing values
-- **API endpoints**: Response structure, data freshness, rate limits
-- **Database queries**: Record count, field completeness, update frequency
-- Data quality checks:
-  - Each record must have enough unique attributes to generate distinct content
-  - Flag duplicate or near-duplicate records (>80% field overlap)
-  - Verify data freshness — stale data produces stale pages
+プログラマティックページを支えるデータを評価します：
+- **CSV/JSONファイル**: 行数、カラムの一意性、欠損値
+- **APIエンドポイント**: レスポンス構造、データの鮮度、レートリミット
+- **データベースクエリ**: レコード数、フィールドの完全性、更新頻度
+- データ品質チェック：
+  - 各レコードは、独自のコンテンツを生成するのに十分な固有属性を持つ必要がある
+  - 重複または準重複レコード（フィールドの重複が80%超）をフラグする
+  - データの鮮度を確認する — 古いデータは古いページを生み出す
 
-## Template Engine Planning
+## テンプレートエンジンの計画
 
-Design templates that produce unique, valuable pages:
-- **Variable injection points**: Title, H1, body sections, meta description, schema
-- **Content blocks**: Static (shared across pages) vs dynamic (unique per page)
-- **Conditional logic**: Show/hide sections based on data availability
-- **Supplementary content**: Related items, contextual tips, user-generated content
-- Template review checklist:
-  - Each page must read as a standalone, valuable resource
-  - No "mad-libs" patterns (just swapping city/product names in identical text)
-  - Dynamic sections must add genuine information, not just keyword variations
+ユニークで価値のあるページを生成するテンプレートを設計します：
+- **変数挿入ポイント**: タイトル、H1、本文セクション、meta description、schema
+- **コンテンツブロック**: 静的（ページ間で共有）と動的（ページごとに固有）
+- **条件ロジック**: データの有無に基づいてセクションを表示/非表示
+- **補足コンテンツ**: 関連アイテム、文脈に応じたヒント、ユーザー生成コンテンツ
+- テンプレートレビューチェックリスト：
+  - 各ページは単体で価値のあるリソースとして読めること
+  - 「穴埋め」パターンを使わない（同一テキストの都市名/製品名の差し替えのみは不可）
+  - 動的セクションは本質的な情報を追加すること（キーワードのバリエーションだけではない）
 
-## URL Pattern Strategy
+## URLパターン戦略
 
-### Common Patterns
-- `/tools/[tool-name]` — Tool/product directory pages
-- `/[city]/[service]` — Location + service pages
-- `/integrations/[platform]` — Integration landing pages
-- `/glossary/[term]` — Definition/reference pages
-- `/templates/[template-name]` — Downloadable template pages
+### 一般的なパターン
+- `/tools/[tool-name]` — ツール/製品ディレクトリページ
+- `/[city]/[service]` — 地域 + サービスページ
+- `/integrations/[platform]` — 連携ランディングページ
+- `/glossary/[term]` — 用語定義/リファレンスページ
+- `/templates/[template-name]` — ダウンロード可能なテンプレートページ
 
-### URL Rules
-- Lowercase, hyphenated slugs derived from data
-- Logical hierarchy reflecting site architecture
-- No duplicate slugs — enforce uniqueness at generation time
-- Keep URLs under 100 characters
-- No query parameters for primary content URLs
-- Consistent trailing slash usage (match existing site pattern)
+### URLルール
+- データから生成されたlowercase、ハイフン区切りのslug
+- サイト構造を反映した論理的な階層構造
+- 重複slugの禁止 — 生成時に一意性を確保する
+- URLは100文字以内に収める
+- 主要コンテンツURLにはクエリパラメータを使用しない
+- trailing slashの使用を統一する（既存のサイトパターンに合わせる）
 
-## Internal Linking Automation
+## 内部リンクの自動化
 
-- **Hub/spoke model**: Category hub pages linking to individual programmatic pages
-- **Related items**: Auto-link to 3-5 related pages based on data attributes
-- **Breadcrumbs**: Generate BreadcrumbList schema from URL hierarchy
-- **Cross-linking**: Link between programmatic pages sharing attributes (same category, same city, same feature)
-- **Anchor text**: Use descriptive, varied anchor text — avoid exact-match keyword repetition
-- Link density: 3-5 internal links per 1000 words (match seo-content guidelines)
+- **Hub/spokeモデル**: カテゴリハブページから個別のプログラマティックページへのリンク
+- **関連アイテム**: データ属性に基づいて3〜5件の関連ページに自動リンク
+- **パンくずリスト**: URL階層からBreadcrumbList schemaを生成
+- **クロスリンク**: 共通の属性を持つプログラマティックページ間のリンク（同一カテゴリ、同一都市、同一機能）
+- **アンカーテキスト**: 説明的で多様なアンカーテキストを使用する — 完全一致キーワードの繰り返しを避ける
+- リンク密度: 1000ワードあたり3〜5本の内部リンク（seo-contentのガイドラインに準拠）
 
-## Thin Content Safeguards
+## 低品質コンテンツの防止策
 
-### Quality Gates
+### 品質ゲート
 
-| Metric | Threshold | Action |
+| 指標 | しきい値 | アクション |
 |--------|-----------|--------|
-| Pages without content review | 100+ | ⚠️ WARNING — require content audit before publishing |
-| Pages without justification | 500+ | 🛑 HARD STOP — require explicit user approval and thin content audit |
-| Unique content per page | <40% | ❌ Flag as thin content — likely penalty risk |
-| Word count per page | <300 | ⚠️ Flag for review — may lack sufficient value |
+| コンテンツレビューなしのページ | 100件以上 | ⚠️ 警告 — 公開前にコンテンツ監査が必要 |
+| 正当な理由のないページ | 500件以上 | 🛑 強制停止 — ユーザーの明示的な承認と低品質コンテンツ監査が必要 |
+| ページごとのユニークコンテンツ | 40%未満 | ❌ 低品質コンテンツとしてフラグ — ペナルティリスクの可能性が高い |
+| ページごとのワード数 | 300未満 | ⚠️ レビュー対象としてフラグ — 十分な価値がない可能性あり |
 
-### Scaled Content Abuse — Enforcement Context (2025-2026)
+### Scaled Content Abuse — 執行状況（2025〜2026年）
 
-Google's Scaled Content Abuse policy (introduced March 2024) saw major enforcement escalation in 2025:
+GoogleのScaled Content Abuseポリシー（2024年3月導入）は、2025年に大幅な執行強化が行われました：
 
-- **June 2025:** Wave of manual actions targeting websites with AI-generated content at scale
-- **August 2025:** SpamBrain spam update enhanced pattern detection for AI-generated link schemes and content farms
-- **Result:** Google reported 45% reduction in low-quality, unoriginal content in search results post-March 2024 enforcement
+- **2025年6月:** AI生成コンテンツを大規模に使用するウェブサイトに対する手動対策の波
+- **2025年8月:** SpamBrainスパムアップデートにより、AI生成リンクスキームおよびコンテンツファームのパターン検出が強化
+- **結果:** Googleは2024年3月の執行以降、検索結果における低品質で独自性のないコンテンツが45%削減されたと報告
 
-**Enhanced quality gates for programmatic pages:**
-- **Content differentiation:** ≥30-40% of content must be genuinely unique between any two programmatic pages (not just city/keyword string replacement)
-- **Human review:** Minimum 5-10% sample review of generated pages before publishing
-- **Progressive rollout:** Publish in batches of 50-100 pages. Monitor indexing and rankings for 2-4 weeks before expanding. Never publish 500+ programmatic pages simultaneously without explicit quality review.
-- **Standalone value test:** Each page should pass: "Would this page be worth publishing even if no other similar pages existed?"
-- **Site reputation abuse:** If publishing programmatic content under a high-authority domain (not your own), this may trigger site reputation abuse penalties. Google began enforcing this aggressively in November 2024.
+**プログラマティックページの強化された品質ゲート：**
+- **コンテンツの差別化:** 任意の2つのプログラマティックページ間でコンテンツの30〜40%以上が真に固有であること（都市名/キーワードの文字列置換だけではない）
+- **人間によるレビュー:** 公開前に生成ページの最低5〜10%をサンプルレビュー
+- **段階的な公開:** 50〜100ページのバッチで公開する。2〜4週間インデックスとランキングを監視してから拡大する。明示的な品質レビューなしに500件以上のプログラマティックページを同時に公開しないこと。
+- **独立した価値テスト:** 各ページは以下のテストに合格すること：「他の類似ページが存在しなくても、このページは公開する価値があるか？」
+- **サイト評判の悪用:** 高権威ドメイン（自社のものではない）の下でプログラマティックコンテンツを公開する場合、site reputation abuseペナルティが発動される可能性がある。Googleは2024年11月からこの取り締まりを積極的に開始した。
 
-> **Recommendation:** The WARNING gate at `<40% unique content` remains appropriate. Consider a HARD STOP at `<30%` unique content to prevent scaled content abuse risk.
+> **推奨事項:** `ユニークコンテンツ40%未満`での警告ゲートは引き続き適切です。Scaled Content Abuseリスクを防止するため、`30%未満`のユニークコンテンツで強制停止を検討してください。
 
-### Safe Programmatic Pages (OK at scale)
-✅ Integration pages (with real setup docs, API details, screenshots)
-✅ Template/tool pages (with downloadable content, usage instructions)
-✅ Glossary pages (200+ word definitions with examples, related terms)
-✅ Product pages (unique specs, reviews, comparison data)
-✅ Data-driven pages (unique statistics, charts, analysis per record)
+### 安全なプログラマティックページ（大規模展開可能）
+✅ 連携ページ（実際のセットアップドキュメント、API詳細、スクリーンショット付き）
+✅ テンプレート/ツールページ（ダウンロード可能なコンテンツ、使用手順付き）
+✅ 用語集ページ（200ワード以上の定義、例と関連用語付き）
+✅ 製品ページ（固有のスペック、レビュー、比較データ付き）
+✅ データ駆動型ページ（レコードごとの固有の統計、チャート、分析付き）
 
-### Penalty Risk (avoid at scale)
-❌ Location pages with only city name swapped in identical text
-❌ "Best [tool] for [industry]" without industry-specific value
-❌ "[Competitor] alternative" without real comparison data
-❌ AI-generated pages without human review and unique value-add
-❌ Pages where >60% of content is shared template boilerplate
+### ペナルティリスク（大規模展開は避ける）
+❌ 同一テキストの都市名のみを差し替えた地域ページ
+❌ 業界固有の価値がない「[業界]向けベスト[ツール]」ページ
+❌ 実際の比較データがない「[競合]の代替」ページ
+❌ 人間によるレビューと独自の付加価値がないAI生成ページ
+❌ コンテンツの60%超が共有テンプレートの定型文であるページ
 
-### Uniqueness Calculation
-Unique content % = (words unique to this page) / (total words on page) × 100
+### ユニーク率の計算方法
+ユニークコンテンツ % = （そのページに固有のワード数）/（ページの総ワード数）× 100
 
-Measure against all other pages in the programmatic set. Shared headers, footers, and navigation are excluded from the calculation. Template boilerplate text IS included.
+プログラマティックセット内の全ページと比較して計測します。共有ヘッダー、フッター、ナビゲーションは計算から除外します。テンプレートの定型テキストは計算に含まれます。
 
-## Canonical Strategy
+## Canonical戦略
 
-- Every programmatic page must have a self-referencing canonical tag
-- Parameter variations (sort, filter, pagination) canonical to the base URL
-- Paginated series: canonical to page 1 or use rel=next/prev
-- If programmatic pages overlap with manual pages, the manual page is canonical
-- No canonical to a different domain unless intentional cross-domain setup
+- すべてのプログラマティックページにself-referencing canonicalタグを設定する
+- パラメータバリエーション（sort、filter、pagination）はベースURLにcanonicalを設定する
+- ページネーションシリーズ：ページ1にcanonicalを設定するか、rel=next/prevを使用する
+- プログラマティックページが手動ページと重複する場合、手動ページをcanonicalとする
+- 意図的なクロスドメイン設定でない限り、別ドメインへのcanonicalを設定しない
 
-## Sitemap Integration
+## Sitemap統合
 
-- Auto-generate sitemap entries for all programmatic pages
-- Split at 50,000 URLs per sitemap file (protocol limit)
-- Use sitemap index if multiple sitemap files needed
-- `<lastmod>` reflects actual data update timestamp (not generation time)
-- Exclude noindexed programmatic pages from sitemap
-- Register sitemap in robots.txt
-- Update sitemap dynamically as new records are added to data source
+- すべてのプログラマティックページのsitemapエントリを自動生成する
+- sitemapファイルあたり50,000 URLで分割する（プロトコル上限）
+- 複数のsitemapファイルが必要な場合はsitemap indexを使用する
+- `<lastmod>`は実際のデータ更新タイムスタンプを反映する（生成時刻ではない）
+- noindexのプログラマティックページをsitemapから除外する
+- sitemapをrobots.txtに登録する
+- データソースに新しいレコードが追加されたらsitemapを動的に更新する
 
-## Index Bloat Prevention
+## インデックス肥大化の防止
 
-- **Noindex low-value pages**: Pages that don't meet quality gates
-- **Pagination**: Noindex paginated results beyond page 1 (or use rel=next/prev)
-- **Faceted navigation**: Noindex filtered views, canonical to base category
-- **Crawl budget**: For sites with >10k programmatic pages, monitor crawl stats in Search Console
-- **Thin page consolidation**: Merge records with insufficient data into aggregated pages
-- **Regular audits**: Monthly review of indexed page count vs intended count
+- **低品質ページのnoindex**: 品質ゲートを満たさないページ
+- **ページネーション**: 2ページ目以降のページネーション結果をnoindexにする（またはrel=next/prevを使用する）
+- **ファセットナビゲーション**: フィルター表示をnoindexにし、ベースカテゴリにcanonicalを設定する
+- **クロールバジェット**: プログラマティックページが10,000件以上のサイトでは、Search Consoleでクロール統計を監視する
+- **低品質ページの統合**: データが不十分なレコードを集約ページにまとめる
+- **定期監査**: インデックス済みページ数と意図したページ数の月次レビュー
 
-## Output
+## 出力
 
-### Programmatic SEO Score: XX/100
+### Programmatic SEO スコア: XX/100
 
-### Assessment Summary
-| Category | Status | Score |
+### 評価サマリー
+| カテゴリ | ステータス | スコア |
 |----------|--------|-------|
-| Data Quality | ✅/⚠️/❌ | XX/100 |
-| Template Uniqueness | ✅/⚠️/❌ | XX/100 |
-| URL Structure | ✅/⚠️/❌ | XX/100 |
-| Internal Linking | ✅/⚠️/❌ | XX/100 |
-| Thin Content Risk | ✅/⚠️/❌ | XX/100 |
-| Index Management | ✅/⚠️/❌ | XX/100 |
+| データ品質 | ✅/⚠️/❌ | XX/100 |
+| テンプレートのユニーク性 | ✅/⚠️/❌ | XX/100 |
+| URL構造 | ✅/⚠️/❌ | XX/100 |
+| 内部リンク | ✅/⚠️/❌ | XX/100 |
+| 低品質コンテンツリスク | ✅/⚠️/❌ | XX/100 |
+| インデックス管理 | ✅/⚠️/❌ | XX/100 |
 
-### Critical Issues (fix immediately)
-### High Priority (fix within 1 week)
-### Medium Priority (fix within 1 month)
-### Low Priority (backlog)
+### 重大な問題（直ちに修正）
+### 優先度：高（1週間以内に修正）
+### 優先度：中（1ヶ月以内に修正）
+### 優先度：低（バックログ）
 
-### Recommendations
-- Data source improvements
-- Template modifications
-- URL pattern adjustments
-- Quality gate compliance actions
+### 推奨事項
+- データソースの改善
+- テンプレートの修正
+- URLパターンの調整
+- 品質ゲート準拠のためのアクション

@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Post-edit schema validation hook for Claude Code.
+"""Claude Code 用の編集後 Schema バリデーションフック。
 
-Validates JSON-LD schema after file edits. Returns exit code 2 to block
-if critical validation errors found.
+ファイル編集後に JSON-LD Schema を検証します。重大なバリデーションエラーが
+見つかった場合、終了コード 2 を返してブロックします。
 
-Hook configuration in ~/.claude/settings.json:
+~/.claude/settings.json でのフック設定:
 {
   "hooks": {
     "PostToolUse": [
@@ -22,8 +22,9 @@ Hook configuration in ~/.claude/settings.json:
   }
 }
 
-Note: matcher filters by tool name only (Edit, Write). The script itself
-checks if the file contains schema markup before validating.
+注意: matcher はツール名（Edit、Write）のみでフィルタリングします。
+スクリプト自体が、バリデーション前にファイルに Schema マークアップが
+含まれているかどうかを確認します。
 """
 
 import json
@@ -34,20 +35,20 @@ from typing import List
 
 
 def validate_jsonld(content: str) -> List[str]:
-    """Validate JSON-LD blocks in HTML content."""
+    """HTML コンテンツ内の JSON-LD ブロックを検証します。"""
     errors = []
     pattern = r'<script\s+type=["\']application/ld\+json["\']\s*>(.*?)</script>'
     blocks = re.findall(pattern, content, re.DOTALL | re.IGNORECASE)
 
     if not blocks:
-        return []  # No schema found — not an error
+        return []  # Schema が見つかりません — エラーではありません
 
     for i, block in enumerate(blocks, 1):
         block = block.strip()
         try:
             data = json.loads(block)
         except json.JSONDecodeError as e:
-            errors.append(f"Block {i}: Invalid JSON — {e}")
+            errors.append(f"ブロック {i}: 無効な JSON — {e}")
             continue
 
         if isinstance(data, list):
@@ -60,21 +61,21 @@ def validate_jsonld(content: str) -> List[str]:
 
 
 def _validate_schema_object(obj: dict, block_num: int) -> List[str]:
-    """Validate a single schema object."""
+    """単一の Schema オブジェクトを検証します。"""
     errors = []
-    prefix = f"Block {block_num}"
+    prefix = f"ブロック {block_num}"
 
-    # Check @context
+    # @context の確認
     if "@context" not in obj:
-        errors.append(f"{prefix}: Missing @context")
+        errors.append(f"{prefix}: @context がありません")
     elif obj["@context"] not in ("https://schema.org", "http://schema.org"):
-        errors.append(f"{prefix}: @context should be 'https://schema.org'")
+        errors.append(f"{prefix}: @context は 'https://schema.org' であるべきです")
 
-    # Check @type
+    # @type の確認
     if "@type" not in obj:
-        errors.append(f"{prefix}: Missing @type")
+        errors.append(f"{prefix}: @type がありません")
 
-    # Check for placeholder text
+    # プレースホルダーテキストの確認
     placeholders = [
         "[Business Name]",
         "[City]",
@@ -90,26 +91,26 @@ def _validate_schema_object(obj: dict, block_num: int) -> List[str]:
     text = json.dumps(obj)
     for p in placeholders:
         if p.lower() in text.lower():
-            errors.append(f"{prefix}: Contains placeholder text: {p}")
+            errors.append(f"{prefix}: プレースホルダーテキストが含まれています: {p}")
 
-    # Check for deprecated types
+    # 非推奨タイプの確認
     schema_type = obj.get("@type", "")
     deprecated = {
-        "HowTo": "deprecated September 2023",
-        "SpecialAnnouncement": "deprecated July 31, 2025",
-        "CourseInfo": "retired June 2025",
-        "EstimatedSalary": "retired June 2025",
-        "LearningVideo": "retired June 2025",
-        "ClaimReview": "retired June 2025 — fact-check rich results discontinued",
-        "VehicleListing": "retired June 2025 — vehicle listing structured data discontinued",
+        "HowTo": "2023年9月に非推奨",
+        "SpecialAnnouncement": "2025年7月31日に非推奨",
+        "CourseInfo": "2025年6月に廃止",
+        "EstimatedSalary": "2025年6月に廃止",
+        "LearningVideo": "2025年6月に廃止",
+        "ClaimReview": "2025年6月に廃止 — ファクトチェックのリッチリザルトは終了",
+        "VehicleListing": "2025年6月に廃止 — 車両リスティングの構造化データは終了",
     }
     if schema_type in deprecated:
-        errors.append(f"{prefix}: @type '{schema_type}' is {deprecated[schema_type]}")
+        errors.append(f"{prefix}: @type '{schema_type}' は{deprecated[schema_type]}です")
 
-    # Check for restricted types used incorrectly
-    restricted = {"FAQPage": "restricted to government and healthcare sites only (Aug 2023)"}
+    # 制限付きタイプの不正使用の確認
+    restricted = {"FAQPage": "政府および医療サイトのみに制限されています（2023年8月）"}
     if schema_type in restricted:
-        errors.append(f"{prefix}: @type '{schema_type}' is {restricted[schema_type]} — verify site qualifies")
+        errors.append(f"{prefix}: @type '{schema_type}' は{restricted[schema_type]} — サイトが対象かご確認ください")
 
     return errors
 
@@ -123,7 +124,7 @@ def main():
     if not os.path.isfile(filepath):
         sys.exit(0)
 
-    # Only validate HTML-like files
+    # HTML 系ファイルのみを検証
     valid_extensions = (".html", ".htm", ".jsx", ".tsx", ".vue", ".svelte", ".php", ".ejs")
     if not filepath.endswith(valid_extensions):
         sys.exit(0)
@@ -139,23 +140,23 @@ def main():
     if not errors:
         sys.exit(0)
 
-    # Categorize errors
-    critical_keywords = ["placeholder", "deprecated", "retired"]
+    # エラーの分類
+    critical_keywords = ["プレースホルダー", "非推奨", "廃止"]
     critical = [e for e in errors if any(kw in e.lower() for kw in critical_keywords)]
     warnings = [e for e in errors if e not in critical]
 
     if warnings:
-        print("⚠️  Schema validation warnings:")
+        print("⚠️  Schema バリデーション警告:")
         for w in warnings:
             print(f"  - {w}")
 
     if critical:
-        print("🛑 Schema validation ERRORS (blocking):")
+        print("🛑 Schema バリデーションエラー（ブロック）:")
         for e in critical:
             print(f"  - {e}")
-        sys.exit(2)  # Block the edit
+        sys.exit(2)  # 編集をブロック
 
-    sys.exit(1)  # Warnings only — proceed
+    sys.exit(1)  # 警告のみ — 続行
 
 
 if __name__ == "__main__":

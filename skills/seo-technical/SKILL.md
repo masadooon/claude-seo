@@ -2,46 +2,46 @@
 ---
 name: seo-technical
 description: >
-  Technical SEO audit across 8 categories: crawlability, indexability, security,
-  URL structure, mobile, Core Web Vitals, structured data, and JavaScript
-  rendering. Use when user says "technical SEO", "crawl issues", "robots.txt",
-  "Core Web Vitals", "site speed", or "security headers".
+  テクニカルSEO監査（8カテゴリ）：クローラビリティ、インデックス可能性、セキュリティ、
+  URL構造、モバイル、Core Web Vitals、構造化データ、JavaScriptレンダリング。
+  ユーザーが「テクニカルSEO」「クロールの問題」「robots.txt」「Core Web Vitals」
+  「サイト速度」「セキュリティヘッダー」と言った場合に使用。
 ---
 
-# Technical SEO Audit
+# テクニカルSEO監査
 
-## Categories
+## カテゴリ
 
-### 1. Crawlability
-- robots.txt: exists, valid, not blocking important resources
-- XML sitemap: exists, referenced in robots.txt, valid format
-- Noindex tags: intentional vs accidental
-- Crawl depth: important pages within 3 clicks of homepage
-- JavaScript rendering: check if critical content requires JS execution
-- Crawl budget: for large sites (>10k pages), efficiency matters
+### 1. クローラビリティ
+- robots.txt：存在するか、有効か、重要なリソースをブロックしていないか
+- XML sitemap：存在するか、robots.txtで参照されているか、フォーマットが正しいか
+- noindexタグ：意図的なものか、誤設定か
+- クロール深度：重要なページがホームページから3クリック以内にあるか
+- JavaScriptレンダリング：重要なコンテンツがJS実行を必要とするか確認
+- クロールバジェット：大規模サイト（1万ページ超）では効率が重要
 
-#### AI Crawler Management
+#### AIクローラー管理
 
-As of 2025-2026, AI companies actively crawl the web to train models and power AI search. Managing these crawlers via robots.txt is a critical technical SEO consideration.
+2025〜2026年現在、AI企業はモデル学習やAI検索のためにウェブを積極的にクロールしています。robots.txtを通じたこれらのクローラーの管理は、テクニカルSEOにおける重要な考慮事項です。
 
-**Known AI crawlers:**
+**既知のAIクローラー：**
 
-| Crawler | Company | robots.txt token | Purpose |
+| クローラー | 企業 | robots.txtトークン | 目的 |
 |---------|---------|-----------------|---------|
-| GPTBot | OpenAI | `GPTBot` | Model training |
-| ChatGPT-User | OpenAI | `ChatGPT-User` | Real-time browsing |
-| ClaudeBot | Anthropic | `ClaudeBot` | Model training |
-| PerplexityBot | Perplexity | `PerplexityBot` | Search index + training |
-| Bytespider | ByteDance | `Bytespider` | Model training |
-| Google-Extended | Google | `Google-Extended` | Gemini training (NOT search) |
-| CCBot | Common Crawl | `CCBot` | Open dataset |
+| GPTBot | OpenAI | `GPTBot` | モデル学習 |
+| ChatGPT-User | OpenAI | `ChatGPT-User` | リアルタイムブラウジング |
+| ClaudeBot | Anthropic | `ClaudeBot` | モデル学習 |
+| PerplexityBot | Perplexity | `PerplexityBot` | 検索インデックス＋学習 |
+| Bytespider | ByteDance | `Bytespider` | モデル学習 |
+| Google-Extended | Google | `Google-Extended` | Gemini学習（検索には影響なし） |
+| CCBot | Common Crawl | `CCBot` | オープンデータセット |
 
-**Key distinctions:**
-- Blocking `Google-Extended` prevents Gemini training use but does NOT affect Google Search indexing or AI Overviews (those use `Googlebot`)
-- Blocking `GPTBot` prevents OpenAI training but does NOT prevent ChatGPT from citing your content via browsing (`ChatGPT-User`)
-- ~3-5% of websites now use AI-specific robots.txt rules
+**重要な違い：**
+- `Google-Extended`をブロックするとGeminiの学習利用は防げますが、Google検索のインデックスやAI Overviewsには影響しません（それらは`Googlebot`を使用）
+- `GPTBot`をブロックするとOpenAIの学習は防げますが、ChatGPTがブラウジング機能（`ChatGPT-User`）であなたのコンテンツを引用することは防げません
+- 現在、約3〜5%のウェブサイトがAI固有のrobots.txtルールを使用しています
 
-**Example — selective AI crawler blocking:**
+**例 — AIクローラーの選択的ブロック：**
 ```
 # Allow search indexing, block AI training crawlers
 User-agent: GPTBot
@@ -58,92 +58,92 @@ User-agent: *
 Allow: /
 ```
 
-**Recommendation:** Consider your AI visibility strategy before blocking. Being cited by AI systems drives brand awareness and referral traffic. Cross-reference the `seo-geo` skill for full AI visibility optimization.
+**推奨事項：** ブロックする前にAI可視性戦略を検討してください。AIシステムに引用されることは、ブランド認知やリファラルトラフィックの向上につながります。AI可視性の最適化については`seo-geo`スキルも参照してください。
 
-### 2. Indexability
-- Canonical tags: self-referencing, no conflicts with noindex
-- Duplicate content: near-duplicates, parameter URLs, www vs non-www
-- Thin content: pages below minimum word counts per type
-- Pagination: rel=next/prev or load-more pattern
-- Hreflang: correct for multi-language/multi-region sites
-- Index bloat: unnecessary pages consuming crawl budget
+### 2. インデックス可能性
+- canonicalタグ：自己参照か、noindexとの競合がないか
+- 重複コンテンツ：類似コンテンツ、パラメータURL、wwwありなし
+- 低品質コンテンツ：ページタイプごとの最低文字数を下回るページ
+- ページネーション：rel=next/prevまたはload-moreパターン
+- hreflang：多言語・多地域サイトで正しく設定されているか
+- インデックスの肥大化：クロールバジェットを消費する不要なページ
 
-### 3. Security
-- HTTPS: enforced, valid SSL certificate, no mixed content
-- Security headers:
+### 3. セキュリティ
+- HTTPS：強制されているか、SSL証明書が有効か、混在コンテンツがないか
+- セキュリティヘッダー：
   - Content-Security-Policy (CSP)
   - Strict-Transport-Security (HSTS)
   - X-Frame-Options
   - X-Content-Type-Options
   - Referrer-Policy
-- HSTS preload: check preload list inclusion for high-security sites
+- HSTSプリロード：高セキュリティサイトではプリロードリストへの登録を確認
 
-### 4. URL Structure
-- Clean URLs: descriptive, hyphenated, no query parameters for content
-- Hierarchy: logical folder structure reflecting site architecture
-- Redirects: no chains (max 1 hop), 301 for permanent moves
-- URL length: flag >100 characters
-- Trailing slashes: consistent usage
+### 4. URL構造
+- クリーンなURL：説明的、ハイフン区切り、コンテンツにクエリパラメータなし
+- 階層構造：サイトアーキテクチャを反映した論理的なフォルダ構造
+- リダイレクト：チェーンなし（最大1ホップ）、恒久的な移動には301を使用
+- URLの長さ：100文字超を警告
+- 末尾スラッシュ：一貫した使用
 
-### 5. Mobile Optimization
-- Responsive design: viewport meta tag, responsive CSS
-- Touch targets: minimum 48x48px with 8px spacing
-- Font size: minimum 16px base
-- No horizontal scroll
-- Mobile-first indexing: Google indexes mobile version. **Mobile-first indexing is 100% complete as of July 5, 2024.** Google now crawls and indexes ALL websites exclusively with the mobile Googlebot user-agent.
+### 5. モバイル最適化
+- レスポンシブデザイン：viewportメタタグ、レスポンシブCSS
+- タッチターゲット：最小48x48px、8pxの間隔
+- フォントサイズ：基本16px以上
+- 水平スクロールなし
+- モバイルファーストインデックス：Googleはモバイル版をインデックスする。**モバイルファーストインデックスは2024年7月5日に100%完了。** Googleは現在、すべてのウェブサイトをモバイルGooglebotユーザーエージェントのみでクロール・インデックスしています。
 
 ### 6. Core Web Vitals
-- **LCP** (Largest Contentful Paint): target <2.5s
-- **INP** (Interaction to Next Paint): target <200ms
-  - INP replaced FID on March 12, 2024. FID was fully removed from all Chrome tools (CrUX API, PageSpeed Insights, Lighthouse) on September 9, 2024. Do NOT reference FID anywhere.
-- **CLS** (Cumulative Layout Shift): target <0.1
-- Evaluation uses 75th percentile of real user data
-- Use PageSpeed Insights API or CrUX data if MCP available
+- **LCP** (Largest Contentful Paint)：目標 <2.5秒
+- **INP** (Interaction to Next Paint)：目標 <200ms
+  - INPは2024年3月12日にFIDを置き換えました。FIDは2024年9月9日にすべてのChromeツール（CrUX API、PageSpeed Insights、Lighthouse）から完全に削除されました。FIDへの言及は一切不要です。
+- **CLS** (Cumulative Layout Shift)：目標 <0.1
+- 評価には実ユーザーデータの75パーセンタイルを使用
+- MCP利用可能な場合はPageSpeed Insights APIまたはCrUXデータを使用
 
-### 7. Structured Data
-- Detection: JSON-LD (preferred), Microdata, RDFa
-- Validation against Google's supported types
-- See seo-schema skill for full analysis
+### 7. 構造化データ
+- 検出：JSON-LD（推奨）、Microdata、RDFa
+- Googleがサポートするタイプに対するバリデーション
+- 詳細な分析についてはseo-schemaスキルを参照
 
-### 8. JavaScript Rendering
-- Check if content visible in initial HTML vs requires JS
-- Identify client-side rendered (CSR) vs server-side rendered (SSR)
-- Flag SPA frameworks (React, Vue, Angular) that may cause indexing issues
-- Verify dynamic rendering setup if applicable
+### 8. JavaScriptレンダリング
+- コンテンツが初期HTMLで表示されるか、JSが必要かを確認
+- クライアントサイドレンダリング（CSR）とサーバーサイドレンダリング（SSR）を特定
+- インデックスの問題を引き起こす可能性のあるSPAフレームワーク（React、Vue、Angular）を警告
+- 該当する場合はダイナミックレンダリングの設定を検証
 
-#### JavaScript SEO — Canonical & Indexing Guidance (December 2025)
+#### JavaScript SEO — canonical＆インデックスに関するガイダンス（2025年12月）
 
-Google updated its JavaScript SEO documentation in December 2025 with critical clarifications:
+Googleは2025年12月にJavaScript SEOドキュメントを更新し、重要な明確化を行いました：
 
-1. **Canonical conflicts:** If a canonical tag in raw HTML differs from one injected by JavaScript, Google may use EITHER one. Ensure canonical tags are identical between server-rendered HTML and JS-rendered output.
-2. **noindex with JavaScript:** If raw HTML contains `<meta name="robots" content="noindex">` but JavaScript removes it, Google MAY still honor the noindex from raw HTML. Serve correct robots directives in the initial HTML response.
-3. **Non-200 status codes:** Google does NOT render JavaScript on pages returning non-200 HTTP status codes. Any content or meta tags injected via JS on error pages will be invisible to Googlebot.
-4. **Structured data in JavaScript:** Product, Article, and other structured data injected via JS may face delayed processing. For time-sensitive structured data (especially e-commerce Product markup), include it in the initial server-rendered HTML.
+1. **canonicalの競合：** 生HTMLのcanonicalタグとJavaScriptで挿入されたcanonicalタグが異なる場合、Googleはどちらを使用するか分かりません。サーバーレンダリングされたHTMLとJS出力の間でcanonicalタグが同一であることを確認してください。
+2. **JavaScriptによるnoindex：** 生HTMLに`<meta name="robots" content="noindex">`が含まれていてJavaScriptがそれを削除した場合でも、Googleは生HTMLのnoindexを適用する可能性があります。正しいrobots指示は初期HTMLレスポンスで提供してください。
+3. **非200ステータスコード：** Googleは非200 HTTPステータスコードを返すページではJavaScriptをレンダリングしません。エラーページでJSにより挿入されたコンテンツやメタタグはGooglebotには見えません。
+4. **JavaScriptによる構造化データ：** Product、Articleなど、JSで挿入された構造化データは処理が遅延する場合があります。時間的制約のある構造化データ（特にEコマースのProductマークアップ）は、初期サーバーレンダリングHTMLに含めてください。
 
-**Best practice:** Serve critical SEO elements (canonical, meta robots, structured data, title, meta description) in the initial server-rendered HTML rather than relying on JavaScript injection.
+**ベストプラクティス：** 重要なSEO要素（canonical、meta robots、構造化データ、title、meta description）はJavaScript挿入に頼らず、初期サーバーレンダリングHTMLで提供してください。
 
-### 9. IndexNow Protocol
-- Check if site supports IndexNow for Bing, Yandex, Naver
-- Supported by search engines other than Google
-- Recommend implementation for faster indexing on non-Google engines
+### 9. IndexNowプロトコル
+- サイトがBing、Yandex、Naver向けにIndexNowをサポートしているか確認
+- Google以外の検索エンジンがサポート
+- Google以外のエンジンでの高速インデックスのため、実装を推奨
 
-## Output
+## 出力
 
-### Technical Score: XX/100
+### テクニカルスコア：XX/100
 
-### Category Breakdown
-| Category | Status | Score |
+### カテゴリ別内訳
+| カテゴリ | ステータス | スコア |
 |----------|--------|-------|
-| Crawlability | ✅/⚠️/❌ | XX/100 |
-| Indexability | ✅/⚠️/❌ | XX/100 |
-| Security | ✅/⚠️/❌ | XX/100 |
-| URL Structure | ✅/⚠️/❌ | XX/100 |
-| Mobile | ✅/⚠️/❌ | XX/100 |
+| クローラビリティ | ✅/⚠️/❌ | XX/100 |
+| インデックス可能性 | ✅/⚠️/❌ | XX/100 |
+| セキュリティ | ✅/⚠️/❌ | XX/100 |
+| URL構造 | ✅/⚠️/❌ | XX/100 |
+| モバイル | ✅/⚠️/❌ | XX/100 |
 | Core Web Vitals | ✅/⚠️/❌ | XX/100 |
-| Structured Data | ✅/⚠️/❌ | XX/100 |
-| JS Rendering | ✅/⚠️/❌ | XX/100 |
+| 構造化データ | ✅/⚠️/❌ | XX/100 |
+| JSレンダリング | ✅/⚠️/❌ | XX/100 |
 
-### Critical Issues (fix immediately)
-### High Priority (fix within 1 week)
-### Medium Priority (fix within 1 month)
-### Low Priority (backlog)
+### 重大な問題（直ちに修正）
+### 高優先度（1週間以内に修正）
+### 中優先度（1ヶ月以内に修正）
+### 低優先度（バックログ）

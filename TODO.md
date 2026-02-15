@@ -1,27 +1,24 @@
 # TODO — claude-seo
 
-## Deferred from February 2026 Research Report
+## 2026年2月のリサーチレポートから保留された項目
 
-Items identified during the Feb 2026 SEO research audit that require additional implementation work.
+2026年2月のSEOリサーチ監査で特定された、追加の実装作業が必要な項目。
 
-- [ ] **Fake freshness detection** (Priority: Medium)
-  Compare visible dates (`datePublished`, `dateModified`) against actual content modification signals.
-  Flag pages with updated dates but unchanged body content. This is a spam pattern Google targets.
+- [ ] **偽の鮮度検出** (優先度: 中)
+  表示される日付（`datePublished`、`dateModified`）を実際のコンテンツ変更シグナルと比較する。
+  日付が更新されているが本文コンテンツが変更されていないページをフラグする。これはGoogleが対象とするスパムパターンである。
 
-- [ ] **Mobile content parity check** (Priority: Medium)
-  Compare mobile vs desktop meta tags, structured data presence, and content completeness.
-  Flag discrepancies that could affect mobile-first indexing. Currently only viewport/touch targets
-  are checked, not content equivalence.
+- [ ] **モバイルコンテンツの同等性チェック** (優先度: 中)
+  モバイルとデスクトップのmetaタグ、構造化データの存在、コンテンツの完全性を比較する。
+  mobile-first indexingに影響を与える可能性のある不一致をフラグする。現在はviewport/タッチターゲットのみチェックしており、コンテンツの同等性はチェックしていない。
 
-- [ ] **Discover optimization checks** (Priority: Low-Medium)
-  Clickbait title detection, content depth scoring, local relevance signals, sensationalism flags.
-  Relevant to Feb 2026 Discover Core Update which emphasizes original reporting and E-E-A-T signals.
+- [ ] **Discover最適化チェック** (優先度: 低〜中)
+  クリックベイトタイトルの検出、コンテンツ深度スコアリング、ローカル関連性シグナル、センセーショナリズムフラグ。
+  オリジナル報道とE-E-A-Tシグナルを重視する2026年2月のDiscover Core Updateに関連する。
 
-- [ ] **Brand mention analysis Python implementation** (Priority: Low)
-  Currently documented in `seo-geo/SKILL.md` but no programmatic scoring. Consider implementing
-  a check that searches for brand entity presence signals (unlinked mentions, co-citation patterns,
-  entity authority indicators).
+- [ ] **ブランド言及分析のPython実装** (優先度: 低)
+  現在`seo-geo/SKILL.md`に文書化されているが、プログラムによるスコアリングは未実装。ブランドエンティティの存在シグナル（リンクなしの言及、共引用パターン、エンティティ権威性指標）をチェックする実装を検討する。
 
 ---
 
-*Last updated: February 2026*
+*最終更新: 2026年2月*

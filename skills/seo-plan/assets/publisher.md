@@ -1,16 +1,16 @@
 <!-- Updated: 2026-02-07 -->
-# Publisher/Media SEO Strategy Template
+# パブリッシャー/メディア SEO戦略テンプレート
 
-## Industry Characteristics
+## 業界の特徴
 
-- High content volume
-- Time-sensitive content (news)
-- Ad revenue dependent on traffic
-- Authority and trust critical
-- Competing with social platforms
-- AI Overviews impact on traffic
+- コンテンツ量が多い
+- 速報性の高いコンテンツ（ニュース）
+- 広告収益がトラフィックに依存
+- 権威性と信頼性が重要
+- ソーシャルプラットフォームとの競合
+- AI Overviewsによるトラフィックへの影響
 
-## Recommended Site Architecture
+## 推奨サイト構造
 
 ```
 /
@@ -33,21 +33,21 @@
 │   ├── /editorial-policy
 │   ├── /corrections
 │   └── /contact
-└── /[year]/[month]/[slug] (article URLs)
+└── /[year]/[month]/[slug] (記事URL)
 ```
 
-## Schema Recommendations
+## schema推奨設定
 
-| Page Type | Schema Types |
+| ページタイプ | schema タイプ |
 |-----------|-------------|
-| Article | NewsArticle or Article, Person (author), Organization (publisher) |
-| Author Page | Person, ProfilePage |
-| Topic Page | CollectionPage, ItemList |
-| Homepage | WebSite, Organization |
-| Video | VideoObject |
-| Podcast | PodcastEpisode, PodcastSeries |
+| 記事 | NewsArticle or Article, Person (著者), Organization (発行者) |
+| 著者ページ | Person, ProfilePage |
+| トピックページ | CollectionPage, ItemList |
+| ホームページ | WebSite, Organization |
+| 動画 | VideoObject |
+| ポッドキャスト | PodcastEpisode, PodcastSeries |
 
-### NewsArticle Schema Example
+### NewsArticle schema の例
 ```json
 {
   "@context": "https://schema.org",
@@ -76,78 +76,78 @@
 }
 ```
 
-## E-E-A-T Requirements
+## E-E-A-T 要件
 
-Publishers face highest E-E-A-T scrutiny.
+パブリッシャーは最も厳しい E-E-A-T の審査を受けます。
 
-### Author Pages Must Include
-- Full name and photo
-- Bio and credentials
-- Areas of expertise
-- Contact information
-- Social profiles (sameAs)
-- Previous articles by this author
+### 著者ページに必須の情報
+- フルネームと写真
+- 経歴と資格
+- 専門分野
+- 連絡先情報
+- ソーシャルプロフィール（sameAs）
+- その著者による過去の記事
 
-### Editorial Standards
-- Clear correction policy
-- Transparent editorial process
-- Fact-checking procedures
-- Conflict of interest disclosures
+### 編集基準
+- 明確な訂正ポリシー
+- 透明性のある編集プロセス
+- ファクトチェックの手順
+- 利益相反の開示
 
-## Content Priorities
+## コンテンツの優先順位
 
-### High Priority
-1. Breaking news (speed matters)
-2. Evergreen guides on core topics
-3. Author pages with credentials
-4. Topic hubs/pillar pages
+### 高優先度
+1. 速報ニュース（速度が重要）
+2. コアトピックに関するエバーグリーンガイド
+3. 資格情報を含む著者ページ
+4. トピックハブ/ピラーページ
 
-### Medium Priority
-1. Opinion/analysis pieces
-2. Video content
-3. Interactive content
-4. Newsletter landing pages
+### 中優先度
+1. 意見・分析記事
+2. 動画コンテンツ
+3. インタラクティブコンテンツ
+4. ニュースレターのランディングページ
 
-### GEO Considerations
-- Clear, quotable facts in articles
-- Tables for data-heavy content
-- Expert quotes with attribution
-- Update dates prominently displayed
-- Structured headings (H2/H3)
-- First-party data and original research are highly cited by AI systems
-- Ensure author entities are clearly defined with Person schema + sameAs links
-- Monitor AI citation frequency across Google AI Overviews, AI Mode, ChatGPT, Perplexity
-- Treat AI citation as a standalone KPI alongside organic traffic
+### GEO に関する考慮事項
+- 記事内に明確で引用しやすい事実を記載する
+- データが多いコンテンツにはテーブルを使用する
+- 出典付きの専門家の引用を含める
+- 更新日を目立つ位置に表示する
+- 構造化された見出し（H2/H3）を使用する
+- ファーストパーティデータとオリジナルリサーチはAIシステムに頻繁に引用される
+- Person schema + sameAs リンクで著者エンティティを明確に定義する
+- Google AI Overviews、AI Mode、ChatGPT、Perplexity におけるAI引用頻度を監視する
+- AI引用をオーガニックトラフィックと並ぶ独立したKPIとして扱う
 
-### Publisher SEO Updates (2025-2026)
+### パブリッシャーSEOの最新情報（2025-2026）
 
-- **Google News automatic inclusion:** Google News no longer accepts manual applications (since March 2025). Inclusion is fully automatic based on Google's content quality criteria. Focus on Google News sitemap markup and consistent, high-quality publishing cadence.
-- **KPI shift:** Traffic-based KPIs (sessions, pageviews) are declining in relevance as AI Overviews reduce click-through rates. Leading publishers are shifting to: subscriber conversions, time on page, scroll depth, newsletter signups, AI citation frequency, and revenue per visitor.
-- **Site reputation abuse risk:** Publishers hosting third-party content (coupons, product reviews, affiliate content) under their domain are at high risk. Google penalized Forbes, WSJ, Time, and CNN for this in late 2024. If hosting third-party content, ensure strong editorial oversight and clear first-party involvement.
+- **Google News の自動掲載:** Google News はもはや手動申請を受け付けていません（2025年3月以降）。掲載は Google のコンテンツ品質基準に基づき完全に自動化されています。Google News sitemap マークアップと、一貫した高品質な公開頻度に注力してください。
+- **KPIの変化:** トラフィックベースのKPI（セッション数、ページビュー数）は、AI Overviewsによるクリック率の低下に伴い、重要性が低下しています。先進的なパブリッシャーは以下に移行しています：購読者コンバージョン、ページ滞在時間、スクロール深度、ニュースレター登録数、AI引用頻度、訪問者あたりの収益。
+- **サイトレピュテーション悪用のリスク:** 自社ドメイン配下にサードパーティコンテンツ（クーポン、製品レビュー、アフィリエイトコンテンツ）をホスティングしているパブリッシャーは高リスクです。Google は2024年後半にForbes、WSJ、Time、CNNをこの理由でペナルティを課しました。サードパーティコンテンツをホスティングする場合は、強力な編集監督と明確なファーストパーティの関与を確保してください。
 
-## Technical Considerations
+## 技術的な考慮事項
 
 ### Core Web Vitals
-- Ad placement affects CLS
-- Lazy load ads and images below fold
-- Optimize hero images for LCP
-- Minimize render-blocking resources
+- 広告配置がCLSに影響する
+- ファーストビュー以下の広告と画像を遅延読み込みする
+- ヒーロー画像をLCP向けに最適化する
+- レンダリングブロッキングリソースを最小化する
 
-### AMP (if used)
-- Consider dropping AMP (no longer required for Top Stories)
-- Ensure canonical setup is correct
-- Monitor performance vs non-AMP
+### AMP（使用している場合）
+- AMPの廃止を検討する（トップストーリーへの掲載に不要になった）
+- canonical の設定が正しいことを確認する
+- 非AMPとのパフォーマンスを比較監視する
 
-### Pagination
-- Proper pagination for multi-page articles
-- Or infinite scroll with proper indexing
-- Canonical to page 1 or full article
+### ページネーション
+- 複数ページ記事には適切なページネーションを実装する
+- または適切なインデックス設定を行った無限スクロールを使用する
+- canonical は1ページ目または全文記事に設定する
 
-## Key Metrics to Track
+## 追跡すべき主要指標
 
-- Page views from organic
-- Time on page
-- Pages per session
-- Newsletter signups from organic
-- Google News/Discover traffic
-- AI Overview appearances
+- オーガニック経由のページビュー数
+- ページ滞在時間
+- セッションあたりのページ数
+- オーガニック経由のニュースレター登録数
+- Google News/Discover からのトラフィック
+- AI Overviewsへの表示回数

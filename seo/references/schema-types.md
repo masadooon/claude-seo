@@ -1,114 +1,114 @@
 <!-- Updated: 2026-02-07 -->
-# Schema.org Types — Status & Recommendations (February 2026)
+# Schema.org タイプ — ステータスと推奨事項 (2026年2月)
 
-**Schema.org Version:** 29.4 (December 8, 2025)
+**Schema.org バージョン:** 29.4 (2025年12月8日)
 
-## Format Preference
-Always use **JSON-LD** (`<script type="application/ld+json">`).
-Google's documentation explicitly recommends JSON-LD over Microdata and RDFa.
+## フォーマットの推奨
+常に **JSON-LD** (`<script type="application/ld+json">`) を使用してください。
+Googleのドキュメントでは、MicrodataやRDFaよりもJSON-LDを明示的に推奨しています。
 
-**AI Search Note:** Content with proper schema has ~2.5× higher chance of appearing in AI-generated answers (confirmed by Google and Microsoft, March 2025).
+**AI検索に関する注記:** 適切なSchemaを持つコンテンツは、AI生成の回答に表示される可能性が約2.5倍高くなります（2025年3月にGoogleとMicrosoftが確認）。
 
 ---
 
-## Active — Recommend freely
+## 有効 — 自由に推奨可能
 
-| Type | Use Case | Key Properties |
+| タイプ | ユースケース | 主要プロパティ |
 |------|----------|----------------|
-| Organization | Company info | name, url, logo, contactPoint, sameAs |
-| LocalBusiness | Physical businesses | name, address, telephone, openingHours, geo, priceRange |
-| SoftwareApplication | Desktop/mobile apps | name, operatingSystem, applicationCategory, offers, aggregateRating |
-| WebApplication | Browser-based SaaS | name, applicationCategory, offers, browserRequirements, featureList |
-| Product | Physical/digital products | name, image, description, sku, brand, offers, review |
-| Offer | Pricing | price, priceCurrency, availability, url, validFrom |
-| Service | Service businesses | name, provider, areaServed, description, offers |
-| Article | Blog posts, news | headline, author, datePublished, dateModified, image, publisher |
-| BlogPosting | Blog content | Same as Article + blog-specific context |
-| NewsArticle | News content | Same as Article + news-specific context |
-| Review | Individual reviews | reviewRating, author, itemReviewed, reviewBody |
-| AggregateRating | Rating summaries | ratingValue, reviewCount, bestRating, worstRating |
-| BreadcrumbList | Navigation | itemListElement with position, name, item |
-| WebSite | Site-level | name, url, potentialAction (SearchAction for sitelinks search) |
-| WebPage | Page-level | name, description, datePublished, dateModified |
-| Person | Author/team | name, jobTitle, url, sameAs, image, worksFor |
-| ContactPage | Contact pages | name, url |
-| VideoObject | Video content | name, description, thumbnailUrl, uploadDate, duration, contentUrl |
-| ImageObject | Image content | contentUrl, caption, creator, copyrightHolder |
-| Event | Events | name, startDate, endDate, location, organizer, offers |
-| JobPosting | Job listings | title, description, datePosted, hiringOrganization, jobLocation |
-| Course | Educational content | name, description, provider, hasCourseInstance |
-| DiscussionForumPosting | Forum threads | headline, author, datePublished, text, url |
-| ProductGroup | Variant products | name, productGroupID, variesBy, hasVariant |
-| ProfilePage | Author/creator profiles | mainEntity (Person), name, url, description, sameAs |
+| Organization | 企業情報 | name, url, logo, contactPoint, sameAs |
+| LocalBusiness | 実店舗ビジネス | name, address, telephone, openingHours, geo, priceRange |
+| SoftwareApplication | デスクトップ/モバイルアプリ | name, operatingSystem, applicationCategory, offers, aggregateRating |
+| WebApplication | ブラウザベースのSaaS | name, applicationCategory, offers, browserRequirements, featureList |
+| Product | 物理的/デジタル製品 | name, image, description, sku, brand, offers, review |
+| Offer | 価格設定 | price, priceCurrency, availability, url, validFrom |
+| Service | サービスビジネス | name, provider, areaServed, description, offers |
+| Article | ブログ記事、ニュース | headline, author, datePublished, dateModified, image, publisher |
+| BlogPosting | ブログコンテンツ | Articleと同じ + ブログ固有のコンテキスト |
+| NewsArticle | ニュースコンテンツ | Articleと同じ + ニュース固有のコンテキスト |
+| Review | 個別レビュー | reviewRating, author, itemReviewed, reviewBody |
+| AggregateRating | 評価の概要 | ratingValue, reviewCount, bestRating, worstRating |
+| BreadcrumbList | ナビゲーション | itemListElement（position, name, itemを含む） |
+| WebSite | サイトレベル | name, url, potentialAction（サイトリンク検索用のSearchAction） |
+| WebPage | ページレベル | name, description, datePublished, dateModified |
+| Person | 著者/チーム | name, jobTitle, url, sameAs, image, worksFor |
+| ContactPage | お問い合わせページ | name, url |
+| VideoObject | 動画コンテンツ | name, description, thumbnailUrl, uploadDate, duration, contentUrl |
+| ImageObject | 画像コンテンツ | contentUrl, caption, creator, copyrightHolder |
+| Event | イベント | name, startDate, endDate, location, organizer, offers |
+| JobPosting | 求人情報 | title, description, datePosted, hiringOrganization, jobLocation |
+| Course | 教育コンテンツ | name, description, provider, hasCourseInstance |
+| DiscussionForumPosting | フォーラムスレッド | headline, author, datePublished, text, url |
+| ProductGroup | バリエーション商品 | name, productGroupID, variesBy, hasVariant |
+| ProfilePage | 著者/クリエイターのプロフィール | mainEntity (Person), name, url, description, sameAs |
 
 ---
 
-## Restricted — Only for specific site types
+## 制限付き — 特定のサイトタイプのみ対象
 
-| Type | Restriction | Since |
+| タイプ | 制限事項 | 適用開始 |
 |------|------------|-------|
-| FAQPage | Government and healthcare authority sites ONLY | August 2023 |
+| FAQPage | 政府および医療機関のサイトのみ | 2023年8月 |
 
-> Google severely limited FAQ rich results. Only authoritative sources (government, health organizations) now receive FAQ rich results. Do NOT recommend FAQPage schema for commercial sites.
+> GoogleはFAQリッチリザルトを大幅に制限しました。現在、権威あるソース（政府、医療機関）のみがFAQリッチリザルトを受け取ります。商用サイトにはFAQPage Schemaを推奨しないでください。
 
 ---
 
-## Deprecated — Never recommend
+## 非推奨 — 推奨しないこと
 
-| Type | Status | Since | Notes |
+| タイプ | ステータス | 適用開始 | 備考 |
 |------|--------|-------|-------|
-| HowTo | Rich results fully removed | September 2023 | Google stopped showing how-to rich results |
-| SpecialAnnouncement | Deprecated | July 31, 2025 | COVID-era schema, no longer processed |
-| CourseInfo | Retired from rich results | June 2025 | Merged into Course |
-| EstimatedSalary | Retired from rich results | June 2025 | No longer displayed |
-| LearningVideo | Retired from rich results | June 2025 | Use VideoObject instead |
-| ClaimReview | Retired from rich results | June 2025 | Fact-check markup no longer generates rich results |
-| VehicleListing | Retired from rich results | June 2025 | Vehicle listing structured data discontinued |
-| Book Actions | Deprecated then REVERSED | June 2025 | **Still functional as of Feb 2026** — historical note only |
-| Practice Problem | Retired from rich results | Late 2025 | Educational practice problems no longer displayed |
-| Dataset | Retired from rich results | Late 2025 | Dataset Search feature discontinued |
+| HowTo | リッチリザルト完全削除 | 2023年9月 | Googleがhow-toリッチリザルトの表示を停止 |
+| SpecialAnnouncement | 非推奨 | 2025年7月31日 | COVID時代のSchema、処理されなくなった |
+| CourseInfo | リッチリザルトから廃止 | 2025年6月 | Courseに統合 |
+| EstimatedSalary | リッチリザルトから廃止 | 2025年6月 | 表示されなくなった |
+| LearningVideo | リッチリザルトから廃止 | 2025年6月 | 代わりにVideoObjectを使用 |
+| ClaimReview | リッチリザルトから廃止 | 2025年6月 | ファクトチェックマークアップはリッチリザルトを生成しなくなった |
+| VehicleListing | リッチリザルトから廃止 | 2025年6月 | 車両リスティング構造化データの提供終了 |
+| Book Actions | 非推奨後に撤回 | 2025年6月 | **2026年2月時点でも機能中** — 歴史的な記録のみ |
+| Practice Problem | リッチリザルトから廃止 | 2025年後半 | 教育用練習問題が表示されなくなった |
+| Dataset | リッチリザルトから廃止 | 2025年後半 | Dataset Search機能の提供終了 |
 
 ---
 
-## Recent Additions (2024-2026)
+## 最近の追加 (2024-2026)
 
-| Type/Feature | Added | Notes |
+| タイプ/機能 | 追加時期 | 備考 |
 |-------------|-------|-------|
-| Product Certification markup | April 2025 | Energy ratings, safety certifications. Replaced EnergyConsumptionDetails. |
-| ProductGroup | 2025 | E-commerce product variants with variesBy, hasVariant properties |
-| ProfilePage | 2025 | Author/creator profile pages with mainEntity Person for E-E-A-T |
-| DiscussionForumPosting | 2024 | For forum/community content |
-| Speakable | Updated 2024 | For voice search optimization |
-| LoyaltyProgram | June 2025 | Member pricing, loyalty card structured data |
-| Organization-level shipping/return policies | November 2025 | Configure via Search Console without Merchant Center |
-| ConferenceEvent | December 2025 | Schema.org v29.4 addition |
-| PerformingArtsEvent | December 2025 | Schema.org v29.4 addition |
+| Product Certification マークアップ | 2025年4月 | エネルギー評価、安全認証。EnergyConsumptionDetailsの代替。 |
+| ProductGroup | 2025年 | variesBy, hasVariantプロパティを持つECサイトの商品バリエーション |
+| ProfilePage | 2025年 | E-E-A-TのためのmainEntity Personを持つ著者/クリエイターのプロフィールページ |
+| DiscussionForumPosting | 2024年 | フォーラム/コミュニティコンテンツ向け |
+| Speakable | 2024年更新 | 音声検索最適化向け |
+| LoyaltyProgram | 2025年6月 | 会員価格、ロイヤルティカードの構造化データ |
+| Organization レベルの配送/返品ポリシー | 2025年11月 | Merchant Centerなしで Search Console 経由で設定可能 |
+| ConferenceEvent | 2025年12月 | Schema.org v29.4 で追加 |
+| PerformingArtsEvent | 2025年12月 | Schema.org v29.4 で追加 |
 
-## E-commerce Requirements (Updated)
+## ECサイトの要件 (更新済み)
 
-| Requirement | Status | Since |
+| 要件 | ステータス | 適用開始 |
 |-------------|--------|-------|
-| `returnPolicyCountry` in MerchantReturnPolicy | **Required** | March 2025 |
-| Product variant structured data | Expanded | 2025 — includes apparel, cosmetics, electronics |
+| MerchantReturnPolicy の `returnPolicyCountry` | **必須** | 2025年3月 |
+| Product バリエーション構造化データ | 拡張 | 2025年 — アパレル、化粧品、電子機器を含む |
 
-> **Note:** Content API for Shopping sunsets August 18, 2026. Migrate to Merchant API.
+> **注記:** Content API for Shoppingは2026年8月18日にサービス終了予定。Merchant APIへの移行が必要です。
 
 ---
 
-## Validation Checklist
+## バリデーションチェックリスト
 
-For any schema block, verify:
+Schemaブロックについて、以下を確認してください:
 
-1. ✅ `@context` is `"https://schema.org"` (not http)
-2. ✅ `@type` is a valid, non-deprecated type
-3. ✅ All required properties are present
-4. ✅ Property values match expected data types
-5. ✅ No placeholder text (e.g., "[Business Name]")
-6. ✅ URLs are absolute, not relative
-7. ✅ Dates are in ISO 8601 format
-8. ✅ Images have valid URLs
+1. `@context` が `"https://schema.org"` である（httpではない）
+2. `@type` が有効かつ非推奨でないタイプである
+3. すべての必須プロパティが存在する
+4. プロパティの値が期待されるデータ型と一致する
+5. プレースホルダーテキスト（例: "[Business Name]"）が含まれていない
+6. URLが相対パスではなく絶対パスである
+7. 日付がISO 8601形式である
+8. 画像に有効なURLが設定されている
 
-## Testing Tools
+## テストツール
 
 - [Google Rich Results Test](https://search.google.com/test/rich-results)
 - [Schema.org Validator](https://validator.schema.org/)

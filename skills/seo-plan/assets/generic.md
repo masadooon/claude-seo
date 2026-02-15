@@ -1,11 +1,11 @@
 <!-- Updated: 2026-02-07 -->
-# Generic Business SEO Strategy Template
+# 汎用ビジネスSEO戦略テンプレート
 
-## Overview
+## 概要
 
-This template applies to businesses that don't fit neatly into SaaS, local service, e-commerce, publisher, or agency categories. Customize based on your specific business model.
+このテンプレートは、SaaS、ローカルサービス、EC、メディア、エージェンシーのいずれのカテゴリにもきれいに当てはまらないビジネスに適用されます。自社のビジネスモデルに合わせてカスタマイズしてください。
 
-## Recommended Site Architecture
+## 推奨サイト構造
 
 ```
 /
@@ -33,112 +33,112 @@ This template applies to businesses that don't fit neatly into SaaS, local servi
     └── /terms
 ```
 
-## Universal SEO Principles
+## SEOの普遍的原則
 
-### Every Page Should Have
-- Unique title tag (30-60 chars)
-- Unique meta description (120-160 chars)
-- Single H1 matching page intent
-- Logical heading hierarchy (H1→H2→H3)
-- Internal links to related content
-- Clear call-to-action
+### すべてのページに必要な要素
+- ユニークなtitleタグ（30〜60文字）
+- ユニークなmeta description（120〜160文字）
+- ページの検索意図に合致する単一のH1
+- 論理的な見出し階層（H1→H2→H3）
+- 関連コンテンツへの内部リンク
+- 明確なコールトゥアクション
 
-### Schema for All Sites
-| Page Type | Schema Types |
+### すべてのサイト向けのschema
+| ページ種別 | Schema Types |
 |-----------|-------------|
-| Homepage | Organization, WebSite |
-| About | Organization, AboutPage |
-| Contact | ContactPage |
-| Blog | Article, BlogPosting |
-| FAQ | (FAQPage only for gov/health) |
-| Product/Service | Product or Service |
+| トップページ | Organization, WebSite |
+| 会社概要 | Organization, AboutPage |
+| お問い合わせ | ContactPage |
+| ブログ | Article, BlogPosting |
+| FAQ | （FAQPageは政府・医療系のみ） |
+| 製品/サービス | Product or Service |
 
-## Content Quality Standards
+## コンテンツ品質基準
 
-### Minimum Word Counts
-| Page Type | Min Words |
+### 最低文字数の目安
+| ページ種別 | 最低語数 |
 |-----------|-----------|
-| Homepage | 500 |
-| Product/Service | 800 |
-| Blog Post | 1,500 |
-| About Page | 400 |
-| Landing Page | 600 |
+| トップページ | 500 |
+| 製品/サービス | 800 |
+| ブログ記事 | 1,500 |
+| 会社概要ページ | 400 |
+| ランディングページ | 600 |
 
-### E-E-A-T Essentials
-1. **Experience**: Share real examples and case studies
-2. **Expertise**: Display credentials and qualifications
-3. **Authoritativeness**: Earn mentions and citations
-4. **Trustworthiness**: Full contact info, policies visible
+### E-E-A-Tの基本要件
+1. **Experience（経験）**: 実際の事例やケーススタディを共有する
+2. **Expertise（専門性）**: 資格や実績を表示する
+3. **Authoritativeness（権威性）**: 外部からの言及や引用を獲得する
+4. **Trustworthiness（信頼性）**: 連絡先情報やポリシーを明示する
 
-## Technical Foundations
+## 技術的な基盤
 
-### Must-Haves
-- [ ] HTTPS enabled
-- [ ] Mobile-responsive design
-- [ ] robots.txt configured
-- [ ] XML sitemap submitted
-- [ ] Google Search Console verified
-- [ ] Core Web Vitals passing (LCP <2.5s, INP <200ms, CLS <0.1)
+### 必須項目
+- [ ] HTTPSの有効化
+- [ ] モバイルレスポンシブデザイン
+- [ ] robots.txtの設定
+- [ ] XML sitemapの送信
+- [ ] Google Search Consoleの認証
+- [ ] Core Web Vitalsの合格（LCP <2.5s、INP <200ms、CLS <0.1）
 
-### Should-Haves
-- [ ] Structured data on key pages
-- [ ] Internal linking strategy
-- [ ] 404 error page optimized
-- [ ] Redirect chains eliminated
-- [ ] Image optimization (WebP, lazy loading)
+### 推奨項目
+- [ ] 主要ページへの構造化データの実装
+- [ ] 内部リンク戦略の策定
+- [ ] 404エラーページの最適化
+- [ ] リダイレクトチェーンの排除
+- [ ] 画像の最適化（WebP、遅延読み込み）
 
-## Content Priorities
+## コンテンツの優先順位
 
-### Phase 1: Foundation (weeks 1-4)
-1. Homepage optimization
-2. Core product/service pages
-3. About and contact pages
-4. Basic schema implementation
+### フェーズ1: 基盤構築（1〜4週目）
+1. トップページの最適化
+2. 主要な製品/サービスページ
+3. 会社概要・お問い合わせページ
+4. 基本的なschemaの実装
 
-### Phase 2: Expansion (weeks 5-12)
-1. Blog launch (2-4 posts/month)
-2. FAQ page
-3. Additional product/service pages
-4. Internal linking audit
+### フェーズ2: 拡張（5〜12週目）
+1. ブログの立ち上げ（月2〜4記事）
+2. FAQページ
+3. 追加の製品/サービスページ
+4. 内部リンクの監査
 
-### Phase 3: Growth (weeks 13-24)
-1. Consistent content publishing
-2. Link building outreach
-3. GEO optimization
-4. Performance optimization
+### フェーズ3: 成長（13〜24週目）
+1. 継続的なコンテンツ公開
+2. リンクビルディングのアウトリーチ
+3. GEOの最適化
+4. パフォーマンスの最適化
 
-### Phase 4: Authority (months 7-12)
-1. Thought leadership content
-2. Original research
-3. PR and media mentions
-4. Advanced schema
+### フェーズ4: 権威性の確立（7〜12ヶ月目）
+1. ソートリーダーシップコンテンツ
+2. 独自リサーチ
+3. PR・メディア掲載の獲得
+4. 高度なschemaの実装
 
-## Key Metrics to Track
+## 追跡すべき主要指標
 
-- Organic traffic (overall and by section)
-- Keyword rankings (branded and non-branded)
-- Conversion rate from organic
-- Pages indexed
-- Core Web Vitals scores
-- Backlinks acquired
+- オーガニックトラフィック（全体およびセクション別）
+- キーワードランキング（ブランド系・非ブランド系）
+- オーガニック経由のコンバージョン率
+- インデックスされたページ数
+- Core Web Vitalsのスコア
+- 獲得した被リンク数
 
-## Customization Points
+## カスタマイズのポイント
 
-Adjust this template based on:
+以下の要素に基づいてこのテンプレートを調整してください:
 
-1. **Business Model**: B2B vs B2C vs D2C
-2. **Geographic Scope**: Local, national, or international
-3. **Content Type**: Product-focused vs content-heavy
-4. **Competition Level**: Niche vs competitive market
-5. **Resources**: Budget and team capacity
+1. **ビジネスモデル**: B2B vs B2C vs D2C
+2. **地理的範囲**: ローカル、全国、または国際
+3. **コンテンツの種類**: 製品重視 vs コンテンツ重視
+4. **競合レベル**: ニッチ市場 vs 競争の激しい市場
+5. **リソース**: 予算とチームのキャパシティ
 
-## Generative Engine Optimization (GEO) Checklist
+## Generative Engine Optimization (GEO) チェックリスト
 
-- [ ] Include clear, quotable facts and statistics that AI systems can extract and cite
-- [ ] Use structured data (Schema.org) to help AI systems understand content
-- [ ] Build topical authority through comprehensive content clusters
-- [ ] Provide original data, research, or unique perspectives AI cannot find elsewhere
-- [ ] Maintain consistent entity information (brand, people, products) across the web
-- [ ] Structure content with clear headings, definitions, and step-by-step formats
-- [ ] Consider adding an `llms.txt` file at site root (emerging convention for AI crawlers — Google treats it as a regular text file)
-- [ ] Monitor AI citation across Google AI Overviews, ChatGPT, Perplexity, and Bing Copilot
+- [ ] AIシステムが抽出・引用できる、明確で引用しやすい事実や統計データを含める
+- [ ] 構造化データ（Schema.org）を使用して、AIシステムがコンテンツを理解しやすくする
+- [ ] 包括的なコンテンツクラスターを通じてトピックの権威性を構築する
+- [ ] AIが他では見つけられない独自のデータ、リサーチ、またはユニークな視点を提供する
+- [ ] ウェブ全体でエンティティ情報（ブランド、人物、製品）の一貫性を維持する
+- [ ] 明確な見出し、定義、ステップバイステップの形式でコンテンツを構造化する
+- [ ] サイトルートに`llms.txt`ファイルの追加を検討する（AIクローラー向けの新しい慣習 — Googleは通常のテキストファイルとして扱う）
+- [ ] Google AI Overviews、ChatGPT、Perplexity、Bing CopilotにおけるAI引用を監視する

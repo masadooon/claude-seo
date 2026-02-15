@@ -1,15 +1,15 @@
 <!-- Updated: 2026-02-07 -->
-# SaaS SEO Strategy Template
+# SaaS SEO戦略テンプレート
 
-## Industry Characteristics
+## 業界の特徴
 
-- Long sales cycles with multiple touchpoints
-- Feature-focused decision making
-- Comparison shopping behavior
-- Heavy research phase before purchase
-- Integration and ecosystem considerations
+- 複数のタッチポイントを伴う長い営業サイクル
+- 機能重視の意思決定
+- 比較検討型の購買行動
+- 購入前の徹底的なリサーチフェーズ
+- 連携機能とエコシステムの考慮
 
-## Recommended Site Architecture
+## 推奨サイト構造
 
 ```
 /
@@ -54,82 +54,82 @@
     └── /vs-competitor-2
 ```
 
-## Content Priorities
+## コンテンツの優先順位
 
-### High Priority Pages
-1. Homepage (value proposition, social proof)
-2. Features overview
-3. Pricing page
-4. Key integrations
-5. Top 3-5 use case pages
+### 高優先度ページ
+1. トップページ（価値提案、ソーシャルプルーフ）
+2. 機能概要
+3. 料金ページ
+4. 主要な連携機能
+5. 上位3〜5件のユースケースページ
 
-### Medium Priority Pages
-1. Individual feature pages
-2. Industry solution pages
-3. Case studies (2-3 detailed ones)
-4. Comparison pages (vs competitors)
+### 中優先度ページ
+1. 個別機能ページ
+2. 業界別ソリューションページ
+3. 導入事例（詳細なもの2〜3件）
+4. 比較ページ（競合他社との比較）
 
-### Content Marketing Focus
-1. Bottom-of-funnel: Comparison guides, ROI calculators
-2. Middle-of-funnel: How-to guides, best practices
-3. Top-of-funnel: Industry trends, educational content
+### コンテンツマーケティングの重点
+1. ファネル下部：比較ガイド、ROI計算ツール
+2. ファネル中部：ハウツーガイド、ベストプラクティス
+3. ファネル上部：業界トレンド、教育コンテンツ
 
-## Schema Recommendations
+## Schema の推奨設定
 
-| Page Type | Schema Types |
+| ページ種別 | Schema タイプ |
 |-----------|-------------|
-| Homepage | Organization, WebSite, SoftwareApplication |
-| Product/Features | SoftwareApplication, Offer |
-| Pricing | SoftwareApplication, Offer (with pricing) |
-| Blog | Article, BlogPosting |
-| Case Studies | Article, Organization (customer) |
-| Documentation | TechArticle |
+| トップページ | Organization, WebSite, SoftwareApplication |
+| 製品/機能 | SoftwareApplication, Offer |
+| 料金 | SoftwareApplication, Offer（料金情報付き） |
+| ブログ | Article, BlogPosting |
+| 導入事例 | Article, Organization（顧客） |
+| ドキュメント | TechArticle |
 
-## Key Metrics to Track
+## 追跡すべき主要指標
 
-- Organic traffic to pricing page
-- Demo/trial signups from organic
-- Blog → pricing page conversion
-- Comparison page rankings
-- Integration page performance
+- 料金ページへのオーガニックトラフィック
+- オーガニック経由のデモ/トライアル登録数
+- ブログ → 料金ページへのコンバージョン
+- 比較ページの検索順位
+- 連携機能ページのパフォーマンス
 
-## Comparison & Alternative Pages
+## 比較ページと代替製品ページ
 
-Comparison pages are among the highest-converting content types for SaaS, with conversion rates of **4-7%** vs. 0.5-1.8% for standard blog content (35.8% of marketers report comparison content performs "better than ever" per Intergrowth November 2025 survey).
+比較ページはSaaSにおいて最もコンバージョン率が高いコンテンツタイプのひとつであり、コンバージョン率は**4〜7%**（標準的なブログコンテンツの0.5〜1.8%と比較。Intergrowth 2025年11月調査によると、マーケターの35.8%が比較コンテンツのパフォーマンスが「かつてないほど良い」と回答）。
 
-**Recommended page types:**
-- `/{product}-vs-{competitor}` — Direct 1:1 comparison
-- `/{competitor}-alternative` — Targeting competitor brand searches
-- `/compare/{category}` — Category comparison hub
-- `/best-{category}-tools` — Roundup-style pages
+**推奨ページタイプ：**
+- `/{product}-vs-{competitor}` — 1対1の直接比較
+- `/{competitor}-alternative` — 競合ブランド検索をターゲット
+- `/compare/{category}` — カテゴリ比較ハブ
+- `/best-{category}-tools` — まとめ形式のページ
 
-**Best practices:**
-- Include structured comparison tables with pricing, features, pros/cons
-- Be factually accurate about competitors — verify claims regularly
-- Include customer testimonials from users who switched
-- Add FAQ schema for common comparison questions (valuable for AI search)
-- Update regularly — stale comparison data damages credibility
-- Cross-reference the `seo-competitor-pages` skill for detailed frameworks
+**ベストプラクティス：**
+- 料金、機能、メリット/デメリットを含む構造化された比較表を掲載する
+- 競合他社について事実に基づいた正確な情報を記載し、定期的に内容を検証する
+- 乗り換えたユーザーの顧客の声を掲載する
+- よくある比較に関する質問にFAQ schemaを追加する（AI検索に有効）
+- 定期的に更新する — 古い比較データは信頼性を損なう
+- 詳細なフレームワークについては`seo-competitor-pages`スキルを参照する
 
-**Legal considerations:**
-- Nominative fair use generally permits competitor brand mentions for comparison purposes
-- Do NOT imply endorsement or affiliation
-- Do NOT make false or unverifiable claims about competitor products
-- Different jurisdictions have different trademark laws — consult legal counsel
+**法的な考慮事項：**
+- 指名的フェアユースにより、比較目的での競合ブランドの言及は一般的に許可されている
+- 推薦や提携関係を暗示してはならない
+- 競合製品について虚偽または検証不可能な主張をしてはならない
+- 商標法は法域によって異なるため、法律の専門家に相談すること
 
-## Competitive Considerations
+## 競合に関する考慮事項
 
-- Monitor competitor feature releases
-- Track competitor content strategies
-- Identify keyword gaps in feature coverage
-- Watch for new comparison opportunities
+- 競合他社の機能リリースを監視する
+- 競合他社のコンテンツ戦略を追跡する
+- 機能カバレッジにおけるキーワードギャップを特定する
+- 新たな比較機会に注視する
 
-## Generative Engine Optimization (GEO) for SaaS
+## SaaS向け Generative Engine Optimization（GEO）
 
-- [ ] Include clear, structured feature comparisons that AI systems can parse and cite
-- [ ] Use SoftwareApplication schema with complete feature lists and pricing
-- [ ] Publish original benchmark data, case studies, and ROI metrics
-- [ ] Build content clusters around key product categories and use cases
-- [ ] Ensure integration pages have clear, quotable descriptions
-- [ ] Structure pricing information in tables AI can extract
-- [ ] Monitor AI citation across Google AI Overviews, ChatGPT, and Perplexity
+- [ ] AIシステムが解析・引用できる明確で構造化された機能比較を含める
+- [ ] 完全な機能リストと料金情報を含むSoftwareApplication schemaを使用する
+- [ ] 独自のベンチマークデータ、導入事例、ROI指標を公開する
+- [ ] 主要な製品カテゴリとユースケースを軸にコンテンツクラスターを構築する
+- [ ] 連携機能ページに明確で引用しやすい説明文を記載する
+- [ ] AIが抽出できるテーブル形式で料金情報を構造化する
+- [ ] Google AI Overviews、ChatGPT、PerplexityにおけるAI引用を監視する

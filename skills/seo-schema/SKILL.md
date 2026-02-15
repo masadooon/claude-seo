@@ -2,70 +2,70 @@
 ---
 name: seo-schema
 description: >
-  Detect, validate, and generate Schema.org structured data. JSON-LD format
-  preferred. Use when user says "schema", "structured data", "rich results",
-  "JSON-LD", or "markup".
+  Schema.org 構造化データの検出、検証、生成を行う。JSON-LD 形式を推奨。
+  ユーザーが「schema」「構造化データ」「リッチリザルト」「JSON-LD」「マークアップ」
+  と言った場合に使用する。
 ---
 
-# Schema Markup Analysis & Generation
+# Schema マークアップの分析と生成
 
-## Detection
+## 検出
 
-1. Scan page source for JSON-LD `<script type="application/ld+json">`
-2. Check for Microdata (`itemscope`, `itemprop`)
-3. Check for RDFa (`typeof`, `property`)
-4. Always recommend JSON-LD as primary format (Google's stated preference)
+1. ページソースから JSON-LD `<script type="application/ld+json">` をスキャンする
+2. Microdata（`itemscope`、`itemprop`）の有無を確認する
+3. RDFa（`typeof`、`property`）の有無を確認する
+4. 常に JSON-LD を主要フォーマットとして推奨する（Google が公式に推奨）
 
-## Validation
+## 検証
 
-- Check required properties per schema type
-- Validate against Google's supported rich result types
-- Test for common errors:
-  - Missing @context
-  - Invalid @type
-  - Wrong data types
-  - Placeholder text
-  - Relative URLs (should be absolute)
-  - Invalid date formats
-- Flag deprecated types (see below)
+- schema タイプごとに必須プロパティを確認する
+- Google がサポートするリッチリザルトタイプと照合して検証する
+- よくあるエラーをチェックする：
+  - @context の欠落
+  - 無効な @type
+  - 誤ったデータ型
+  - プレースホルダーテキスト
+  - 相対 URL（絶対 URL にすべき）
+  - 無効な日付形式
+- 非推奨のタイプにフラグを立てる（下記参照）
 
-## Schema Type Status (as of Feb 2026)
+## Schema タイプのステータス（2026年2月時点）
 
-Read `references/schema-types.md` for the full list. Key rules:
+完全なリストは `references/schema-types.md` を参照。主なルール：
 
-### ACTIVE — recommend freely:
-Organization, LocalBusiness, SoftwareApplication, WebApplication, Product (with Certification markup as of April 2025), ProductGroup, Offer, Service, Article, BlogPosting, NewsArticle, Review, AggregateRating, BreadcrumbList, WebSite, WebPage, Person, ProfilePage, ContactPage, VideoObject, ImageObject, Event, JobPosting, Course, DiscussionForumPosting
+### アクティブ — 自由に推奨可能：
+Organization, LocalBusiness, SoftwareApplication, WebApplication, Product（2025年4月より Certification マークアップ対応）, ProductGroup, Offer, Service, Article, BlogPosting, NewsArticle, Review, AggregateRating, BreadcrumbList, WebSite, WebPage, Person, ProfilePage, ContactPage, VideoObject, ImageObject, Event, JobPosting, Course, DiscussionForumPosting
 
-### VIDEO & SPECIALIZED — recommend freely:
+### 動画・特殊用途 — 自由に推奨可能：
 BroadcastEvent, Clip, SeekToAction, SoftwareSourceCode
 
-See `schema/templates.json` for ready-to-use JSON-LD templates for these types.
+すぐに使える JSON-LD テンプレートについては `schema/templates.json` を参照。
 
-> **JSON-LD and JavaScript rendering:** Per Google's December 2025 JS SEO guidance, structured data injected via JavaScript may face delayed processing. For time-sensitive markup (especially Product, Offer), include JSON-LD in the initial server-rendered HTML.
+> **JSON-LD と JavaScript レンダリング：** Google の2025年12月の JS SEO ガイダンスによると、JavaScript で挿入された構造化データは処理が遅延する可能性がある。時間的制約のあるマークアップ（特に Product、Offer）については、JSON-LD を最初のサーバーレンダリング HTML に含めること。
 
-### RESTRICTED — only for specific sites:
-- **FAQ**: ONLY for government and healthcare authority sites (restricted Aug 2023)
+### 制限付き — 特定のサイトのみ：
+- **FAQ**: 政府および医療機関の権威あるサイトのみ対象（2023年8月に制限）
 
-### DEPRECATED — never recommend:
-- **HowTo**: Rich results removed September 2023
-- **SpecialAnnouncement**: Deprecated July 31, 2025
-- **CourseInfo, EstimatedSalary, LearningVideo**: Retired June 2025
-- **ClaimReview**: Retired from rich results June 2025
-- **VehicleListing**: Retired from rich results June 2025
-- **Practice Problem**: Retired from rich results late 2025
-- **Dataset**: Retired from rich results late 2025
-- **Book Actions**: Deprecated then reversed — still functional as of Feb 2026 (historical note)
+### 非推奨 — 推奨しないこと：
+- **HowTo**: リッチリザルトは2023年9月に廃止
+- **SpecialAnnouncement**: 2025年7月31日に非推奨化
+- **CourseInfo, EstimatedSalary, LearningVideo**: 2025年6月に廃止
+- **ClaimReview**: 2025年6月にリッチリザルトから廃止
+- **VehicleListing**: 2025年6月にリッチリザルトから廃止
+- **Practice Problem**: 2025年後半にリッチリザルトから廃止
+- **Dataset**: 2025年後半にリッチリザルトから廃止
+- **Book Actions**: 一度非推奨化されたが撤回 — 2026年2月時点ではまだ機能している（参考情報）
 
-## Generation
+## 生成
 
-When generating schema for a page:
-1. Identify page type from content analysis
-2. Select appropriate schema type(s)
-3. Generate valid JSON-LD with all required + recommended properties
-4. Include only truthful, verifiable data — use placeholders clearly marked for user to fill
-5. Validate output before presenting
+ページの schema を生成する際：
+1. コンテンツ分析からページタイプを特定する
+2. 適切な schema タイプを選択する
+3. 必須プロパティと推奨プロパティをすべて含む有効な JSON-LD を生成する
+4. 真実で検証可能なデータのみを含める — ユーザーが入力すべき箇所は明確にプレースホルダーとして表示する
+5. 提示前に出力を検証する
 
-## Common Schema Templates
+## よく使う Schema テンプレート
 
 ### Organization
 ```json
@@ -136,17 +136,17 @@ When generating schema for a page:
 }
 ```
 
-## Output
+## 出力
 
-- `SCHEMA-REPORT.md` — detection and validation results
-- `generated-schema.json` — ready-to-use JSON-LD snippets
+- `SCHEMA-REPORT.md` — 検出および検証の結果
+- `generated-schema.json` — すぐに使える JSON-LD スニペット
 
-### Validation Results
-| Schema | Type | Status | Issues |
-|--------|------|--------|--------|
+### 検証結果
+| Schema | タイプ | ステータス | 問題点 |
+|--------|--------|------------|--------|
 | ... | ... | ✅/⚠️/❌ | ... |
 
-### Recommendations
-- Missing schema opportunities
-- Validation fixes needed
-- Generated code for implementation
+### 推奨事項
+- 不足している schema の機会
+- 必要な検証の修正
+- 実装用の生成コード

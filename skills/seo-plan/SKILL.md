@@ -1,106 +1,106 @@
 ---
 name: seo-plan
 description: >
-  Strategic SEO planning for new or existing websites. Industry-specific
-  templates, competitive analysis, content strategy, and implementation
-  roadmap. Use when user says "SEO plan", "SEO strategy", "content strategy",
-  "site architecture", or "SEO roadmap".
+  新規または既存ウェブサイトの戦略的SEOプランニング。業界別テンプレート、
+  競合分析、コンテンツ戦略、実装ロードマップを提供します。ユーザーが
+  「SEOプラン」「SEO戦略」「コンテンツ戦略」「サイト構成」「SEOロードマップ」
+  と言った場合に使用します。
 ---
 
-# Strategic SEO Planning
+# 戦略的SEOプランニング
 
-## Process
+## プロセス
 
-### 1. Discovery
-- Business type, target audience, competitors, goals
-- Current site assessment (if exists)
-- Budget and timeline constraints
-- Key performance indicators (KPIs)
+### 1. ディスカバリー（現状把握）
+- ビジネスの種類、ターゲットオーディエンス、競合、目標
+- 現行サイトの評価（存在する場合）
+- 予算とスケジュールの制約
+- 重要業績評価指標（KPI）
 
-### 2. Competitive Analysis
-- Identify top 5 competitors
-- Analyze their content strategy, schema usage, technical setup
-- Identify keyword gaps and content opportunities
-- Assess their E-E-A-T signals
-- Estimate their domain authority
+### 2. 競合分析
+- 上位5社の競合を特定
+- 競合のコンテンツ戦略、Schema使用状況、技術的構成を分析
+- キーワードギャップとコンテンツ機会を特定
+- E-E-A-Tシグナルの評価
+- Domain Authorityの推定
 
-### 3. Architecture Design
-- Load industry template from `assets/` directory
-- Design URL hierarchy and content pillars
-- Plan internal linking strategy
-- Sitemap structure with quality gates applied
-- Information architecture for user journeys
+### 3. サイト構成の設計
+- `assets/` ディレクトリから業界テンプレートを読み込み
+- URL階層とコンテンツピラーの設計
+- 内部リンク戦略の策定
+- 品質基準を適用したサイトマップ構造
+- ユーザージャーニーのための情報設計
 
-### 4. Content Strategy
-- Content gaps vs competitors
-- Page types and estimated counts
-- Blog/resource topics and publishing cadence
-- E-E-A-T building plan (author bios, credentials, experience signals)
-- Content calendar with priorities
+### 4. コンテンツ戦略
+- 競合とのコンテンツギャップ
+- ページの種類と想定ページ数
+- ブログ・リソースのトピックと公開頻度
+- E-E-A-T構築プラン（著者プロフィール、資格、経験シグナル）
+- 優先度付きコンテンツカレンダー
 
-### 5. Technical Foundation
-- Hosting and performance requirements
-- Schema markup plan per page type
-- Core Web Vitals baseline targets
-- AI search readiness requirements
-- Mobile-first considerations
+### 5. 技術基盤
+- ホスティングとパフォーマンス要件
+- ページ種類ごとのSchemaマークアップ計画
+- Core Web Vitalsのベースライン目標
+- AI検索対応の要件
+- モバイルファースト対応
 
-### 6. Implementation Roadmap (4 phases)
+### 6. 実装ロードマップ（4フェーズ）
 
-#### Phase 1 — Foundation (weeks 1-4)
-- Technical setup and infrastructure
-- Core pages (home, about, contact, main services)
-- Essential schema implementation
-- Analytics and tracking setup
+#### フェーズ1 — 基盤構築（1〜4週目）
+- 技術的セットアップとインフラ整備
+- コアページ（ホーム、会社概要、お問い合わせ、主要サービス）
+- 基本的なSchema実装
+- アナリティクスとトラッキングの設定
 
-#### Phase 2 — Expansion (weeks 5-12)
-- Content creation for primary pages
-- Blog launch with initial posts
-- Internal linking structure
-- Local SEO setup (if applicable)
+#### フェーズ2 — 拡充（5〜12週目）
+- 主要ページのコンテンツ作成
+- 初期記事によるブログ開設
+- 内部リンク構造の構築
+- ローカルSEOの設定（該当する場合）
 
-#### Phase 3 — Scale (weeks 13-24)
-- Advanced content development
-- Link building and outreach
-- GEO optimization
-- Performance optimization
+#### フェーズ3 — 拡大（13〜24週目）
+- 高度なコンテンツ開発
+- リンクビルディングとアウトリーチ
+- GEO最適化
+- パフォーマンス最適化
 
-#### Phase 4 — Authority (months 7-12)
-- Thought leadership content
-- PR and media mentions
-- Advanced schema implementation
-- Continuous optimization
+#### フェーズ4 — 権威性の確立（7〜12ヶ月目）
+- ソートリーダーシップコンテンツ
+- PRとメディア掲載
+- 高度なSchema実装
+- 継続的な最適化
 
-## Industry Templates
+## 業界テンプレート
 
-Load from `assets/` directory:
-- `saas.md` — SaaS/software companies
-- `local-service.md` — Local service businesses
-- `ecommerce.md` — E-commerce stores
-- `publisher.md` — Content publishers/media
-- `agency.md` — Agencies and consultancies
-- `generic.md` — General business template
+`assets/` ディレクトリから読み込み：
+- `saas.md` — SaaS・ソフトウェア企業
+- `local-service.md` — 地域密着型サービス業
+- `ecommerce.md` — ECサイト
+- `publisher.md` — コンテンツパブリッシャー・メディア
+- `agency.md` — エージェンシー・コンサルティング
+- `generic.md` — 汎用ビジネステンプレート
 
-## Output
+## 出力
 
-### Deliverables
-- `SEO-STRATEGY.md` — Complete strategic plan
-- `COMPETITOR-ANALYSIS.md` — Competitive insights
-- `CONTENT-CALENDAR.md` — Content roadmap
-- `IMPLEMENTATION-ROADMAP.md` — Phased action plan
-- `SITE-STRUCTURE.md` — URL hierarchy and architecture
+### 成果物
+- `SEO-STRATEGY.md` — 包括的な戦略プラン
+- `COMPETITOR-ANALYSIS.md` — 競合インサイト
+- `CONTENT-CALENDAR.md` — コンテンツロードマップ
+- `IMPLEMENTATION-ROADMAP.md` — フェーズ別アクションプラン
+- `SITE-STRUCTURE.md` — URL階層とサイト構成
 
-### KPI Targets
-| Metric | Baseline | 3 Month | 6 Month | 12 Month |
-|--------|----------|---------|---------|----------|
-| Organic Traffic | ... | ... | ... | ... |
-| Keyword Rankings | ... | ... | ... | ... |
+### KPI目標
+| 指標 | ベースライン | 3ヶ月後 | 6ヶ月後 | 12ヶ月後 |
+|------|-------------|---------|---------|----------|
+| オーガニックトラフィック | ... | ... | ... | ... |
+| キーワードランキング | ... | ... | ... | ... |
 | Domain Authority | ... | ... | ... | ... |
-| Indexed Pages | ... | ... | ... | ... |
+| インデックスページ数 | ... | ... | ... | ... |
 | Core Web Vitals | ... | ... | ... | ... |
 
-### Success Criteria
-- Clear, measurable goals per phase
-- Resource requirements defined
-- Dependencies identified
-- Risk mitigation strategies
+### 成功基準
+- フェーズごとの明確で測定可能な目標
+- 必要リソースの定義
+- 依存関係の特定
+- リスク軽減策

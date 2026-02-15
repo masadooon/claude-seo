@@ -1,74 +1,75 @@
 ---
 name: seo-page
 description: >
-  Deep single-page SEO analysis covering on-page elements, content quality,
-  technical meta tags, schema, images, and performance. Use when user says
-  "analyze this page", "check page SEO", or provides a single URL for review.
+  単一ページの詳細なSEO分析を行います。オンページ要素、コンテンツ品質、
+  技術的メタタグ、スキーマ、画像、パフォーマンスを網羅的にチェックします。
+  「このページを分析して」「ページのSEOをチェックして」などの指示や、
+  単一のURLが提示された場合に使用します。
 ---
 
-# Single Page Analysis
+# 単一ページ分析
 
-## What to Analyze
+## 分析項目
 
-### On-Page SEO
-- Title tag: 50-60 characters, includes primary keyword, unique
-- Meta description: 150-160 characters, compelling, includes keyword
-- H1: exactly one, matches page intent, includes keyword
-- H2-H6: logical hierarchy (no skipped levels), descriptive
-- URL: short, descriptive, hyphenated, no parameters
-- Internal links: sufficient, relevant anchor text, no orphan pages
-- External links: to authoritative sources, reasonable count
+### オンページSEO
+- titleタグ: 50〜60文字、主要キーワードを含む、ページ固有であること
+- Meta description: 150〜160文字、魅力的な文言、キーワードを含む
+- H1: ページ内に1つだけ、ページの意図と一致、キーワードを含む
+- H2〜H6: 論理的な階層構造（レベルの飛ばしがない）、内容が明確
+- URL: 短く、内容を表し、ハイフン区切り、パラメータなし
+- 内部リンク: 十分な数、適切なアンカーテキスト、孤立ページがない
+- 外部リンク: 権威あるソースへのリンク、適切な数
 
-### Content Quality
-- Word count vs page type minimums (see quality-gates.md)
-- Readability: Flesch Reading Ease score, grade level
-- Keyword density: natural (1-3%), semantic variations present
-- E-E-A-T signals: author bio, credentials, first-hand experience markers
-- Content freshness: publication date, last updated date
+### コンテンツ品質
+- 文字数がページ種別の最低基準を満たしているか（quality-gates.md 参照）
+- 可読性: Flesch Reading Ease スコア、学年レベル
+- キーワード密度: 自然な範囲（1〜3%）、意味的なバリエーションがある
+- E-E-A-Tシグナル: 著者プロフィール、資格・実績、一次体験の根拠
+- コンテンツの鮮度: 公開日、最終更新日
 
-### Technical Elements
-- Canonical tag: present, self-referencing or correct
-- Meta robots: index/follow unless intentionally blocked
+### 技術要素
+- canonical タグ: 存在し、自己参照または正しい参照先
+- Meta robots: 意図的にブロックしている場合を除き index/follow
 - Open Graph: og:title, og:description, og:image, og:url
 - Twitter Card: twitter:card, twitter:title, twitter:description
-- Hreflang: if multi-language, correct implementation
+- hreflang: 多言語対応の場合、正しく実装されているか
 
-### Schema Markup
-- Detect all types (JSON-LD preferred)
-- Validate required properties
-- Identify missing opportunities
-- NEVER recommend HowTo (deprecated) or FAQ (restricted to gov/health)
+### スキーママークアップ
+- すべての種類を検出（JSON-LD 推奨）
+- 必須プロパティの検証
+- 未活用の構造化データの機会を特定
+- HowTo（廃止済み）やFAQ（政府・医療系サイト限定）は絶対に推奨しない
 
-### Images
-- Alt text: present, descriptive, includes keywords where natural
-- File size: flag >200KB (warning), >500KB (critical)
-- Format: recommend WebP/AVIF over JPEG/PNG
-- Dimensions: width/height set for CLS prevention
-- Lazy loading: loading="lazy" on below-fold images
+### 画像
+- alt テキスト: 存在し、内容を的確に表し、自然な形でキーワードを含む
+- ファイルサイズ: 200KB超で警告、500KB超で重大な問題としてフラグ
+- フォーマット: JPEG/PNG よりも WebP/AVIF を推奨
+- サイズ指定: CLS 防止のため width/height が設定されている
+- 遅延読み込み: ファーストビュー外の画像に loading="lazy" が設定されている
 
-### Core Web Vitals (reference only — not measurable from HTML alone)
-- Flag potential LCP issues (huge hero images, render-blocking resources)
-- Flag potential INP issues (heavy JS, no async/defer)
-- Flag potential CLS issues (missing image dimensions, injected content)
+### Core Web Vitals（参考情報 — HTMLだけでは計測不可）
+- LCP に影響しうる問題を指摘（巨大なヒーロー画像、レンダリングブロックリソース）
+- INP に影響しうる問題を指摘（重いJS、async/defer の未使用）
+- CLS に影響しうる問題を指摘（画像サイズ未指定、動的に挿入されるコンテンツ）
 
-## Output
+## 出力形式
 
-### Page Score Card
+### ページスコアカード
 ```
-Overall Score: XX/100
+総合スコア: XX/100
 
-On-Page SEO:     XX/100  ████████░░
-Content Quality: XX/100  ██████████
-Technical:       XX/100  ███████░░░
-Schema:          XX/100  █████░░░░░
-Images:          XX/100  ████████░░
+オンページSEO:       XX/100  ████████░░
+コンテンツ品質:      XX/100  ██████████
+技術要素:            XX/100  ███████░░░
+スキーマ:            XX/100  █████░░░░░
+画像:                XX/100  ████████░░
 ```
 
-### Issues Found
-Organized by priority: Critical → High → Medium → Low
+### 検出された問題
+優先度順に整理: 重大 → 高 → 中 → 低
 
-### Recommendations
-Specific, actionable improvements with expected impact
+### 改善提案
+具体的かつ実行可能な改善策と、期待される効果を提示
 
-### Schema Suggestions
-Ready-to-use JSON-LD code for detected opportunities
+### スキーマの提案
+検出された構造化データの機会に対する、そのまま使える JSON-LD コード

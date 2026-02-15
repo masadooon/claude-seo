@@ -1,16 +1,16 @@
 <!-- Updated: 2026-02-07 -->
-# Agency/Consultancy SEO Strategy Template
+# エージェンシー/コンサルティング会社向けSEO戦略テンプレート
 
-## Industry Characteristics
+## 業界の特徴
 
-- Service-based, high-value transactions
-- Expertise and trust are paramount
-- Long consideration cycles
-- Portfolio/case study driven decisions
-- Relationship-based sales
-- Niche specialization benefits
+- サービスベースの高額取引
+- 専門性と信頼が最も重要
+- 検討期間が長い
+- ポートフォリオ/ケーススタディに基づく意思決定
+- リレーションシップベースの営業
+- ニッチな専門分野への特化が有利
 
-## Recommended Site Architecture
+## 推奨サイト構成
 
 ```
 /
@@ -44,17 +44,17 @@
 └── /faq
 ```
 
-## Schema Recommendations
+## schema の推奨設定
 
-| Page Type | Schema Types |
+| ページ種別 | schema タイプ |
 |-----------|-------------|
-| Homepage | Organization, ProfessionalService |
-| Service Page | Service, ProfessionalService |
-| Case Study | Article, Organization (client) |
-| Team Member | Person, ProfilePage |
-| Blog | Article, BlogPosting |
+| トップページ | Organization, ProfessionalService |
+| サービスページ | Service, ProfessionalService |
+| ケーススタディ | Article, Organization（クライアント） |
+| チームメンバー | Person, ProfilePage |
+| ブログ | Article, BlogPosting |
 
-### ProfessionalService Schema Example
+### ProfessionalService schema の例
 ```json
 {
   "@context": "https://schema.org",
@@ -88,88 +88,88 @@
 }
 ```
 
-## E-E-A-T Requirements
+## E-E-A-T の要件
 
-### Team Pages Must Include
-- Professional headshots
-- Detailed bios with credentials
-- Industry experience
-- Speaking engagements
-- Publications
-- Social profiles
+### チームページに必要な要素
+- プロフェッショナルな顔写真
+- 資格・経歴を含む詳細なプロフィール
+- 業界での経験
+- 登壇実績
+- 出版・執筆実績
+- ソーシャルプロフィール
 
-### Case Studies Must Include
-- Client name (with permission) or industry
-- Challenge/problem statement
-- Approach/methodology
-- Results with specific metrics
-- Timeline
-- Testimonial quote
+### ケーススタディに必要な要素
+- クライアント名（許可がある場合）または業種
+- 課題・問題の説明
+- アプローチ・方法論
+- 具体的な数値を含む成果
+- タイムライン
+- 推薦コメント
 
-## Content Priorities
+## コンテンツの優先順位
 
-### High Priority
-1. Service pages (detailed, specific)
-2. Industry pages (vertical expertise)
-3. 3-5 detailed case studies
-4. Team/leadership pages
+### 高優先度
+1. サービスページ（詳細かつ具体的）
+2. 業種別ページ（業界ごとの専門性）
+3. 3〜5件の詳細なケーススタディ
+4. チーム/リーダーシップページ
 
-### Medium Priority
-1. Methodology/process page
-2. Blog with thought leadership
-3. Comparison content (vs alternatives)
-4. FAQ page
+### 中優先度
+1. 方法論/プロセスページ
+2. ソートリーダーシップを含むブログ
+3. 比較コンテンツ（代替手段との比較）
+4. FAQページ
 
-### Thought Leadership Topics
-- Industry trend analysis
-- How-to guides (non-competitive)
-- Original research/surveys
-- Event recaps and insights
-- Expert interviews
-- Tool/technology reviews
+### ソートリーダーシップのトピック
+- 業界トレンド分析
+- ハウツーガイド（競合しない領域）
+- 独自のリサーチ/アンケート調査
+- イベントレポートとインサイト
+- 専門家インタビュー
+- ツール/テクノロジーレビュー
 
-## Content Strategy
+## コンテンツ戦略
 
-### Service Pages (min 800 words)
-- Clear value proposition
-- Methodology overview
-- Deliverables list
-- Relevant case studies
-- Team members who deliver this service
-- CTA to schedule consultation
+### サービスページ（最低800語）
+- 明確なバリュープロポジション
+- 方法論の概要
+- 成果物一覧
+- 関連するケーススタディ
+- このサービスを担当するチームメンバー
+- 相談予約へのCTA
 
-### Industry Pages (min 800 words)
-- Industry-specific challenges
-- How you solve them differently
-- Relevant case studies
-- Industry credentials/experience
-- Client logos (with permission)
+### 業種別ページ（最低800語）
+- 業種固有の課題
+- 自社ならではの解決方法
+- 関連するケーススタディ
+- 業界の資格・実績
+- クライアントのロゴ（許可がある場合）
 
-### Case Studies (min 1,000 words)
-- Executive summary
-- Client background
-- Challenge details
-- Solution approach
-- Implementation process
-- Measurable results
-- Client testimonial
-- Related services/CTA
+### ケーススタディ（最低1,000語）
+- エグゼクティブサマリー
+- クライアントの背景
+- 課題の詳細
+- ソリューションのアプローチ
+- 実施プロセス
+- 測定可能な成果
+- クライアントの推薦コメント
+- 関連サービス/CTA
 
-## Key Metrics to Track
+## 追跡すべき主要指標
 
-- Organic traffic to service pages
-- Case study page views
-- Contact form submissions from organic
-- Time on page for key content
-- Blog → service page conversion
+- サービスページへのオーガニックトラフィック
+- ケーススタディページのページビュー
+- オーガニック経由のお問い合わせフォーム送信数
+- 主要コンテンツの滞在時間
+- ブログからサービスページへのコンバージョン
 
-## Generative Engine Optimization (GEO) for Agencies
+## エージェンシー向け Generative Engine Optimization (GEO)
 
-- [ ] Publish original case studies with specific, citable metrics and results
-- [ ] Use Person schema with sameAs links for all team members (builds entity authority)
-- [ ] Use ProfilePage schema for team member pages
-- [ ] Include clear, quotable expertise statements in service page descriptions
-- [ ] Produce original industry research and surveys AI systems can cite
-- [ ] Structure thought leadership content with clear headings and extractable insights
-- [ ] Maintain consistent agency entity information across directories, social profiles, and industry sites
-- [ ] Monitor AI citation in ChatGPT, Perplexity, and Google AI Overviews for brand and key service terms
+- [ ] 具体的で引用可能な数値や成果を含む独自のケーススタディを公開する
+- [ ] 全チームメンバーに sameAs リンク付きの Person schema を使用する（エンティティの権威性を構築）
+- [ ] チームメンバーページに ProfilePage schema を使用する
+- [ ] サービスページの説明に、明確で引用しやすい専門性の記述を含める
+- [ ] AIシステムが引用できる独自の業界リサーチやアンケート調査を制作する
+- [ ] ソートリーダーシップコンテンツを明確な見出しと抽出しやすいインサイトで構成する
+- [ ] ディレクトリ、ソーシャルプロフィール、業界サイト全体でエージェンシーのエンティティ情報の一貫性を維持する
+- [ ] ChatGPT、Perplexity、Google AI Overviews でのブランドおよび主要サービス用語のAI引用を監視する

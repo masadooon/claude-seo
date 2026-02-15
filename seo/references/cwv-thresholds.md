@@ -1,94 +1,94 @@
 <!-- Updated: 2026-02-07 -->
-# Core Web Vitals Thresholds (February 2026)
+# Core Web Vitals しきい値 (2026年2月)
 
-## Current Metrics
+## 現在の指標
 
-| Metric | Good | Needs Improvement | Poor |
+| 指標 | 良好 | 改善が必要 | 不良 |
 |--------|------|-------------------|------|
 | LCP (Largest Contentful Paint) | ≤2.5s | 2.5s–4.0s | >4.0s |
 | INP (Interaction to Next Paint) | ≤200ms | 200ms–500ms | >500ms |
 | CLS (Cumulative Layout Shift) | ≤0.1 | 0.1–0.25 | >0.25 |
 
-## Key Facts
-- INP replaced FID (First Input Delay) on **March 12, 2024**. FID was fully removed from all Chrome tools (CrUX API, PageSpeed Insights, Lighthouse) on **September 9, 2024**. INP is the sole interactivity metric.
-- Evaluation uses the **75th percentile** of real user data (field data from CrUX).
-- Google assesses at the **page level** and the **origin level**.
-- Core Web Vitals are a **tiebreaker** ranking signal — they matter most when content quality is similar between competitors.
-- **Thresholds unchanged since original definitions** — ignore claims of "tightened thresholds" from SEO blogs.
-- December 2025 core update appeared to weight **mobile CWV more heavily**.
-- As of October 2025: **57.1%** desktop sites and **49.7%** mobile sites pass all three CWV.
+## 重要事項
+- INPは**2024年3月12日**にFID (First Input Delay) を置き換えました。FIDは**2024年9月9日**にすべてのChromeツール（CrUX API、PageSpeed Insights、Lighthouse）から完全に削除されました。INPが唯一のインタラクティビティ指標です。
+- 評価には実ユーザーデータ（CrUXのフィールドデータ）の**75パーセンタイル**が使用されます。
+- Googleは**ページレベル**と**オリジンレベル**の両方で評価します。
+- Core Web Vitalsは**タイブレーカー**のランキングシグナルです — コンテンツの品質が競合間で類似している場合に最も重要になります。
+- **しきい値は当初の定義から変更されていません** — SEOブログの「しきい値が厳格化された」という主張は無視してください。
+- 2025年12月のコアアップデートでは、**モバイルのCWVがより重視される**傾向が見られました。
+- 2025年10月時点: デスクトップサイトの**57.1%**、モバイルサイトの**49.7%**が3つのCWVすべてに合格しています。
 
-## LCP Subparts (February 2025 CrUX Addition)
+## LCPサブパート (2025年2月 CrUX追加)
 
-LCP can now be broken into diagnostic subparts:
+LCPを診断用のサブパートに分解できるようになりました:
 
-| Subpart | What It Measures | Target |
+| サブパート | 測定内容 | 目標値 |
 |---------|------------------|--------|
-| **TTFB** | Time to First Byte (server response) | <800ms |
-| **Resource Load Delay** | Time from TTFB to resource request start | Minimize |
-| **Resource Load Time** | Time to download the LCP resource | Depends on size |
-| **Element Render Delay** | Time from resource loaded to rendered | Minimize |
+| **TTFB** | Time to First Byte（サーバー応答時間） | <800ms |
+| **Resource Load Delay** | TTFBからリソースリクエスト開始までの時間 | 最小化 |
+| **Resource Load Time** | LCPリソースのダウンロード時間 | サイズに依存 |
+| **Element Render Delay** | リソース読み込み完了からレンダリングまでの時間 | 最小化 |
 
-**Total LCP = TTFB + Resource Load Delay + Resource Load Time + Element Render Delay**
+**LCP合計 = TTFB + Resource Load Delay + Resource Load Time + Element Render Delay**
 
-Use this breakdown to identify which phase is causing LCP issues.
+この分解を使用して、どのフェーズがLCPの問題を引き起こしているかを特定してください。
 
-## Soft Navigations API (Experimental)
+## Soft Navigations API（実験的）
 
-**Chrome 139+ Origin Trial (July 2025)** — First step toward measuring CWV in SPAs.
+**Chrome 139+ Origin Trial (2025年7月)** — SPAにおけるCWV測定に向けた最初のステップ。
 
-- Addresses the long-standing SPA measurement blind spot
-- Currently experimental, **no ranking impact yet**
-- Detects "soft navigations" (URL changes without full page load)
-- May affect future SPA CWV measurement
+- SPAの測定における長年のブラインドスポットに対処
+- 現在は実験段階であり、**ランキングへの影響はまだありません**
+- 「ソフトナビゲーション」（完全なページ読み込みなしのURL変更）を検出
+- 将来のSPA CWV測定に影響する可能性あり
 
-**Detection:** Check for SPA frameworks (React, Vue, Angular, Svelte) and warn about current CWV measurement limitations.
+**検出:** SPAフレームワーク（React、Vue、Angular、Svelte）を確認し、現在のCWV測定の制限について警告してください。
 
-## Measurement Sources
+## 測定ソース
 
-### Field Data (Real Users)
+### フィールドデータ（実ユーザー）
 - Chrome User Experience Report (CrUX)
-- PageSpeed Insights (uses CrUX data)
-- Search Console Core Web Vitals report
+- PageSpeed Insights（CrUXデータを使用）
+- Search Console Core Web Vitalsレポート
 
-### Lab Data (Simulated)
+### ラボデータ（シミュレーション）
 - Lighthouse
 - WebPageTest
 - Chrome DevTools
 
-> Field data is what Google uses for ranking. Lab data is useful for debugging.
+> フィールドデータはGoogleがランキングに使用するものです。ラボデータはデバッグに役立ちます。
 
-## Common Bottlenecks
+## よくあるボトルネック
 
 ### LCP (Largest Contentful Paint)
-- Unoptimized hero images (compress, use WebP/AVIF, add preload)
-- Render-blocking CSS/JS (defer, async, critical CSS inlining)
-- Slow server response (TTFB >200ms — use edge CDN, caching)
-- Third-party script blocking (defer analytics, chat widgets)
-- Web font loading delay (use font-display: swap + preload)
+- 最適化されていないヒーロー画像（圧縮、WebP/AVIFの使用、preloadの追加）
+- レンダリングブロッキングCSS/JS（defer、async、クリティカルCSSのインライン化）
+- サーバー応答の遅延（TTFB >200ms — エッジCDN、キャッシュの使用）
+- サードパーティスクリプトのブロッキング（アナリティクス、チャットウィジェットのdefer）
+- Webフォントの読み込み遅延（font-display: swap + preloadの使用）
 
 ### INP (Interaction to Next Paint)
-- Long JavaScript tasks on main thread (break into smaller tasks <50ms)
-- Heavy event handlers (debounce, use requestAnimationFrame)
-- Excessive DOM size (>1,500 elements is concerning)
-- Third-party scripts hijacking main thread
-- Synchronous XHR or localStorage operations
-- Layout thrashing (multiple forced reflows)
+- メインスレッドでの長いJavaScriptタスク（50ms未満の小さなタスクに分割）
+- 重いイベントハンドラー（debounce、requestAnimationFrameの使用）
+- 過大なDOMサイズ（1,500要素を超えると要注意）
+- メインスレッドを占有するサードパーティスクリプト
+- 同期的なXHRまたはlocalStorage操作
+- レイアウトスラッシング（複数回の強制リフロー）
 
 ### CLS (Cumulative Layout Shift)
-- Images/iframes without width/height dimensions
-- Dynamically injected content above existing content
-- Web fonts causing layout shift (use font-display: swap + preload)
-- Ads/embeds without reserved space
-- Late-loading content pushing down the page
+- width/height属性のない画像/iframe
+- 既存コンテンツの上に動的に挿入されるコンテンツ
+- レイアウトシフトを引き起こすWebフォント（font-display: swap + preloadの使用）
+- 予約スペースのない広告/埋め込み
+- ページの下方にコンテンツを押し下げる遅延読み込みコンテンツ
 
-## Optimization Priority
+## 最適化の優先順位
 
-1. **LCP** — Most impactful for perceived performance
-2. **CLS** — Most common issue affecting user experience
-3. **INP** — Matters most for interactive applications
+1. **LCP** — 体感パフォーマンスへの影響が最も大きい
+2. **CLS** — ユーザー体験に影響する最も一般的な問題
+3. **INP** — インタラクティブなアプリケーションで最も重要
 
-## Tools
+## ツール
 
 ```bash
 # PageSpeed Insights API
@@ -98,11 +98,11 @@ curl "https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=URL&key=API
 npx lighthouse URL --output json --output-path report.json
 ```
 
-## Performance Tooling Updates (2025)
+## パフォーマンスツールの更新 (2025年)
 
-- **Lighthouse 13.0** (October 2025): Major audit restructuring with reorganized performance categories and updated scoring weights. Lighthouse is a lab tool (simulated conditions) — always cross-reference with CrUX field data for real-world performance.
-- **CrUX Vis** replaced the CrUX Dashboard (November 2025). The old Looker Studio dashboard was deprecated. Use [CrUX Vis](https://cruxvis.withgoogle.com) or the CrUX API directly.
-- **LCP subparts** added to CrUX (February 2025): Time to First Byte (TTFB), resource load delay, resource load time, and element render delay are now available as sub-components of LCP in CrUX data.
-- **Google Search Console 2025 features** (December 2025): AI-powered configuration for automated analysis. Branded vs. non-branded queries filter. Hourly data available in API. Custom chart annotations. Social channels tracking.
+- **Lighthouse 13.0** (2025年10月): パフォーマンスカテゴリの再編成とスコアリングウェイトの更新を含む大規模な監査リストラクチャリング。Lighthouseはラボツール（シミュレーション条件）です — 実環境のパフォーマンスについては必ずCrUXフィールドデータと照合してください。
+- **CrUX Vis**がCrUX Dashboardを置き換えました（2025年11月）。旧Looker Studioダッシュボードは非推奨となりました。[CrUX Vis](https://cruxvis.withgoogle.com)またはCrUX APIを直接使用してください。
+- **LCPサブパート**がCrUXに追加されました（2025年2月）: Time to First Byte (TTFB)、Resource Load Delay、Resource Load Time、Element Render Delayが、CrUXデータにおけるLCPのサブコンポーネントとして利用可能になりました。
+- **Google Search Console 2025年の機能** (2025年12月): 自動分析のためのAI搭載設定。ブランドクエリと非ブランドクエリのフィルター。APIで時間単位のデータが利用可能。カスタムチャートアノテーション。ソーシャルチャネルトラッキング。
 
-> **Mobile-first indexing** is 100% complete as of July 5, 2024. Google now crawls and indexes ALL websites exclusively with the mobile Googlebot user-agent. Ensure your mobile version contains all critical content, structured data, and meta tags.
+> **モバイルファーストインデックス**は2024年7月5日に100%完了しました。Googleは現在、すべてのウェブサイトをモバイルGooglebotユーザーエージェントのみでクロールおよびインデックスしています。モバイル版にすべての重要なコンテンツ、構造化データ、メタタグが含まれていることを確認してください。

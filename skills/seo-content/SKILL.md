@@ -2,157 +2,157 @@
 ---
 name: seo-content
 description: >
-  Content quality and E-E-A-T analysis with AI citation readiness assessment.
-  Use when user says "content quality", "E-E-A-T", "content analysis",
-  "readability check", "thin content", or "content audit".
+  コンテンツ品質とE-E-A-T分析、AI引用対応度の評価。
+  ユーザーが「content quality」「E-E-A-T」「content analysis」
+  「readability check」「thin content」「content audit」と言った場合に使用。
 ---
 
-# Content Quality & E-E-A-T Analysis
+# コンテンツ品質 & E-E-A-T分析
 
-## E-E-A-T Framework (updated Sept 2025 QRG)
+## E-E-A-Tフレームワーク（2025年9月 QRG更新版）
 
-Read `seo/references/eeat-framework.md` for full criteria.
+完全な基準については `seo/references/eeat-framework.md` を参照。
 
-### Experience (first-hand signals)
-- Original research, case studies, before/after results
-- Personal anecdotes, process documentation
-- Unique data, proprietary insights
-- Photos/videos from direct experience
+### Experience（実体験シグナル）
+- 独自調査、ケーススタディ、ビフォー・アフターの結果
+- 個人的な体験談、プロセスの記録
+- 独自データ、自社ならではの知見
+- 直接体験に基づく写真・動画
 
-### Expertise
-- Author credentials, certifications, bio
-- Professional background relevant to topic
-- Technical depth appropriate for audience
-- Accurate, well-sourced claims
+### Expertise（専門性）
+- 著者の資格、認定、プロフィール
+- トピックに関連する専門的な経歴
+- 対象読者に適した技術的な深さ
+- 正確で根拠のある主張
 
-### Authoritativeness
-- External citations, backlinks from authoritative sources
-- Brand mentions, industry recognition
-- Published in recognized outlets
-- Cited by other experts
+### Authoritativeness（権威性）
+- 外部からの引用、権威あるソースからの被リンク
+- ブランドへの言及、業界での評価
+- 著名な媒体での掲載実績
+- 他の専門家による引用
 
-### Trustworthiness
-- Contact information, physical address
-- Privacy policy, terms of service
-- Customer testimonials, reviews
-- Date stamps, transparent corrections
-- Secure site (HTTPS)
+### Trustworthiness（信頼性）
+- 連絡先情報、所在地
+- プライバシーポリシー、利用規約
+- 顧客の声、レビュー
+- 日付の記載、訂正の透明性
+- セキュアなサイト（HTTPS）
 
-## Content Metrics
+## コンテンツ指標
 
-### Word Count Analysis
-Compare against page type minimums:
-| Page Type | Minimum |
+### 文字数分析
+ページタイプごとの最低文字数と比較：
+| ページタイプ | 最低文字数 |
 |-----------|---------|
-| Homepage | 500 |
-| Service page | 800 |
-| Blog post | 1,500 |
-| Product page | 300+ (400+ for complex products) |
-| Location page | 500-600 |
+| トップページ | 500 |
+| サービスページ | 800 |
+| ブログ記事 | 1,500 |
+| 商品ページ | 300+（複雑な商品の場合は400+） |
+| 地域ページ | 500-600 |
 
-> **Important:** These are **topical coverage floors**, not targets. Google has confirmed word count is NOT a direct ranking factor. The goal is comprehensive topical coverage — a 500-word page that thoroughly answers the query will outrank a 2,000-word page that doesn't. Use these as guidelines for adequate coverage depth, not rigid requirements.
+> **重要:** これらは**トピックカバレッジの下限値**であり、目標値ではありません。Googleは文字数が直接的なランキング要因ではないと明言しています。目指すべきはトピックの網羅的なカバレッジです。クエリに完全に回答する500語のページは、回答できていない2,000語のページよりも上位に表示されます。十分なカバレッジ深度のガイドラインとして使用し、厳格な要件としないでください。
 
-### Readability
-- Flesch Reading Ease: target 60-70 for general audience
+### 可読性
+- Flesch Reading Ease: 一般読者向けは60-70を目標
 
-> **Note:** Flesch Reading Ease is a useful proxy for content accessibility but is NOT a direct Google ranking factor. John Mueller has confirmed Google does not use basic readability scores for ranking. Yoast deprioritized Flesch scores in v19.3. Use readability analysis as a content quality indicator, not as an SEO metric to optimize directly.
-- Grade level: match target audience
-- Sentence length: average 15-20 words
-- Paragraph length: 2-4 sentences
+> **注意:** Flesch Reading Easeはコンテンツのアクセシビリティを測る有用な指標ですが、Googleの直接的なランキング要因ではありません。John Mueller氏はGoogleがランキングに基本的な可読性スコアを使用していないと明言しています。Yoastもv19.3でFleschスコアの優先度を下げました。可読性分析はコンテンツ品質の指標として使用し、直接最適化すべきSEO指標としては扱わないでください。
+- 読解レベル: 対象読者に合わせる
+- 文の長さ: 平均15-20語
+- 段落の長さ: 2-4文
 
-### Keyword Optimization
-- Primary keyword in title, H1, first 100 words
-- Natural density (1-3%)
-- Semantic variations present
-- No keyword stuffing
+### キーワード最適化
+- 主要キーワードをタイトル、H1、最初の100語に含める
+- 自然な出現頻度（1-3%）
+- 意味的なバリエーションの存在
+- キーワードの詰め込みがないこと
 
-### Content Structure
-- Logical heading hierarchy (H1 → H2 → H3)
-- Scannable sections with descriptive headings
-- Bullet/numbered lists where appropriate
-- Table of contents for long-form content
+### コンテンツ構造
+- 論理的な見出し階層（H1 → H2 → H3）
+- 説明的な見出しによるスキャンしやすいセクション
+- 適切な箇所での箇条書き・番号付きリスト
+- 長文コンテンツには目次を設置
 
-### Multimedia
-- Relevant images with proper alt text
-- Videos where appropriate
-- Infographics for complex data
-- Charts/graphs for statistics
+### マルチメディア
+- 適切なalt属性を持つ関連画像
+- 必要に応じた動画
+- 複雑なデータにはインフォグラフィック
+- 統計データにはチャート・グラフ
 
-### Internal Linking
-- 3-5 relevant internal links per 1000 words
-- Descriptive anchor text
-- Links to related content
-- No orphan pages
+### 内部リンク
+- 1,000語あたり3-5本の関連内部リンク
+- 説明的なアンカーテキスト
+- 関連コンテンツへのリンク
+- 孤立ページをなくす
 
-### External Linking
-- Cite authoritative sources
-- Open in new tab for user experience
-- Reasonable count (not excessive)
+### 外部リンク
+- 権威あるソースを引用
+- ユーザー体験のために新しいタブで開く
+- 適度な数（過剰にしない）
 
-## AI Content Assessment (Sept 2025 QRG addition)
+## AIコンテンツ評価（2025年9月 QRG追加事項）
 
-Google's raters now formally assess whether content appears AI-generated.
+Googleの品質評価者は、コンテンツがAI生成であるかどうかを正式に評価するようになりました。
 
-### Acceptable AI Content
-- Demonstrates genuine E-E-A-T
-- Provides unique value
-- Has human oversight and editing
-- Contains original insights
+### 許容されるAIコンテンツ
+- 真のE-E-A-Tを示している
+- 独自の価値を提供している
+- 人間による監督と編集がある
+- オリジナルな知見を含んでいる
 
-### Low-Quality AI Content Markers
-- Generic phrasing, lack of specificity
-- No original insight
-- Repetitive structure across pages
-- No author attribution
-- Factual inaccuracies
+### 低品質なAIコンテンツの特徴
+- 汎用的な表現、具体性の欠如
+- 独自の知見がない
+- ページ間で繰り返される構造
+- 著者の帰属情報がない
+- 事実の不正確さ
 
-> **Helpful Content System (March 2024):** The Helpful Content System was merged into Google's core ranking algorithm during the March 2024 core update. It no longer operates as a standalone classifier. Helpfulness signals are now weighted within every core update — the same principles apply (people-first content, demonstrating E-E-A-T, satisfying user intent), but enforcement is continuous rather than through separate HCU updates.
+> **Helpful Content System（2024年3月）:** Helpful Content Systemは、2024年3月のコアアップデートでGoogleのコアランキングアルゴリズムに統合されました。独立した分類器としては機能しなくなっています。有用性シグナルはすべてのコアアップデート内で重み付けされるようになりました。同じ原則（人間第一のコンテンツ、E-E-A-Tの実証、ユーザーインテントの充足）は引き続き適用されますが、個別のHCUアップデートではなく継続的に適用されます。
 
-## AI Citation Readiness (GEO signals)
+## AI引用対応度（GEOシグナル）
 
-Optimize for AI search engines (ChatGPT, Perplexity, Google AI Overviews):
+AIサーチエンジン（ChatGPT、Perplexity、Google AI Overviews）向けの最適化：
 
-- Clear, quotable statements with statistics/facts
-- Structured data (especially for data points)
-- Strong heading hierarchy (H1→H2→H3 flow)
-- Answer-first formatting for key questions
-- Tables and lists for comparative data
-- Clear attribution and source citations
+- 統計・事実を含む明確で引用しやすい記述
+- 構造化データ（特にデータポイント向け）
+- 強固な見出し階層（H1→H2→H3の流れ）
+- 重要な質問に対する結論先行のフォーマット
+- 比較データにはテーブルとリスト
+- 明確な帰属表示と出典の引用
 
-### AI Search Visibility & GEO (2025-2026)
+### AI検索の可視性 & GEO（2025-2026）
 
-**Google AI Mode** launched publicly in May 2025 as a separate tab in Google Search, available in 180+ countries. Unlike AI Overviews (which appear above organic results), AI Mode provides a fully conversational search experience with **zero organic blue links** — making AI citation the only visibility mechanism.
+**Google AI Mode**は2025年5月にGoogle検索の独立タブとして180以上の国で一般公開されました。AI Overviews（オーガニック検索結果の上部に表示）とは異なり、AI Modeは**オーガニックの青いリンクが一切ない**完全な対話型検索体験を提供し、AI引用が唯一の可視性メカニズムとなります。
 
-**Key optimization strategies for AI citation:**
-- **Structured answers:** Clear question-answer formats, definition patterns, and step-by-step instructions that AI systems can extract and cite
-- **First-party data:** Original research, statistics, case studies, and unique datasets are highly cited by AI systems
-- **Schema markup:** Article, FAQ (for non-Google AI platforms), and structured content schemas help AI systems parse and attribute content
-- **Topical authority:** AI systems preferentially cite sources that demonstrate deep expertise — build content clusters, not isolated pages
-- **Entity clarity:** Ensure brand, authors, and key concepts are clearly defined with structured data (Organization, Person schema)
-- **Multi-platform tracking:** Monitor visibility across Google AI Overviews, AI Mode, ChatGPT, Perplexity, and Bing Copilot — not just traditional rankings. Treat AI citation as a standalone KPI alongside organic rankings and traffic.
+**AI引用のための主要な最適化戦略：**
+- **構造化された回答:** AIシステムが抽出・引用できる明確なQ&Aフォーマット、定義パターン、ステップバイステップの手順
+- **ファーストパーティデータ:** 独自調査、統計、ケーススタディ、ユニークなデータセットはAIシステムに高頻度で引用される
+- **Schema markup:** Article、FAQ（Google以外のAIプラットフォーム向け）、構造化コンテンツスキーマがAIシステムのコンテンツ解析と帰属表示を支援
+- **トピックオーソリティ:** AIシステムは深い専門性を示すソースを優先的に引用する — 孤立したページではなく、コンテンツクラスターを構築する
+- **エンティティの明確化:** ブランド、著者、主要コンセプトを構造化データ（Organization、Personスキーマ）で明確に定義する
+- **マルチプラットフォーム追跡:** 従来のランキングだけでなく、Google AI Overviews、AI Mode、ChatGPT、Perplexity、Bing Copilot全体での可視性を監視する。AI引用をオーガニックランキングやトラフィックと並ぶ独立したKPIとして扱う。
 
 **Generative Engine Optimization (GEO):**
-GEO is the emerging discipline of optimizing content specifically for AI-generated answers. Key GEO signals include: quotability (clear, concise extractable facts), attribution (source citations within your content), structure (well-organized heading hierarchy), and freshness (regularly updated data). Cross-reference the `seo-geo` skill for detailed GEO workflows.
+GEOは、AI生成の回答に向けてコンテンツを最適化する新興分野です。主なGEOシグナルには、引用可能性（明確で簡潔な抽出可能な事実）、帰属表示（コンテンツ内の出典引用）、構造（整理された見出し階層）、鮮度（定期的に更新されるデータ）があります。詳細なGEOワークフローについては `seo-geo` スキルを参照してください。
 
-## Content Freshness
+## コンテンツの鮮度
 
-- Publication date visible
-- Last updated date if content has been revised
-- Flag content older than 12 months without update for fast-changing topics
+- 公開日の表示
+- コンテンツが改訂された場合は最終更新日の表示
+- 変化の速いトピックで12ヶ月以上更新されていないコンテンツにフラグを立てる
 
-## Output
+## 出力
 
-### Content Quality Score: XX/100
+### コンテンツ品質スコア: XX/100
 
-### E-E-A-T Breakdown
-| Factor | Score | Key Signals |
+### E-E-A-T内訳
+| 要素 | スコア | 主なシグナル |
 |--------|-------|-------------|
 | Experience | XX/25 | ... |
 | Expertise | XX/25 | ... |
 | Authoritativeness | XX/25 | ... |
 | Trustworthiness | XX/25 | ... |
 
-### AI Citation Readiness: XX/100
+### AI引用対応度: XX/100
 
-### Issues Found
-### Recommendations
+### 検出された問題
+### 推奨事項

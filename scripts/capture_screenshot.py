@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Capture screenshots of web pages using Playwright.
+Playwrightを使用してWebページのスクリーンショットを撮影します。
 
-Usage:
+使い方:
     python capture_screenshot.py https://example.com
     python capture_screenshot.py https://example.com --mobile
     python capture_screenshot.py https://example.com --output screenshots/
@@ -16,7 +16,7 @@ from urllib.parse import urlparse
 try:
     from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeout
 except ImportError:
-    print("Error: playwright required. Install with: pip install playwright && playwright install chromium")
+    print("エラー: playwrightが必要です。次のコマンドでインストールしてください: pip install playwright && playwright install chromium")
     sys.exit(1)
 
 
@@ -36,17 +36,17 @@ def capture_screenshot(
     timeout: int = 30000,
 ) -> dict:
     """
-    Capture a screenshot of a web page.
+    Webページのスクリーンショットを撮影します。
 
     Args:
-        url: URL to capture
-        output_path: Output file path
-        viewport: Viewport preset (desktop, laptop, tablet, mobile)
-        full_page: Whether to capture full page or just viewport
-        timeout: Page load timeout in milliseconds
+        url: 撮影対象のURL
+        output_path: 出力ファイルパス
+        viewport: ビューポートのプリセット (desktop, laptop, tablet, mobile)
+        full_page: ページ全体を撮影するか、ビューポートのみを撮影するか
+        timeout: ページ読み込みのタイムアウト（ミリ秒）
 
     Returns:
-        Dictionary with capture results
+        撮影結果を含む辞書
     """
     result = {
         "url": url,
@@ -57,7 +57,7 @@ def capture_screenshot(
     }
 
     if viewport not in VIEWPORTS:
-        result["error"] = f"Invalid viewport: {viewport}. Choose from: {list(VIEWPORTS.keys())}"
+        result["error"] = f"無効なビューポート: {viewport}。次の中から選択してください: {list(VIEWPORTS.keys())}"
         return result
 
     vp = VIEWPORTS[viewport]
@@ -71,20 +71,20 @@ def capture_screenshot(
             )
             page = context.new_page()
 
-            # Navigate and wait for network idle
+            # ページに遷移し、ネットワークがアイドル状態になるまで待機
             page.goto(url, wait_until="networkidle", timeout=timeout)
 
-            # Wait a bit more for any lazy-loaded content
+            # 遅延読み込みコンテンツのためにさらに少し待機
             page.wait_for_timeout(1000)
 
-            # Capture screenshot
+            # スクリーンショットを撮影
             page.screenshot(path=output_path, full_page=full_page)
 
             result["success"] = True
             browser.close()
 
     except PlaywrightTimeout:
-        result["error"] = f"Page load timed out after {timeout}ms"
+        result["error"] = f"ページの読み込みが{timeout}ミリ秒後にタイムアウトしました"
     except Exception as e:
         result["error"] = str(e)
 
@@ -92,20 +92,20 @@ def capture_screenshot(
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Capture web page screenshots")
-    parser.add_argument("url", help="URL to capture")
-    parser.add_argument("--output", "-o", default="screenshots", help="Output directory")
+    parser = argparse.ArgumentParser(description="Webページのスクリーンショットを撮影")
+    parser.add_argument("url", help="撮影対象のURL")
+    parser.add_argument("--output", "-o", default="screenshots", help="出力ディレクトリ")
     parser.add_argument("--viewport", "-v", default="desktop", choices=VIEWPORTS.keys())
-    parser.add_argument("--all", "-a", action="store_true", help="Capture all viewports")
-    parser.add_argument("--full", "-f", action="store_true", help="Capture full page")
-    parser.add_argument("--timeout", "-t", type=int, default=30000, help="Timeout in ms")
+    parser.add_argument("--all", "-a", action="store_true", help="すべてのビューポートで撮影")
+    parser.add_argument("--full", "-f", action="store_true", help="ページ全体を撮影")
+    parser.add_argument("--timeout", "-t", type=int, default=30000, help="タイムアウト（ミリ秒）")
 
     args = parser.parse_args()
 
-    # Create output directory
+    # 出力ディレクトリを作成
     os.makedirs(args.output, exist_ok=True)
 
-    # Generate filename from URL
+    # URLからファイル名を生成
     parsed = urlparse(args.url)
     base_name = parsed.netloc.replace(".", "_")
 
@@ -115,7 +115,7 @@ def main():
         filename = f"{base_name}_{viewport}.png"
         output_path = os.path.join(args.output, filename)
 
-        print(f"Capturing {viewport} screenshot...")
+        print(f"{viewport}のスクリーンショットを撮影中...")
         result = capture_screenshot(
             args.url,
             output_path,
@@ -125,9 +125,9 @@ def main():
         )
 
         if result["success"]:
-            print(f"  ✓ Saved to {output_path}")
+            print(f"  ✓ {output_path} に保存しました")
         else:
-            print(f"  ✗ Failed: {result['error']}")
+            print(f"  ✗ 失敗: {result['error']}")
 
 
 if __name__ == "__main__":

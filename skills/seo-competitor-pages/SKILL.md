@@ -1,43 +1,43 @@
 ---
 name: seo-competitor-pages
 description: >
-  Generate SEO-optimized competitor comparison and alternatives pages. Covers
-  "X vs Y" layouts, "alternatives to X" pages, feature matrices, schema markup,
-  and conversion optimization. Use when user says "comparison page", "vs page",
-  "alternatives page", "competitor comparison", or "X vs Y".
+  SEO最適化された競合比較ページおよび代替製品ページを生成します。「X vs Y」レイアウト、
+  「Xの代替」ページ、機能比較マトリクス、schema markup、コンバージョン最適化を網羅します。
+  ユーザーが「comparison page」「vs page」「alternatives page」「competitor comparison」
+  「X vs Y」と言った場合に使用してください。
 ---
 
-# Competitor Comparison & Alternatives Pages
+# 競合比較ページ & 代替製品ページ
 
-Create high-converting comparison and alternatives pages that target
-competitive intent keywords with accurate, structured content.
+競合意図キーワードをターゲットにした、正確で構造化されたコンテンツによる
+高コンバージョンの比較ページおよび代替製品ページを作成します。
 
-## Page Types
+## ページタイプ
 
-### 1. "X vs Y" Comparison Pages
-- Direct head-to-head comparison between two products/services
-- Balanced feature-by-feature analysis
-- Clear verdict or recommendation with justification
-- Target keyword: `[Product A] vs [Product B]`
+### 1. 「X vs Y」比較ページ
+- 2つの製品・サービスの直接比較
+- バランスの取れた機能ごとの分析
+- 根拠を伴った明確な結論または推奨
+- ターゲットキーワード: `[Product A] vs [Product B]`
 
-### 2. "Alternatives to X" Pages
-- List of alternatives to a specific product/service
-- Each alternative with brief summary, pros/cons, best-for use case
-- Target keyword: `[Product] alternatives`, `best alternatives to [Product]`
+### 2. 「Xの代替」ページ
+- 特定の製品・サービスの代替リスト
+- 各代替製品について概要、長所/短所、最適なユースケースを記載
+- ターゲットキーワード: `[Product] alternatives`、`best alternatives to [Product]`
 
-### 3. "Best [Category] Tools" Roundup Pages
-- Curated list of top tools/services in a category
-- Ranking criteria clearly stated
-- Target keyword: `best [category] tools [year]`, `top [category] software`
+### 3. 「ベスト[カテゴリ]ツール」まとめページ
+- カテゴリ内のトップツール・サービスの厳選リスト
+- ランキング基準を明確に記載
+- ターゲットキーワード: `best [category] tools [year]`、`top [category] software`
 
-### 4. Comparison Table Pages
-- Feature matrix with multiple products in columns
-- Sortable/filterable if interactive
-- Target keyword: `[category] comparison`, `[category] comparison chart`
+### 4. 比較表ページ
+- 列に複数の製品を配置した機能マトリクス
+- インタラクティブな場合はソート・フィルタリング機能付き
+- ターゲットキーワード: `[category] comparison`、`[category] comparison chart`
 
-## Comparison Table Generation
+## 比較表の生成
 
-### Feature Matrix Layout
+### 機能マトリクスのレイアウト
 ```
 | Feature          | Your Product | Competitor A | Competitor B |
 |------------------|:------------:|:------------:|:------------:|
@@ -48,15 +48,15 @@ competitive intent keywords with accurate, structured content.
 | Free Tier        | ✅           | ❌           | ✅           |
 ```
 
-### Data Accuracy Requirements
-- All feature claims must be verifiable from public sources
-- Pricing must be current (include "as of [date]" note)
-- Update frequency: review quarterly or when competitors ship major changes
-- Link to source for each competitor data point where possible
+### データ正確性の要件
+- すべての機能に関する記載は公開情報から検証可能であること
+- 価格は最新であること（「[date]時点」の注記を含める）
+- 更新頻度: 四半期ごと、または競合が大きな変更をリリースした際にレビュー
+- 可能な限り、各競合データのソースへリンクすること
 
-## Schema Markup Recommendations
+## Schema Markup の推奨事項
 
-### Product Schema with AggregateRating
+### Product Schema（AggregateRating付き）
 ```json
 {
   "@context": "https://schema.org",
@@ -77,7 +77,7 @@ competitive intent keywords with accurate, structured content.
 }
 ```
 
-### SoftwareApplication (for software comparisons)
+### SoftwareApplication（ソフトウェア比較向け）
 ```json
 {
   "@context": "https://schema.org",
@@ -93,7 +93,7 @@ competitive intent keywords with accurate, structured content.
 }
 ```
 
-### ItemList (for roundup pages)
+### ItemList（まとめページ向け）
 ```json
 {
   "@context": "https://schema.org",
@@ -112,93 +112,93 @@ competitive intent keywords with accurate, structured content.
 }
 ```
 
-## Keyword Targeting
+## キーワードターゲティング
 
-### Comparison Intent Patterns
-| Pattern | Example | Search Volume Signal |
+### 比較意図パターン
+| パターン | 例 | 検索ボリュームシグナル |
 |---------|---------|---------------------|
-| `[A] vs [B]` | "Slack vs Teams" | High |
-| `[A] alternative` | "Figma alternatives" | High |
-| `[A] alternatives [year]` | "Notion alternatives 2026" | High |
-| `best [category] tools` | "best project management tools" | High |
-| `[A] vs [B] for [use case]` | "AWS vs Azure for startups" | Medium |
-| `[A] review [year]` | "Monday.com review 2026" | Medium |
-| `[A] vs [B] pricing` | "HubSpot vs Salesforce pricing" | Medium |
-| `is [A] better than [B]` | "is Notion better than Confluence" | Medium |
+| `[A] vs [B]` | "Slack vs Teams" | 高 |
+| `[A] alternative` | "Figma alternatives" | 高 |
+| `[A] alternatives [year]` | "Notion alternatives 2026" | 高 |
+| `best [category] tools` | "best project management tools" | 高 |
+| `[A] vs [B] for [use case]` | "AWS vs Azure for startups" | 中 |
+| `[A] review [year]` | "Monday.com review 2026" | 中 |
+| `[A] vs [B] pricing` | "HubSpot vs Salesforce pricing" | 中 |
+| `is [A] better than [B]` | "is Notion better than Confluence" | 中 |
 
-### Title Tag Formulas
-- X vs Y: `[A] vs [B]: [Key Differentiator] ([Year])`
-- Alternatives: `[N] Best [A] Alternatives in [Year] (Free & Paid)`
-- Roundup: `[N] Best [Category] Tools in [Year] — Compared & Ranked`
+### Title Tag の構成パターン
+- X vs Y: `[A] vs [B]: [主な差別化ポイント] ([Year])`
+- 代替製品: `[N] Best [A] Alternatives in [Year] (Free & Paid)`
+- まとめ: `[N] Best [Category] Tools in [Year] — Compared & Ranked`
 
-### H1 Patterns
-- Match title tag intent
-- Include primary keyword naturally
-- Keep under 70 characters
+### H1 パターン
+- Title Tag の意図と一致させる
+- メインキーワードを自然に含める
+- 70文字以内に収める
 
-## Conversion-Optimized Layouts
+## コンバージョン最適化レイアウト
 
-### CTA Placement
-- **Above fold**: Brief comparison summary with primary CTA
-- **After comparison table**: "Try [Your Product] free" CTA
-- **Bottom of page**: Final recommendation with CTA
-- Avoid aggressive CTAs in competitor description sections (reduces trust)
+### CTA の配置
+- **ファーストビュー**: 簡潔な比較サマリーとメインCTAを配置
+- **比較表の後**: 「[Your Product]を無料で試す」CTAを配置
+- **ページ下部**: 最終推奨とCTAを配置
+- 競合の説明セクションでは過度なCTAを避ける（信頼性が低下するため）
 
-### Social Proof Sections
-- Customer testimonials relevant to comparison criteria
-- G2/Capterra/TrustPilot ratings (with source links)
-- Case studies showing migration from competitor
-- "Switched from [Competitor]" stories
+### ソーシャルプルーフセクション
+- 比較基準に関連する顧客の声
+- G2/Capterra/TrustPilot の評価（ソースリンク付き）
+- 競合からの移行を示すケーススタディ
+- 「[Competitor]から乗り換えました」ストーリー
 
-### Pricing Highlights
-- Clear pricing comparison table
-- Highlight value advantages (not just lowest price)
-- Include hidden costs (setup fees, per-user pricing, overage charges)
-- Link to full pricing page
+### 価格のハイライト
+- 明確な価格比較表
+- 価格の安さだけでなく、価値の優位性を強調
+- 隠れたコストを含める（初期費用、ユーザー単価、超過料金）
+- 詳細な料金ページへのリンク
 
-### Trust Signals
-- "Last updated [date]" timestamp
-- Author with relevant expertise
-- Methodology disclosure (how comparisons were conducted)
-- Disclosure of own product affiliation
+### 信頼性シグナル
+- 「最終更新日: [date]」のタイムスタンプ
+- 関連分野の専門知識を持つ著者
+- 方法論の開示（比較の実施方法）
+- 自社製品との関係性の開示
 
-## Fairness Guidelines
+## 公正性ガイドライン
 
-- **Accuracy**: All competitor information must be verifiable from public sources
-- **No defamation**: Never make false or misleading claims about competitors
-- **Cite sources**: Link to competitor websites, review sites, or documentation
-- **Timely updates**: Review and update when competitors release major changes
-- **Disclose affiliation**: Clearly state which product is yours
-- **Balanced presentation**: Acknowledge competitor strengths honestly
-- **Pricing accuracy**: Include "as of [date]" disclaimers on all pricing data
-- **Feature verification**: Test competitor features where possible, cite documentation otherwise
+- **正確性**: 競合に関するすべての情報は公開情報から検証可能であること
+- **名誉毀損の禁止**: 競合について虚偽または誤解を招く記載をしないこと
+- **出典の明記**: 競合のウェブサイト、レビューサイト、またはドキュメントへリンクすること
+- **適時の更新**: 競合が大きな変更をリリースした際にレビュー・更新すること
+- **所属の開示**: どの製品が自社のものかを明確に記載すること
+- **バランスの取れた紹介**: 競合の強みを正直に認めること
+- **価格の正確性**: すべての価格データに「[date]時点」の免責事項を含めること
+- **機能の検証**: 可能な限り競合の機能を実際にテストし、それ以外はドキュメントを引用すること
 
-## Internal Linking
+## 内部リンク
 
-- Link to your own product/service pages from comparison sections
-- Cross-link between related comparison pages (e.g., "A vs B" links to "A vs C")
-- Link to feature-specific pages when discussing individual features
-- Breadcrumb: Home > Comparisons > [This Page]
-- Related comparisons section at bottom of page
-- Link to case studies and testimonials mentioned in the comparison
+- 比較セクションから自社の製品・サービスページへリンク
+- 関連する比較ページ間で相互リンク（例: 「A vs B」から「A vs C」へリンク）
+- 個々の機能について議論する際に機能別ページへリンク
+- パンくずリスト: ホーム > 比較 > [このページ]
+- ページ下部に関連比較セクションを配置
+- 比較で言及したケーススタディや顧客の声へリンク
 
-## Output
+## 出力
 
-### Comparison Page Template
-- `COMPARISON-PAGE.md` — Ready-to-implement page structure with sections
-- Feature matrix table
-- Content outline with word count targets (minimum 1,500 words)
+### 比較ページテンプレート
+- `COMPARISON-PAGE.md` — セクション付きのすぐに実装可能なページ構造
+- 機能マトリクス表
+- 目標文字数付きのコンテンツアウトライン（最低1,500ワード）
 
 ### Schema Markup
-- `comparison-schema.json` — Product/SoftwareApplication/ItemList JSON-LD
+- `comparison-schema.json` — Product/SoftwareApplication/ItemList の JSON-LD
 
-### Keyword Strategy
-- Primary and secondary keywords
-- Related long-tail opportunities
-- Content gaps vs existing competitor pages
+### キーワード戦略
+- メインキーワードとサブキーワード
+- 関連するロングテールキーワードの機会
+- 既存の競合ページとのコンテンツギャップ
 
-### Recommendations
-- Content improvements for existing comparison pages
-- New comparison page opportunities
-- Schema markup additions
-- Conversion optimization suggestions
+### 推奨事項
+- 既存の比較ページに対するコンテンツ改善
+- 新しい比較ページの機会
+- Schema Markup の追加
+- コンバージョン最適化の提案

@@ -2,7 +2,7 @@
   "templates": [
     {
       "type": "VideoObject",
-      "description": "Video content pages with thumbnails, duration, and playback URLs. Enables video rich results in Google Search.",
+      "description": "サムネイル、再生時間、再生URLを含む動画コンテンツページ。Google検索で動画のリッチリザルトを有効にします。",
       "template": {
         "@context": "https://schema.org",
         "@type": "VideoObject",
@@ -25,7 +25,7 @@
     },
     {
       "type": "BroadcastEvent",
-      "description": "Live streaming content for LIVE badge in Google Search results. Requires VideoObject and isLiveBroadcast flag.",
+      "description": "Google検索結果でLIVEバッジを表示するためのライブ配信コンテンツ。VideoObjectとisLiveBroadcastフラグが必要です。",
       "template": {
         "@context": "https://schema.org",
         "@type": "VideoObject",
@@ -45,7 +45,7 @@
     },
     {
       "type": "Clip",
-      "description": "Key moments or chapters within a video. Enables key moments rich results with timestamp links.",
+      "description": "動画内の重要な場面やチャプター。タイムスタンプリンク付きの主要な場面のリッチリザルトを有効にします。",
       "template": {
         "@context": "https://schema.org",
         "@type": "VideoObject",
@@ -74,7 +74,7 @@
     },
     {
       "type": "SeekToAction",
-      "description": "Enable seek functionality in video rich results. Allows users to jump to specific timestamps from search.",
+      "description": "動画リッチリザルトでシーク機能を有効にします。ユーザーが検索結果から特定のタイムスタンプにジャンプできるようになります。",
       "template": {
         "@context": "https://schema.org",
         "@type": "VideoObject",
@@ -92,7 +92,7 @@
     },
     {
       "type": "SoftwareSourceCode",
-      "description": "Open source and code repository pages. Describes programming language, platform, and repository location.",
+      "description": "オープンソースおよびコードリポジトリページ。プログラミング言語、プラットフォーム、リポジトリの場所を記述します。",
       "template": {
         "@context": "https://schema.org",
         "@type": "SoftwareSourceCode",
@@ -112,7 +112,7 @@
     },
     {
       "type": "ProductGroup",
-      "description": "E-commerce product variants grouped by attributes like size, color. Enables variant-aware rich results with variesBy and hasVariant properties.",
+      "description": "サイズや色などの属性でグループ化されたECサイトの商品バリエーション。variesByおよびhasVariantプロパティを使用して、バリエーション対応のリッチリザルトを有効にします。",
       "template": {
         "@context": "https://schema.org",
         "@type": "ProductGroup",
@@ -139,7 +139,7 @@
     },
     {
       "type": "ProfilePage",
-      "description": "Author, creator, or team member profile pages. Enhances E-E-A-T signals with mainEntity Person markup and sameAs links.",
+      "description": "著者、クリエイター、またはチームメンバーのプロフィールページ。mainEntityのPersonマークアップとsameAsリンクを使用してE-E-A-Tシグナルを強化します。",
       "template": {
         "@context": "https://schema.org",
         "@type": "ProfilePage",
@@ -157,7 +157,7 @@
     },
     {
       "type": "Certification",
-      "description": "Product certifications (Energy Star, safety, organic, etc.). Replaced EnergyConsumptionDetails in April 2025.",
+      "description": "製品認証（Energy Star、安全認証、オーガニック認証など）。2025年4月にEnergyConsumptionDetailsから置き換えられました。",
       "template": {
         "@context": "https://schema.org",
         "@type": "Product",
@@ -174,7 +174,7 @@
     },
     {
       "type": "OfferShippingDetails",
-      "description": "Shipping and delivery information for e-commerce products. Includes shipping rate, handling time, and transit time.",
+      "description": "ECサイト商品の配送・配達情報。送料、出荷準備時間、配送時間を含みます。",
       "template": {
         "@context": "https://schema.org",
         "@type": "Product",

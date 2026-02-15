@@ -1,21 +1,21 @@
 <!-- Updated: 2026-02-07 -->
 # MCP Integration
 
-## Overview
+## 概要
 
-Claude SEO can integrate with Model Context Protocol (MCP) servers to access external APIs and enhance analysis capabilities.
+Claude SEO は Model Context Protocol (MCP) サーバーと統合し、外部 API へのアクセスや分析機能の強化が可能です。
 
-## Available Integrations
+## 利用可能な統合
 
 ### PageSpeed Insights API
 
-Use Google's PageSpeed Insights API directly for real Core Web Vitals data.
+Google の PageSpeed Insights API を直接使用して、実際の Core Web Vitals データを取得できます。
 
-**Configuration:**
+**設定方法:**
 
-1. Get an API key from [Google Cloud Console](https://console.cloud.google.com/)
-2. Enable the PageSpeed Insights API
-3. Use in your analysis:
+1. [Google Cloud Console](https://console.cloud.google.com/) から API キーを取得する
+2. PageSpeed Insights API を有効にする
+3. 分析に使用する:
 
 ```bash
 curl "https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=URL&key=YOUR_API_KEY"
@@ -23,9 +23,9 @@ curl "https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=URL&key=YOU
 
 ### Google Search Console
 
-For organic search data, use the `mcp-server-gsc` MCP server by [ahonn](https://github.com/ahonn/mcp-server-gsc). Provides search performance data, URL inspection, and sitemap management.
+オーガニック検索データには、[ahonn](https://github.com/ahonn/mcp-server-gsc) による `mcp-server-gsc` MCP サーバーを使用します。検索パフォーマンスデータ、URL 検査、サイトマップ管理の機能を提供します。
 
-**Configuration:**
+**設定方法:**
 
 ```json
 {
@@ -43,9 +43,9 @@ For organic search data, use the `mcp-server-gsc` MCP server by [ahonn](https://
 
 ### PageSpeed Insights MCP Server
 
-Use `mcp-server-pagespeed` by [enemyrr](https://github.com/enemyrr/mcp-server-pagespeed) for Lighthouse audits, CWV metrics, and performance scoring via MCP.
+[enemyrr](https://github.com/enemyrr/mcp-server-pagespeed) による `mcp-server-pagespeed` を使用して、MCP 経由で Lighthouse 監査、CWV メトリクス、パフォーマンススコアリングを行えます。
 
-**Configuration:**
+**設定方法:**
 
 ```json
 {
@@ -61,21 +61,21 @@ Use `mcp-server-pagespeed` by [enemyrr](https://github.com/enemyrr/mcp-server-pa
 }
 ```
 
-### Official SEO MCP Servers (2025-2026)
+### 公式 SEO MCP サーバー (2025-2026)
 
-The MCP ecosystem for SEO has matured significantly. These are production-ready integrations:
+SEO 向けの MCP エコシステムは大きく成熟しました。以下は本番環境で利用可能な統合です:
 
-| Tool | Package / Endpoint | Type | Notes |
+| ツール | パッケージ / エンドポイント | 種類 | 備考 |
 |------|-------------------|------|-------|
-| **Ahrefs** | `@ahrefs/mcp` | Official | Launched July 2025. Supports local and remote modes. Backlinks, keywords, site audit data. |
-| **Semrush** | `https://mcp.semrush.com/v1/mcp` | Official (remote) | Full API access via remote MCP endpoint. Domain analytics, keyword research, backlink data. |
-| **Google Search Console** | `mcp-server-gsc` | Community | By ahonn. Search performance, URL inspection, sitemaps. |
-| **PageSpeed Insights** | `mcp-server-pagespeed` | Community | By enemyrr. Lighthouse audits, CWV metrics, performance scoring. |
-| **DataForSEO** | `dataforseo-mcp-server` | Community | By Skobyn (GitHub: Skobyn/dataforseo-mcp-server). SERP data, keyword data, backlinks. |
-| **kwrds.ai** | kwrds MCP server | Community | Keyword research, search volume, difficulty scoring. |
-| **SEO Review Tools** | SEO Review Tools MCP | Community | Site auditing and on-page analysis API. |
+| **Ahrefs** | `@ahrefs/mcp` | 公式 | 2025年7月リリース。ローカルモードとリモートモードに対応。被リンク、キーワード、サイト監査データ。 |
+| **Semrush** | `https://mcp.semrush.com/v1/mcp` | 公式 (リモート) | リモート MCP エンドポイント経由で API にフルアクセス可能。ドメイン分析、キーワード調査、被リンクデータ。 |
+| **Google Search Console** | `mcp-server-gsc` | コミュニティ | ahonn 作。検索パフォーマンス、URL 検査、サイトマップ。 |
+| **PageSpeed Insights** | `mcp-server-pagespeed` | コミュニティ | enemyrr 作。Lighthouse 監査、CWV メトリクス、パフォーマンススコアリング。 |
+| **DataForSEO** | `dataforseo-mcp-server` | コミュニティ | Skobyn 作 (GitHub: Skobyn/dataforseo-mcp-server)。SERP データ、キーワードデータ、被リンク。 |
+| **kwrds.ai** | kwrds MCP server | コミュニティ | キーワード調査、検索ボリューム、難易度スコアリング。 |
+| **SEO Review Tools** | SEO Review Tools MCP | コミュニティ | サイト監査およびオンページ分析 API。 |
 
-## API Usage Examples
+## API 使用例
 
 ### PageSpeed Insights
 
@@ -95,7 +95,7 @@ def get_pagespeed_data(url: str, api_key: str) -> dict:
     return response.json()
 ```
 
-### Core Web Vitals from CrUX
+### CrUX からの Core Web Vitals
 
 ```python
 def get_crux_data(url: str, api_key: str) -> dict:
@@ -111,43 +111,43 @@ def get_crux_data(url: str, api_key: str) -> dict:
     return response.json()
 ```
 
-## Metrics Available
+## 取得可能なメトリクス
 
-### From PageSpeed Insights
+### PageSpeed Insights から取得
 
-| Metric | Description |
+| メトリクス | 説明 |
 |--------|-------------|
-| LCP | Largest Contentful Paint (lab) |
-| INP | Interaction to Next Paint (estimated) |
-| CLS | Cumulative Layout Shift (lab) |
+| LCP | Largest Contentful Paint (ラボデータ) |
+| INP | Interaction to Next Paint (推定値) |
+| CLS | Cumulative Layout Shift (ラボデータ) |
 | FCP | First Contentful Paint |
 | TBT | Total Blocking Time |
-| Speed Index | Visual progress speed |
+| Speed Index | 視覚的な表示進行速度 |
 
-### From CrUX (Field Data)
+### CrUX から取得 (フィールドデータ)
 
-| Metric | Description |
+| メトリクス | 説明 |
 |--------|-------------|
-| LCP | 75th percentile, real users |
-| INP | 75th percentile, real users |
-| CLS | 75th percentile, real users |
+| LCP | 75パーセンタイル、実ユーザーデータ |
+| INP | 75パーセンタイル、実ユーザーデータ |
+| CLS | 75パーセンタイル、実ユーザーデータ |
 | TTFB | Time to First Byte |
 
-## Best Practices
+## ベストプラクティス
 
-1. **Rate Limiting**: Respect API quotas (typically 25k requests/day for PageSpeed)
-2. **Caching**: Cache results to avoid redundant API calls
-3. **Field vs Lab**: Prioritize field data (CrUX) for ranking signals
-4. **Error Handling**: Handle API errors gracefully
+1. **レート制限**: API のクォータを遵守する (PageSpeed の場合、通常1日あたり25,000リクエスト)
+2. **キャッシュ**: 不要な API 呼び出しを避けるために結果をキャッシュする
+3. **フィールドデータ vs ラボデータ**: ランキングシグナルにはフィールドデータ (CrUX) を優先する
+4. **エラーハンドリング**: API エラーを適切に処理する
 
-## Without API Keys
+## API キーなしでの利用
 
-If you don't have API keys, Claude SEO can still:
+API キーがなくても、Claude SEO は以下のことが可能です:
 
-1. Analyze HTML source for potential issues
-2. Identify common performance problems
-3. Check for render-blocking resources
-4. Evaluate image optimization opportunities
-5. Detect JavaScript-heavy implementations
+1. HTML ソースを分析して潜在的な問題を特定する
+2. 一般的なパフォーマンスの問題を特定する
+3. レンダリングブロッキングリソースを確認する
+4. 画像最適化の改善点を評価する
+5. JavaScript に依存した実装を検出する
 
-The analysis will note that actual Core Web Vitals measurements require field data from real users.
+なお、実際の Core Web Vitals の測定には、実ユーザーによるフィールドデータが必要です。

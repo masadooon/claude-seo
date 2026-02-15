@@ -1,62 +1,62 @@
-# Troubleshooting
+# トラブルシューティング
 
-## Common Issues
+## よくある問題
 
-### Skill Not Loading
+### Skill が読み込まれない
 
-**Symptom:** `/seo` command not recognized
+**症状:** `/seo` コマンドが認識されない
 
-**Solutions:**
+**解決方法:**
 
-1. Verify installation:
+1. インストールを確認する:
 ```bash
 ls ~/.claude/skills/seo/SKILL.md
 ```
 
-2. Check SKILL.md has proper frontmatter:
+2. SKILL.md に正しい frontmatter があるか確認する:
 ```bash
 head -5 ~/.claude/skills/seo/SKILL.md
 ```
-Should start with `---` followed by YAML.
+`---` で始まり、その後に YAML が続いている必要があります。
 
-3. Restart Claude Code:
+3. Claude Code を再起動する:
 ```bash
 claude
 ```
 
-4. Re-run installer:
+4. インストーラーを再実行する:
 ```bash
 curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/claude-seo/main/install.sh | bash
 ```
 
 ---
 
-### Python Dependency Errors
+### Python 依存関係のエラー
 
-**Symptom:** `ModuleNotFoundError: No module named 'requests'`
+**症状:** `ModuleNotFoundError: No module named 'requests'`
 
-**Solution:**
+**解決方法:**
 ```bash
 pip install -r ~/.claude/skills/seo/requirements.txt
 ```
 
-Or install individually:
+または個別にインストールする:
 ```bash
 pip install beautifulsoup4 requests lxml playwright Pillow urllib3 validators
 ```
 
 ---
 
-### Playwright Screenshot Errors
+### Playwright スクリーンショットのエラー
 
-**Symptom:** `playwright._impl._errors.Error: Executable doesn't exist`
+**症状:** `playwright._impl._errors.Error: Executable doesn't exist`
 
-**Solution:**
+**解決方法:**
 ```bash
 playwright install chromium
 ```
 
-If that fails:
+上記が失敗する場合:
 ```bash
 pip install playwright
 python -m playwright install chromium
@@ -64,11 +64,11 @@ python -m playwright install chromium
 
 ---
 
-### Permission Denied Errors
+### Permission Denied エラー
 
-**Symptom:** `Permission denied` when running scripts
+**症状:** スクリプト実行時に `Permission denied` が発生する
 
-**Solution:**
+**解決方法:**
 ```bash
 chmod +x ~/.claude/skills/seo/scripts/*.py
 chmod +x ~/.claude/skills/seo/hooks/*.py
@@ -77,18 +77,18 @@ chmod +x ~/.claude/skills/seo/hooks/*.sh
 
 ---
 
-### Hook Not Triggering
+### Hook がトリガーされない
 
-**Symptom:** Schema validation hook not running
+**症状:** Schema バリデーション Hook が実行されない
 
-**Check:**
+**確認方法:**
 
-1. Verify hook is in settings:
+1. Hook が設定に含まれているか確認する:
 ```bash
 cat ~/.claude/settings.json
 ```
 
-2. Ensure correct path:
+2. パスが正しいことを確認する:
 ```json
 {
   "hooks": {
@@ -108,94 +108,94 @@ cat ~/.claude/settings.json
 }
 ```
 
-3. Test hook directly:
+3. Hook を直接テストする:
 ```bash
 python3 ~/.claude/skills/seo/hooks/validate-schema.py test.html
 ```
 
 ---
 
-### Subagent Not Found
+### Subagent が見つからない
 
-**Symptom:** `Agent 'seo-technical' not found`
+**症状:** `Agent 'seo-technical' not found`
 
-**Solution:**
+**解決方法:**
 
-1. Verify agent files exist:
+1. Agent ファイルが存在するか確認する:
 ```bash
 ls ~/.claude/agents/seo-*.md
 ```
 
-2. Check agent frontmatter:
+2. Agent の frontmatter を確認する:
 ```bash
 head -5 ~/.claude/agents/seo-technical.md
 ```
 
-3. Re-install agents:
+3. Agent を再インストールする:
 ```bash
 cp /path/to/claude-seo/agents/*.md ~/.claude/agents/
 ```
 
 ---
 
-### Timeout Errors
+### タイムアウトエラー
 
-**Symptom:** `Request timed out after 30 seconds`
+**症状:** `Request timed out after 30 seconds`
 
-**Solutions:**
+**解決方法:**
 
-1. The target site may be slow — try again
-2. Increase timeout in script calls
-3. Check your network connection
-4. Some sites block automated requests
-
----
-
-### Schema Validation False Positives
-
-**Symptom:** Hook blocks valid schema
-
-**Check:**
-
-1. Ensure placeholders are replaced
-2. Verify @context is `https://schema.org`
-3. Check for deprecated types (HowTo, SpecialAnnouncement)
-4. Validate at [Google's Rich Results Test](https://search.google.com/test/rich-results)
+1. 対象サイトの応答が遅い可能性があります。再度試してください
+2. スクリプト呼び出しのタイムアウト値を増やしてください
+3. ネットワーク接続を確認してください
+4. 一部のサイトは自動リクエストをブロックしています
 
 ---
 
-### Slow Audit Performance
+### Schema バリデーションの誤検知
 
-**Symptom:** Full audit takes too long
+**症状:** Hook が有効な Schema をブロックする
 
-**Solutions:**
+**確認方法:**
 
-1. Audit crawls up to 500 pages — large sites take time
-2. Subagents run in parallel to speed up analysis
-3. For faster checks, use `/seo page` on specific URLs
-4. Check if site has slow response times
+1. プレースホルダーが置き換えられていることを確認する
+2. @context が `https://schema.org` であることを確認する
+3. 非推奨のタイプ (HowTo, SpecialAnnouncement) がないか確認する
+4. [Google's Rich Results Test](https://search.google.com/test/rich-results) で検証する
 
 ---
 
-## Getting Help
+### 監査パフォーマンスが遅い
 
-1. **Check the docs:** Review [COMMANDS.md](COMMANDS.md) and [ARCHITECTURE.md](ARCHITECTURE.md)
+**症状:** フル監査に時間がかかりすぎる
 
-2. **GitHub Issues:** Report bugs at the repository
+**解決方法:**
 
-3. **Logs:** Check Claude Code's output for error details
+1. 監査は最大 500 ページをクロールするため、大規模サイトでは時間がかかります
+2. Subagent は並列で実行され、分析を高速化します
+3. より迅速な確認には、特定の URL に対して `/seo page` を使用してください
+4. サイトの応答時間が遅くないか確認してください
 
-## Debug Mode
+---
 
-To see detailed output, check Claude Code's internal logs or run scripts directly:
+## ヘルプを得る
+
+1. **ドキュメントを確認する:** [COMMANDS.md](COMMANDS.md) と [ARCHITECTURE.md](ARCHITECTURE.md) を参照してください
+
+2. **GitHub Issues:** リポジトリでバグを報告してください
+
+3. **ログ:** Claude Code の出力でエラーの詳細を確認してください
+
+## デバッグモード
+
+詳細な出力を確認するには、Claude Code の内部ログを確認するか、スクリプトを直接実行してください:
 
 ```bash
-# Test fetch
+# fetch のテスト
 python3 ~/.claude/skills/seo/scripts/fetch_page.py https://example.com
 
-# Test parse
+# parse のテスト
 python3 ~/.claude/skills/seo/scripts/parse_html.py page.html --json
 
-# Test screenshot
+# スクリーンショットのテスト
 python3 ~/.claude/skills/seo/scripts/capture_screenshot.py https://example.com
 ```

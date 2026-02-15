@@ -1,155 +1,155 @@
-# Content Quality Gates
+# コンテンツ品質ゲート
 
-## Minimum Word Counts by Page Type
+## ページタイプ別の最小ワード数
 
-| Page Type | Min Words | Unique Content % | Notes |
+| ページタイプ | 最小ワード数 | ユニークコンテンツ割合 | 備考 |
 |-----------|-----------|-----------------|-------|
-| Homepage | 500 | 100% | Must clearly communicate value proposition |
-| Service / Feature Page | 800 | 100% | Detailed explanation of offering |
-| Location (Primary) | 600 | 60%+ | City headquarters or main service area |
-| Location (Secondary) | 500 | 40%+ | Satellite locations |
-| Blog Post | 1,500 | 100% | In-depth, valuable content |
-| Product Page | 400 | 80%+ | Unique descriptions, specs |
-| Category Page | 400 | 100% | Unique intro, not just product listings |
-| About Page | 400 | 100% | Company story, team, values |
-| Landing Page | 600 | 100% | Focused conversion content |
-| FAQ Page | 800 | 100% | Comprehensive Q&A |
+| ホームページ | 500 | 100% | 価値提案を明確に伝える必要がある |
+| サービス / 機能ページ | 800 | 100% | 提供内容の詳細な説明 |
+| 地域ページ（主要） | 600 | 60%以上 | 本社所在地または主要サービスエリア |
+| 地域ページ（副次） | 500 | 40%以上 | サテライト拠点 |
+| ブログ記事 | 1,500 | 100% | 詳細で価値のあるコンテンツ |
+| 商品ページ | 400 | 80%以上 | ユニークな説明文、スペック |
+| カテゴリページ | 400 | 100% | 独自の導入文、商品一覧だけではないもの |
+| 会社概要ページ | 400 | 100% | 企業ストーリー、チーム、価値観 |
+| ランディングページ | 600 | 100% | コンバージョンに特化したコンテンツ |
+| FAQページ | 800 | 100% | 包括的なQ&A |
 
 ---
 
-## Location Page Thresholds
+## 地域ページの閾値
 
-### Warning Level (30+ pages)
-- ⚠️ **WARNING** at 30+ location pages
-- Enforce 60%+ unique content per page
-- Content must include:
-  - Unique local information (landmarks, neighborhoods)
-  - Location-specific services or offerings
-  - Local team or staff information
-  - Genuine customer testimonials from that area
+### 警告レベル（30ページ以上）
+- ⚠️ **WARNING** : 30ページ以上の地域ページで発動
+- ページごとに60%以上のユニークコンテンツを強制
+- コンテンツに含めるべき内容：
+  - 独自のローカル情報（ランドマーク、近隣地域）
+  - 地域固有のサービスや提供内容
+  - 地域のチームやスタッフ情報
+  - その地域の本物の顧客の声
 
-### Hard Stop (50+ pages)
-- 🛑 **HARD STOP** at 50+ location pages
-- Require explicit user justification
-- Must demonstrate:
-  - Legitimate business presence in each location
-  - Unique content strategy for each page
-  - Local signals (Google Business Profile, local reviews)
+### 強制停止（50ページ以上）
+- 🛑 **HARD STOP** : 50ページ以上の地域ページで発動
+- ユーザーによる明示的な正当化が必要
+- 以下を証明する必要がある：
+  - 各地域における正当なビジネスの存在
+  - 各ページに対するユニークなコンテンツ戦略
+  - ローカルシグナル（Google Business Profile、ローカルレビュー）
 
-### Why This Matters
-Google's doorway page algorithm penalizes programmatic location pages with thin/duplicate content. Signs of doorway pages:
-- Only city/state name changed between pages
-- No unique local information
-- No local business signals
-- Keyword-stuffed URLs
+### これが重要な理由
+Googleのドアウェイページアルゴリズムは、薄い/重複したコンテンツを持つプログラマティック地域ページにペナルティを課す。ドアウェイページの兆候：
+- ページ間で市区町村名/都道府県名のみが変更されている
+- ユニークなローカル情報がない
+- ローカルビジネスシグナルがない
+- キーワード詰め込みのURL
 
 ---
 
-## Safe vs. Risky Programmatic Pages
+## 安全なプログラマティックページ vs. リスクのあるプログラマティックページ
 
-### Safe at Scale ✅
-| Page Type | Why It's Safe |
+### 大規模展開しても安全 ✅
+| ページタイプ | 安全な理由 |
 |-----------|---------------|
-| Integration pages | Real setup documentation, unique technical content |
-| Template/tool pages | Downloadable assets, unique functionality |
-| Glossary pages | 200+ word unique definitions |
-| Product pages | Unique specs, images, reviews |
-| User profile pages | User-generated unique content |
+| インテグレーションページ | 実際のセットアップドキュメント、ユニークな技術コンテンツ |
+| テンプレート/ツールページ | ダウンロード可能なアセット、ユニークな機能 |
+| 用語集ページ | 200語以上のユニークな定義 |
+| 商品ページ | ユニークなスペック、画像、レビュー |
+| ユーザープロフィールページ | ユーザー生成のユニークコンテンツ |
 
-### Penalty Risk ❌
-| Page Type | Why It's Risky |
+### ペナルティリスクあり ❌
+| ページタイプ | リスクのある理由 |
 |-----------|----------------|
-| Location pages with only city swapped | Duplicate content, doorway pages |
-| "Best [tool] for [industry]" | Often thin, no industry-specific value |
-| "[Competitor] alternative" | Requires genuine comparison data |
-| AI-generated mass content | No unique value, E-E-A-T failure |
+| 都市名のみを入れ替えた地域ページ | 重複コンテンツ、ドアウェイページ |
+| 「[業界]向けベスト[ツール]」 | 内容が薄く、業界固有の価値がないことが多い |
+| 「[競合]の代替」 | 本物の比較データが必要 |
+| AI生成の大量コンテンツ | ユニークな価値がなく、E-E-A-T違反 |
 
 ---
 
-## Title Tag Requirements
+## title タグの要件
 
-| Aspect | Requirement |
+| 項目 | 要件 |
 |--------|-------------|
-| Minimum length | 30 characters |
-| Maximum length | 60 characters (Google truncates ~60) |
-| Primary keyword | Near the beginning |
-| Brand name | At end (if included) |
-| Uniqueness | Each page must have unique title |
+| 最小文字数 | 30文字 |
+| 最大文字数 | 60文字（Googleは約60文字で切り捨て） |
+| 主要キーワード | 先頭付近に配置 |
+| ブランド名 | 末尾に配置（含める場合） |
+| ユニーク性 | 各ページに固有のタイトルが必要 |
 
-### Good Examples
+### 良い例
 - "Emergency Plumbing Services in Austin | ABC Plumbing"
 - "How to Fix a Leaky Faucet: Step-by-Step Guide"
 - "Enterprise SEO Software | Comprehensive Platform"
 
-### Bad Examples
-- "Home" (too short, not descriptive)
-- "Best Plumbing Services for All Your Plumbing Needs in Austin Texas and Surrounding Areas" (too long)
-- "ABC Plumbing - Plumbing - Plumber - Plumbing Services" (keyword stuffing)
+### 悪い例
+- "Home"（短すぎる、説明的でない）
+- "Best Plumbing Services for All Your Plumbing Needs in Austin Texas and Surrounding Areas"（長すぎる）
+- "ABC Plumbing - Plumbing - Plumber - Plumbing Services"（キーワード詰め込み）
 
 ---
 
-## Meta Description Requirements
+## meta description の要件
 
-| Aspect | Requirement |
+| 項目 | 要件 |
 |--------|-------------|
-| Minimum length | 120 characters |
-| Maximum length | 160 characters (Google truncates ~155-160) |
-| Call-to-action | Include compelling CTA |
-| Primary keyword | Include naturally |
-| Uniqueness | Each page must have unique description |
+| 最小文字数 | 120文字 |
+| 最大文字数 | 160文字（Googleは約155〜160文字で切り捨て） |
+| 行動喚起 | 魅力的なCTAを含める |
+| 主要キーワード | 自然に含める |
+| ユニーク性 | 各ページに固有のディスクリプションが必要 |
 
 ---
 
-## Image Alt Text Requirements
+## 画像 alt テキストの要件
 
-| Aspect | Requirement |
+| 項目 | 要件 |
 |--------|-------------|
-| Required on | All non-decorative images |
-| Length | 10-125 characters |
-| Content | Describe the image content, not "image" or filename |
-| Keywords | Include naturally where relevant |
-| Decorative images | Use `alt=""` or `role="presentation"` |
+| 必須対象 | すべての装飾以外の画像 |
+| 文字数 | 10〜125文字 |
+| 内容 | 画像の内容を説明する。「image」やファイル名は不可 |
+| キーワード | 関連する場合は自然に含める |
+| 装飾画像 | `alt=""` または `role="presentation"` を使用 |
 
-### Good Examples
+### 良い例
 - "Professional plumber repairing kitchen sink faucet"
 - "Red 2024 Toyota Camry sedan front view"
 - "Team meeting in modern office conference room"
 
-### Bad Examples
-- "image.jpg" (filename, not description)
-- "plumber plumbing plumber services" (keyword stuffing)
-- "Click here" (not descriptive)
+### 悪い例
+- "image.jpg"（ファイル名であり、説明ではない）
+- "plumber plumbing plumber services"（キーワード詰め込み）
+- "Click here"（説明的でない）
 
 ---
 
-## Internal Linking Guidelines
+## 内部リンクのガイドライン
 
-| Page Type | Internal Links Target |
+| ページタイプ | 内部リンク目標数 |
 |-----------|----------------------|
-| Blog post (1,500+ words) | 5-10 internal links |
-| Service page | 3-5 internal links |
-| Category page | Links to all child pages |
-| Product page | 2-4 internal links |
+| ブログ記事（1,500語以上） | 5〜10本の内部リンク |
+| サービスページ | 3〜5本の内部リンク |
+| カテゴリページ | すべての子ページへのリンク |
+| 商品ページ | 2〜4本の内部リンク |
 
-### Anchor Text Rules
-- Use descriptive anchor text (not "click here")
-- Vary anchor text (don't always use exact match keywords)
-- Link to relevant, related content
-- Ensure no orphan pages (every page linked from at least one other page)
+### アンカーテキストのルール
+- 説明的なアンカーテキストを使用する（「ここをクリック」は不可）
+- アンカーテキストにバリエーションを持たせる（常に完全一致キーワードを使わない）
+- 関連性のあるコンテンツにリンクする
+- 孤立ページを作らない（すべてのページが少なくとも1つの他のページからリンクされること）
 
 ---
 
-## Content Freshness Signals
+## コンテンツ鮮度のシグナル
 
-| Content Type | Update Frequency |
+| コンテンツタイプ | 更新頻度 |
 |--------------|------------------|
-| News/current events | Within hours/days |
-| Blog posts (evergreen) | Review annually |
-| Product pages | When specs change |
-| Service pages | Review quarterly |
-| Company info | When changes occur |
+| ニュース/時事 | 数時間〜数日以内 |
+| ブログ記事（エバーグリーン） | 年1回の見直し |
+| 商品ページ | スペック変更時 |
+| サービスページ | 四半期ごとの見直し |
+| 企業情報 | 変更発生時 |
 
-### Required Elements
-- Publication date visible (for articles/blogs)
-- Last updated date (if significantly revised)
-- Changelog for major updates (optional but good)
+### 必須要素
+- 公開日の表示（記事/ブログの場合）
+- 最終更新日（大幅な改訂があった場合）
+- 主要な更新の変更履歴（任意だが推奨）

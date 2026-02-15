@@ -1,88 +1,86 @@
 ---
 name: seo-hreflang
 description: >
-  Hreflang and international SEO audit, validation, and generation. Detects
-  common mistakes, validates language/region codes, and generates correct
-  hreflang implementations. Use when user says "hreflang", "i18n SEO",
-  "international SEO", "multi-language", "multi-region", or "language tags".
+  hreflangおよび国際SEOの監査、検証、生成。よくあるミスの検出、言語・地域コードの
+  検証、正しいhreflang実装の生成を行います。ユーザーが「hreflang」「i18n SEO」
+  「international SEO」「多言語」「多地域」「language tags」と言った場合に使用します。
 ---
 
 # Hreflang & International SEO
 
-Validate existing hreflang implementations or generate correct hreflang tags
-for multi-language and multi-region sites. Supports HTML, HTTP header, and
-XML sitemap implementations.
+既存のhreflang実装を検証するか、多言語・多地域サイト向けに正しいhreflangタグを
+生成します。HTML、HTTPヘッダー、XMLサイトマップでの実装に対応しています。
 
-## Validation Checks
+## 検証チェック
 
-### 1. Self-Referencing Tags
-- Every page must include an hreflang tag pointing to itself
-- The self-referencing URL must exactly match the page's canonical URL
-- Missing self-referencing tags cause Google to ignore the entire hreflang set
+### 1. 自己参照タグ
+- すべてのページは、自分自身を指すhreflangタグを含める必要があります
+- 自己参照URLは、そのページのcanonical URLと完全に一致する必要があります
+- 自己参照タグが欠落すると、Googleはhreflangセット全体を無視します
 
-### 2. Return Tags
-- If page A links to page B with hreflang, page B must link back to page A
-- Every hreflang relationship must be bidirectional (A→B and B→A)
-- Missing return tags invalidate the hreflang signal for both pages
-- Check all language versions reference each other (full mesh)
+### 2. リターンタグ
+- ページAがhreflangでページBにリンクしている場合、ページBもページAにリンクを返す必要があります
+- すべてのhreflang関係は双方向でなければなりません（A→BかつB→A）
+- リターンタグが欠落すると、両方のページのhreflangシグナルが無効になります
+- すべての言語バージョンが相互に参照していることを確認してください（フルメッシュ）
 
-### 3. x-default Tag
-- Required: designates the fallback page for unmatched languages/regions
-- Typically points to the language selector page or English version
-- Only one x-default per set of alternates
-- Must also have return tags from all other language versions
+### 3. x-defaultタグ
+- 必須：一致しない言語・地域に対するフォールバックページを指定します
+- 通常、言語選択ページまたは英語版を指します
+- alternateセットごとにx-defaultは1つだけです
+- 他のすべての言語バージョンからのリターンタグも必要です
 
-### 4. Language Code Validation
-- Must use ISO 639-1 two-letter codes (e.g., `en`, `fr`, `de`, `ja`)
-- Common errors:
-  - `eng` instead of `en` (ISO 639-2, not valid for hreflang)
-  - `jp` instead of `ja` (incorrect code for Japanese)
-  - `zh` without region qualifier (ambiguous — use `zh-Hans` or `zh-Hant`)
+### 4. 言語コードの検証
+- ISO 639-1の2文字コードを使用する必要があります（例：`en`、`fr`、`de`、`ja`）
+- よくあるエラー：
+  - `en`ではなく`eng`を使用（ISO 639-2であり、hreflangでは無効）
+  - `ja`ではなく`jp`を使用（日本語の正しいコードではない）
+  - 地域修飾子なしの`zh`（曖昧 — `zh-Hans`または`zh-Hant`を使用）
 
-### 5. Region Code Validation
-- Optional region qualifier uses ISO 3166-1 Alpha-2 (e.g., `en-US`, `en-GB`, `pt-BR`)
-- Format: `language-REGION` (lowercase language, uppercase region)
-- Common errors:
-  - `en-uk` instead of `en-GB` (UK is not a valid ISO 3166-1 code)
-  - `es-LA` (Latin America is not a country — use specific countries)
-  - Region without language prefix
+### 5. 地域コードの検証
+- オプションの地域修飾子はISO 3166-1 Alpha-2を使用します（例：`en-US`、`en-GB`、`pt-BR`）
+- 形式：`language-REGION`（言語は小文字、地域は大文字）
+- よくあるエラー：
+  - `en-GB`ではなく`en-uk`を使用（UKは有効なISO 3166-1コードではない）
+  - `es-LA`（ラテンアメリカは国ではない — 具体的な国を使用）
+  - 言語プレフィックスなしの地域コード
 
-### 6. Canonical URL Alignment
-- Hreflang tags must only appear on canonical URLs
-- If a page has `rel=canonical` pointing elsewhere, hreflang on that page is ignored
-- The canonical URL and hreflang URL must match exactly (including trailing slashes)
-- Non-canonical pages should not be in any hreflang set
+### 6. Canonical URLとの整合性
+- hreflangタグはcanonical URLにのみ配置する必要があります
+- ページに別のURLを指す`rel=canonical`がある場合、そのページのhreflangは無視されます
+- canonical URLとhreflang URLは完全に一致する必要があります（末尾のスラッシュを含む）
+- 非canonicalページはhreflangセットに含めるべきではありません
 
-### 7. Protocol Consistency
-- All URLs in an hreflang set must use the same protocol (HTTPS or HTTP)
-- Mixed HTTP/HTTPS in hreflang sets causes validation failures
-- After HTTPS migration, update all hreflang tags to HTTPS
+### 7. プロトコルの一貫性
+- hreflangセット内のすべてのURLは同じプロトコルを使用する必要があります（HTTPSまたはHTTP）
+- hreflangセット内でHTTP/HTTPSが混在すると検証エラーが発生します
+- HTTPS移行後は、すべてのhreflangタグをHTTPSに更新してください
 
-### 8. Cross-Domain Support
-- Hreflang works across different domains (e.g., example.com and example.de)
-- Cross-domain hreflang requires return tags on both domains
-- Verify both domains are verified in Google Search Console
-- Sitemap-based implementation recommended for cross-domain setups
+### 8. クロスドメイン対応
+- hreflangは異なるドメイン間で機能します（例：example.comとexample.de）
+- クロスドメインのhreflangには、両方のドメインでリターンタグが必要です
+- 両方のドメインがGoogle Search Consoleで確認済みであることを検証してください
+- クロスドメイン構成にはサイトマップベースの実装を推奨します
 
-## Common Mistakes
+## よくあるミス
 
-| Issue | Severity | Fix |
-|-------|----------|-----|
-| Missing self-referencing tag | Critical | Add hreflang pointing to same page URL |
-| Missing return tags (A→B but no B→A) | Critical | Add matching return tags on all alternates |
-| Missing x-default | High | Add x-default pointing to fallback/selector page |
-| Invalid language code (e.g., `eng`) | High | Use ISO 639-1 two-letter codes |
-| Invalid region code (e.g., `en-uk`) | High | Use ISO 3166-1 Alpha-2 codes |
-| Hreflang on non-canonical URL | High | Move hreflang to canonical URL only |
-| HTTP/HTTPS mismatch in URLs | Medium | Standardize all URLs to HTTPS |
-| Trailing slash inconsistency | Medium | Match canonical URL format exactly |
-| Hreflang in both HTML and sitemap | Low | Choose one method — sitemap preferred for large sites |
-| Language without region when needed | Low | Add region qualifier for geo-targeted content |
+| 問題 | 重大度 | 修正方法 |
+|------|--------|----------|
+| 自己参照タグの欠落 | Critical | 同じページURLを指すhreflangを追加 |
+| リターンタグの欠落（A→Bはあるが、B→Aがない） | Critical | すべてのalternateに対応するリターンタグを追加 |
+| x-defaultの欠落 | High | フォールバック/選択ページを指すx-defaultを追加 |
+| 無効な言語コード（例：`eng`） | High | ISO 639-1の2文字コードを使用 |
+| 無効な地域コード（例：`en-uk`） | High | ISO 3166-1 Alpha-2コードを使用 |
+| 非canonical URLでのhreflang | High | hreflangをcanonical URLにのみ配置 |
+| URL内のHTTP/HTTPSの不一致 | Medium | すべてのURLをHTTPSに統一 |
+| 末尾スラッシュの不一致 | Medium | canonical URLの形式と完全に一致させる |
+| HTMLとサイトマップの両方にhreflangがある | Low | 1つの方法を選択 — 大規模サイトにはサイトマップを推奨 |
+| 必要な場合に地域なしの言語コード | Low | 地域ターゲティングコンテンツには地域修飾子を追加 |
 
-## Implementation Methods
+## 実装方法
 
-### Method 1: HTML Link Tags
-Best for: Sites with <50 language/region variants per page.
+### 方法1：HTMLリンクタグ
+最適な用途：1ページあたりの言語・地域バリエーションが50未満のサイト。
 
 ```html
 <link rel="alternate" hreflang="en-US" href="https://example.com/page" />
@@ -91,10 +89,10 @@ Best for: Sites with <50 language/region variants per page.
 <link rel="alternate" hreflang="x-default" href="https://example.com/page" />
 ```
 
-Place in `<head>` section. Every page must include all alternates including itself.
+`<head>`セクション内に配置します。すべてのページは自分自身を含むすべてのalternateを含める必要があります。
 
-### Method 2: HTTP Headers
-Best for: Non-HTML files (PDFs, documents).
+### 方法2：HTTPヘッダー
+最適な用途：非HTMLファイル（PDF、ドキュメント）。
 
 ```
 Link: <https://example.com/page>; rel="alternate"; hreflang="en-US",
@@ -102,34 +100,34 @@ Link: <https://example.com/page>; rel="alternate"; hreflang="en-US",
       <https://example.com/page>; rel="alternate"; hreflang="x-default"
 ```
 
-Set via server configuration or CDN rules.
+サーバー設定またはCDNルールで設定します。
 
-### Method 3: XML Sitemap (Recommended for large sites)
-Best for: Sites with many language variants, cross-domain setups, or 50+ pages.
+### 方法3：XMLサイトマップ（大規模サイトに推奨）
+最適な用途：多くの言語バリエーション、クロスドメイン構成、または50ページ以上のサイト。
 
-See Hreflang Sitemap Generation section below.
+以下のHreflangサイトマップ生成セクションを参照してください。
 
-### Method Comparison
-| Method | Best For | Pros | Cons |
-|--------|----------|------|------|
-| HTML link tags | Small sites (<50 variants) | Easy to implement, visible in source | Bloats `<head>`, hard to maintain at scale |
-| HTTP headers | Non-HTML files | Works for PDFs, images | Complex server config, not visible in HTML |
-| XML sitemap | Large sites, cross-domain | Scalable, centralized management | Not visible on page, requires sitemap maintenance |
+### 方法の比較
+| 方法 | 最適な用途 | メリット | デメリット |
+|------|-----------|----------|-----------|
+| HTMLリンクタグ | 小規模サイト（50バリエーション未満） | 実装が容易、ソースで確認可能 | `<head>`が肥大化、大規模での保守が困難 |
+| HTTPヘッダー | 非HTMLファイル | PDF、画像に対応 | サーバー設定が複雑、HTMLで確認不可 |
+| XMLサイトマップ | 大規模サイト、クロスドメイン | スケーラブル、一元管理 | ページ上で確認不可、サイトマップの保守が必要 |
 
-## Hreflang Generation
+## Hreflang生成
 
-### Process
-1. **Detect languages**: Scan site for language indicators (URL path, subdomain, TLD, HTML lang attribute)
-2. **Map page equivalents**: Match corresponding pages across languages/regions
-3. **Validate language codes**: Verify all codes against ISO 639-1 and ISO 3166-1
-4. **Generate tags**: Create hreflang tags for each page including self-referencing
-5. **Verify return tags**: Confirm all relationships are bidirectional
-6. **Add x-default**: Set fallback for each page set
-7. **Output**: Generate implementation code (HTML, HTTP headers, or sitemap XML)
+### プロセス
+1. **言語の検出**：サイトをスキャンして言語指標を確認（URLパス、サブドメイン、TLD、HTML lang属性）
+2. **ページの対応付け**：言語・地域間で対応するページをマッチング
+3. **言語コードの検証**：すべてのコードをISO 639-1およびISO 3166-1に照合して検証
+4. **タグの生成**：自己参照を含む各ページのhreflangタグを作成
+5. **リターンタグの検証**：すべての関係が双方向であることを確認
+6. **x-defaultの追加**：各ページセットにフォールバックを設定
+7. **出力**：実装コードを生成（HTML、HTTPヘッダー、またはサイトマップXML）
 
-## Hreflang Sitemap Generation
+## Hreflangサイトマップ生成
 
-### Sitemap with Hreflang
+### hreflang付きサイトマップ
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -151,34 +149,34 @@ See Hreflang Sitemap Generation section below.
 </urlset>
 ```
 
-Key rules:
-- Include the `xmlns:xhtml` namespace declaration
-- Every `<url>` entry must include ALL language alternates (including itself)
-- Each alternate must appear as a separate `<url>` entry with its own full set
-- Split at 50,000 URLs per sitemap file
+重要なルール：
+- `xmlns:xhtml`名前空間宣言を含めること
+- すべての`<url>`エントリは、自分自身を含むすべての言語alternateを含める必要があります
+- 各alternateは、独自の完全なセットを持つ個別の`<url>`エントリとして記載する必要があります
+- サイトマップファイルあたり50,000 URLで分割
 
-## Output
+## 出力
 
-### Hreflang Validation Report
+### Hreflang検証レポート
 
-#### Summary
-- Total pages scanned: XX
-- Language variants detected: XX
-- Issues found: XX (Critical: X, High: X, Medium: X, Low: X)
+#### サマリー
+- スキャンしたページ総数：XX
+- 検出された言語バリエーション：XX
+- 発見された問題：XX（Critical: X、High: X、Medium: X、Low: X）
 
-#### Validation Results
-| Language | URL | Self-Ref | Return Tags | x-default | Status |
-|----------|-----|----------|-------------|-----------|--------|
+#### 検証結果
+| 言語 | URL | 自己参照 | リターンタグ | x-default | ステータス |
+|------|-----|----------|-------------|-----------|-----------|
 | en-US | https://... | ✅ | ✅ | ✅ | ✅ |
 | fr | https://... | ❌ | ⚠️ | ✅ | ❌ |
 | de | https://... | ✅ | ❌ | ✅ | ❌ |
 
-### Generated Hreflang Tags
-- HTML `<link>` tags (if HTML method chosen)
-- HTTP header values (if header method chosen)
-- `hreflang-sitemap.xml` (if sitemap method chosen)
+### 生成されたHreflangタグ
+- HTML `<link>`タグ（HTML方式を選択した場合）
+- HTTPヘッダー値（ヘッダー方式を選択した場合）
+- `hreflang-sitemap.xml`（サイトマップ方式を選択した場合）
 
-### Recommendations
-- Missing implementations to add
-- Incorrect codes to fix
-- Method migration suggestions (e.g., HTML → sitemap for scale)
+### 推奨事項
+- 追加すべき欠落した実装
+- 修正すべき不正なコード
+- 方式移行の提案（例：スケーリングのためHTML → サイトマップ）

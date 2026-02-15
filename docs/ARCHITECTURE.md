@@ -1,52 +1,52 @@
-# Architecture
+# アーキテクチャ
 
-## Overview
+## 概要
 
-Claude SEO follows Anthropic's official Claude Code skill specification with a modular, multi-skill architecture.
+Claude SEO は Anthropic 公式の Claude Code skill 仕様に準拠し、モジュール式のマルチスキルアーキテクチャを採用しています。
 
-## Directory Structure
+## ディレクトリ構造
 
 ```
 ~/.claude/
 ├── skills/
-│   ├── seo/              # Main orchestrator skill
-│   │   ├── SKILL.md          # Entry point with routing logic
-│   │   └── references/       # On-demand reference files
+│   ├── seo/              # メインオーケストレータースキル
+│   │   ├── SKILL.md          # ルーティングロジックを含むエントリーポイント
+│   │   └── references/       # オンデマンドで読み込まれるリファレンスファイル
 │   │       ├── cwv-thresholds.md
 │   │       ├── schema-types.md
 │   │       ├── eeat-framework.md
 │   │       └── quality-gates.md
 │   │
-│   ├── seo-audit/            # Full site audit
-│   ├── seo-competitor-pages/ # Competitor comparison pages
-│   ├── seo-content/          # E-E-A-T analysis
-│   ├── seo-geo/              # AI search optimization
+│   ├── seo-audit/            # サイト全体の監査
+│   ├── seo-competitor-pages/ # 競合比較ページ
+│   ├── seo-content/          # E-E-A-T 分析
+│   ├── seo-geo/              # AI 検索最適化
 │   ├── seo-hreflang/         # Hreflang/i18n SEO
-│   ├── seo-images/           # Image optimization
-│   ├── seo-page/             # Single page analysis
-│   ├── seo-plan/             # Strategic planning
-│   │   └── assets/           # Industry templates
+│   ├── seo-images/           # 画像最適化
+│   ├── seo-page/             # 単一ページ分析
+│   ├── seo-plan/             # 戦略プランニング
+│   │   └── assets/           # 業種別テンプレート
 │   ├── seo-programmatic/     # Programmatic SEO
-│   ├── seo-schema/           # Schema markup
-│   ├── seo-sitemap/          # Sitemap analysis/generation
+│   ├── seo-schema/           # Schema マークアップ
+│   ├── seo-sitemap/          # Sitemap 分析・生成
 │   └── seo-technical/        # Technical SEO
 │
 └── agents/
-    ├── seo-technical.md      # Technical SEO specialist
-    ├── seo-content.md        # Content quality reviewer
-    ├── seo-schema.md         # Schema markup expert
-    ├── seo-sitemap.md        # Sitemap architect
-    ├── seo-performance.md    # Performance analyzer
-    └── seo-visual.md         # Visual analyzer
+    ├── seo-technical.md      # Technical SEO スペシャリスト
+    ├── seo-content.md        # コンテンツ品質レビュアー
+    ├── seo-schema.md         # Schema マークアップエキスパート
+    ├── seo-sitemap.md        # Sitemap アーキテクト
+    ├── seo-performance.md    # パフォーマンスアナライザー
+    └── seo-visual.md         # ビジュアルアナライザー
 ```
 
-## Component Types
+## コンポーネントの種類
 
 ### Skills
 
-Skills are markdown files with YAML frontmatter that define capabilities and instructions.
+Skills は YAML frontmatter を持つ Markdown ファイルで、機能と手順を定義します。
 
-**SKILL.md Format:**
+**SKILL.md の形式:**
 ```yaml
 ---
 name: skill-name
@@ -62,9 +62,9 @@ Instructions and documentation...
 
 ### Subagents
 
-Subagents are specialized workers that can be delegated tasks. They have their own context and tools.
+Subagents はタスクを委任できる専門的なワーカーです。独自のコンテキストとツールを持ちます。
 
-**Agent Format:**
+**Agent の形式:**
 ```yaml
 ---
 name: agent-name
@@ -75,25 +75,25 @@ tools: Read, Bash, Write, Glob, Grep
 Instructions for the agent...
 ```
 
-### Reference Files
+### リファレンスファイル
 
-Reference files contain static data loaded on-demand to avoid bloating the main skill.
+リファレンスファイルは、メインスキルの肥大化を防ぐためにオンデマンドで読み込まれる静的データを含みます。
 
-## Orchestration Flow
+## オーケストレーションフロー
 
-### Full Audit (`/seo audit`)
+### フル監査 (`/seo audit`)
 
 ```
 User Request
     │
     ▼
 ┌─────────────────┐
-│   seo       │  ← Main orchestrator
+│   seo       │  ← メインオーケストレーター
 │   (SKILL.md)    │
 └────────┬────────┘
          │
-         │  Detects business type
-         │  Spawns subagents in parallel
+         │  ビジネスタイプを検出
+         │  Subagents を並列で起動
          │
     ┌────┴────┬────────┬────────┬────────┬────────┐
     ▼         ▼        ▼        ▼        ▼        ▼
@@ -106,64 +106,64 @@ User Request
                             │
                             ▼
                     ┌───────────────┐
-                    │  Aggregate    │
-                    │  Results      │
+                    │  結果の       │
+                    │  集約         │
                     └───────┬───────┘
                             │
                             ▼
                     ┌───────────────┐
-                    │  Generate     │
-                    │  Report       │
+                    │  レポートの   │
+                    │  生成         │
                     └───────────────┘
 ```
 
-### Individual Command
+### 個別コマンド
 
 ```
 User Request (e.g., /seo page)
     │
     ▼
 ┌─────────────────┐
-│   seo       │  ← Routes to sub-skill
+│   seo       │  ← サブスキルへルーティング
 └────────┬────────┘
          │
          ▼
 ┌─────────────────┐
-│   seo-page      │  ← Sub-skill handles directly
+│   seo-page      │  ← サブスキルが直接処理
 │   (SKILL.md)    │
 └─────────────────┘
 ```
 
-## Design Principles
+## 設計原則
 
-### 1. Progressive Disclosure
+### 1. 段階的開示
 
-- Main SKILL.md is concise (<200 lines)
-- Reference files loaded on-demand
-- Detailed instructions in sub-skills
+- メインの SKILL.md は簡潔に保つ（200行未満）
+- リファレンスファイルはオンデマンドで読み込み
+- 詳細な手順はサブスキルに記載
 
-### 2. Parallel Processing
+### 2. 並列処理
 
-- Subagents run concurrently during audits
-- Independent analyses don't block each other
-- Results aggregated after all complete
+- 監査時に Subagents が並行して実行される
+- 独立した分析は互いをブロックしない
+- すべて完了後に結果を集約
 
 ### 3. Quality Gates
 
-- Built-in thresholds prevent bad recommendations
-- Location page limits (30 warning, 50 hard stop)
-- Schema deprecation awareness
-- FID → INP replacement enforced
+- 不適切な推奨を防ぐ組み込みの閾値
+- ロケーションページの制限（30件で警告、50件でハードストップ）
+- Schema の非推奨への対応
+- FID から INP への置き換えを強制
 
-### 4. Industry Awareness
+### 4. 業種対応
 
-- Templates for different business types
-- Automatic detection from homepage signals
-- Tailored recommendations per industry
+- さまざまなビジネスタイプ向けのテンプレート
+- ホームページのシグナルからの自動検出
+- 業種ごとにカスタマイズされた推奨事項
 
-## File Naming Conventions
+## ファイル命名規則
 
-| Type | Pattern | Example |
+| 種類 | パターン | 例 |
 |------|---------|---------|
 | Skill | `seo-{name}/SKILL.md` | `seo-audit/SKILL.md` |
 | Agent | `seo-{name}.md` | `seo-technical.md` |
@@ -171,23 +171,23 @@ User Request (e.g., /seo page)
 | Script | `{action}_{target}.py` | `fetch_page.py` |
 | Template | `{industry}.md` | `saas.md` |
 
-## Extension Points
+## 拡張ポイント
 
-### Adding a New Sub-Skill
+### 新しいサブスキルの追加
 
-1. Create `skills/seo-newskill/SKILL.md`
-2. Add YAML frontmatter with name and description
-3. Write skill instructions
-4. Update main `seo/SKILL.md` to route to new skill
+1. `skills/seo-newskill/SKILL.md` を作成
+2. name と description を含む YAML frontmatter を追加
+3. スキルの手順を記述
+4. メインの `seo/SKILL.md` に新しいスキルへのルーティングを追加
 
-### Adding a New Subagent
+### 新しい Subagent の追加
 
-1. Create `agents/seo-newagent.md`
-2. Add YAML frontmatter with name, description, tools
-3. Write agent instructions
-4. Reference from relevant skills
+1. `agents/seo-newagent.md` を作成
+2. name、description、tools を含む YAML frontmatter を追加
+3. エージェントの手順を記述
+4. 関連するスキルから参照
 
-### Adding a New Reference File
+### 新しいリファレンスファイルの追加
 
-1. Create file in appropriate `references/` directory
-2. Reference in skill with load-on-demand instruction
+1. 適切な `references/` ディレクトリにファイルを作成
+2. スキル内でオンデマンド読み込みの指示とともに参照

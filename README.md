@@ -4,22 +4,22 @@
 
 # Claude SEO
 
-Comprehensive SEO analysis skill for Claude Code. Covers technical SEO, on-page analysis, content quality (E-E-A-T), schema markup, image optimization, sitemap architecture, AI search optimization (GEO), and strategic planning.
+Claude Code 向けの包括的なSEO分析スキル。技術的SEO、ページ内分析、コンテンツ品質（E-E-A-T）、schema マークアップ、画像最適化、sitemap アーキテクチャ、AI検索最適化（GEO）、戦略的プランニングをカバーします。
 
 ![SEO Command Demo](screenshots/seo-command-demo.gif)
 
 [![Claude Code Skill](https://img.shields.io/badge/Claude%20Code-Skill-blue)](https://claude.ai/claude-code)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-## Installation
+## インストール
 
-### One-Command Install (Unix/macOS/Linux)
+### ワンコマンドインストール (Unix/macOS/Linux)
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/claude-seo/main/install.sh | bash
 ```
 
-### Manual Install
+### 手動インストール
 
 ```bash
 git clone https://github.com/AgriciDaniel/claude-seo.git
@@ -33,183 +33,183 @@ cd claude-seo
 irm https://raw.githubusercontent.com/AgriciDaniel/claude-seo/main/install.ps1 | iex
 ```
 
-## Quick Start
+## クイックスタート
 
 ```bash
-# Start Claude Code
+# Claude Code を起動
 claude
 
-# Run a full site audit
+# サイト全体の監査を実行
 /seo audit https://example.com
 
-# Analyze a single page
+# 単一ページを分析
 /seo page https://example.com/about
 
-# Check schema markup
+# schema マークアップを確認
 /seo schema https://example.com
 
-# Generate a sitemap
+# sitemap を生成
 /seo sitemap generate
 
-# Optimize for AI search
+# AI検索向けに最適化
 /seo geo https://example.com
 ```
-### Demo:
-[Watch the full demo on YouTube](https://www.youtube.com/watch?v=COMnNlUakQk)
+### デモ:
+[YouTube でフルデモを視聴](https://www.youtube.com/watch?v=COMnNlUakQk)
 
-**`/seo audit` — full site audit with parallel subagents:**
+**`/seo audit` — 並列サブエージェントによるサイト全体監査:**
 
 ![SEO Audit Demo](screenshots/seo-audit-demo.gif)
 
-## Commands
+## コマンド一覧
 
-| Command | Description |
+| コマンド | 説明 |
 |---------|-------------|
-| `/seo audit <url>` | Full website audit with parallel subagent delegation |
-| `/seo page <url>` | Deep single-page analysis |
-| `/seo sitemap <url>` | Analyze existing XML sitemap |
-| `/seo sitemap generate` | Generate new sitemap with industry templates |
-| `/seo schema <url>` | Detect, validate, and generate Schema.org markup |
-| `/seo images <url>` | Image optimization analysis |
-| `/seo technical <url>` | Technical SEO audit (8 categories) |
-| `/seo content <url>` | E-E-A-T and content quality analysis |
+| `/seo audit <url>` | 並列サブエージェント委任によるウェブサイト全体監査 |
+| `/seo page <url>` | 単一ページの詳細分析 |
+| `/seo sitemap <url>` | 既存のXML sitemap を分析 |
+| `/seo sitemap generate` | 業種テンプレートを使用して新しい sitemap を生成 |
+| `/seo schema <url>` | Schema.org マークアップの検出、検証、生成 |
+| `/seo images <url>` | 画像最適化分析 |
+| `/seo technical <url>` | 技術的SEO監査（8カテゴリ） |
+| `/seo content <url>` | E-E-A-T およびコンテンツ品質分析 |
 | `/seo geo <url>` | AI Overviews / Generative Engine Optimization |
-| `/seo plan <type>` | Strategic SEO planning (saas, local, ecommerce, publisher, agency) |
-| `/seo programmatic <url>` | Programmatic SEO analysis and planning |
-| `/seo competitor-pages <url>` | Competitor comparison page generation |
-| `/seo hreflang <url>` | Hreflang/i18n SEO audit and generation |
+| `/seo plan <type>` | 戦略的SEOプランニング (saas, local, ecommerce, publisher, agency) |
+| `/seo programmatic <url>` | プログラマティックSEO分析とプランニング |
+| `/seo competitor-pages <url>` | 競合比較ページの生成 |
+| `/seo hreflang <url>` | hreflang/i18n SEO監査と生成 |
 
 ### `/seo programmatic [url|plan]`
-**Programmatic SEO Analysis & Planning**
+**プログラマティックSEO分析＆プランニング**
 
-Build SEO pages at scale from data sources with quality safeguards.
+データソースから品質管理付きでSEOページを大規模に構築します。
 
-**Capabilities:**
-- Analyze existing programmatic pages for thin content and cannibalization
-- Plan URL patterns and template structures for data-driven pages
-- Internal linking automation between generated pages
-- Canonical strategy and index bloat prevention
-- Quality gates: ⚠️ WARNING at 100+ pages, 🛑 HARD STOP at 500+ without audit
+**機能:**
+- 既存のプログラマティックページの薄いコンテンツやカニバリゼーションを分析
+- データ駆動型ページのURLパターンとテンプレート構造を計画
+- 生成されたページ間の内部リンク自動化
+- canonical 戦略とインデックス肥大化の防止
+- 品質ゲート: 100ページ以上で警告、500ページ以上で監査なしの場合は強制停止
 
 ### `/seo competitor-pages [url|generate]`
-**Competitor Comparison Page Generator**
+**競合比較ページジェネレーター**
 
-Create high-converting "X vs Y" and "alternatives to X" pages.
+コンバージョン率の高い「X vs Y」や「Xの代替」ページを作成します。
 
-**Capabilities:**
-- Structured comparison tables with feature matrices
-- Product schema markup with AggregateRating
-- Conversion-optimized layouts with CTA placement
-- Keyword targeting for comparison intent queries
-- Fairness guidelines for accurate competitor representation
+**機能:**
+- 機能マトリクス付きの構造化された比較テーブル
+- AggregateRating 付きの Product schema マークアップ
+- CTA配置を最適化したコンバージョン重視のレイアウト
+- 比較意図クエリに対するキーワードターゲティング
+- 正確な競合表現のための公正性ガイドライン
 
 ### `/seo hreflang [url]`
-**Hreflang / i18n SEO Audit & Generation**
+**hreflang / i18n SEO監査＆生成**
 
-Validate and generate hreflang tags for multi-language sites.
+多言語サイトのhreflangタグを検証・生成します。
 
-**Capabilities:**
-- Generate hreflang tags (HTML, HTTP headers, or XML sitemap)
-- Validate self-referencing tags, return tags, x-default
-- Detect common mistakes (missing returns, invalid codes, HTTP/HTTPS mismatch)
-- Cross-domain hreflang support
-- Language/region code validation (ISO 639-1 + ISO 3166-1)
+**機能:**
+- hreflangタグの生成（HTML、HTTPヘッダー、またはXML sitemap）
+- 自己参照タグ、リターンタグ、x-default の検証
+- よくあるミスの検出（リターンタグの欠落、無効なコード、HTTP/HTTPSの不一致）
+- クロスドメイン hreflang サポート
+- 言語/地域コードの検証（ISO 639-1 + ISO 3166-1）
 
-## Features
+## 機能
 
-### Core Web Vitals (Current Metrics)
-- **LCP** (Largest Contentful Paint): Target < 2.5s
-- **INP** (Interaction to Next Paint): Target < 200ms
-- **CLS** (Cumulative Layout Shift): Target < 0.1
+### Core Web Vitals（現行指標）
+- **LCP** (Largest Contentful Paint): 目標 < 2.5秒
+- **INP** (Interaction to Next Paint): 目標 < 200ms
+- **CLS** (Cumulative Layout Shift): 目標 < 0.1
 
-> Note: INP replaced FID on March 12, 2024. FID was fully removed from all Chrome tools on September 9, 2024.
+> 注: INP は2024年3月12日にFIDに代わって導入されました。FIDは2024年9月9日にすべてのChromeツールから完全に削除されました。
 
-### E-E-A-T Analysis
-Updated to September 2025 Quality Rater Guidelines:
-- **Experience**: First-hand knowledge signals
-- **Expertise**: Author credentials and depth
-- **Authoritativeness**: Industry recognition
-- **Trustworthiness**: Contact info, security, transparency
+### E-E-A-T 分析
+2025年9月の品質評価ガイドラインに基づく更新:
+- **Experience（経験）**: 実体験に基づく知識のシグナル
+- **Expertise（専門性）**: 著者の資格と知識の深さ
+- **Authoritativeness（権威性）**: 業界での認知度
+- **Trustworthiness（信頼性）**: 連絡先情報、セキュリティ、透明性
 
-### Schema Markup
-- Detection: JSON-LD (preferred), Microdata, RDFa
-- Validation against Google's supported types
-- Generation with templates
-- Deprecation awareness:
-  - HowTo: Deprecated (Sept 2023)
-  - FAQ: Restricted to gov/health sites (Aug 2023)
-  - SpecialAnnouncement: Deprecated (July 2025)
+### Schema マークアップ
+- 検出: JSON-LD（推奨）、Microdata、RDFa
+- Google がサポートするタイプに対する検証
+- テンプレートによる生成
+- 非推奨の認識:
+  - HowTo: 非推奨（2023年9月）
+  - FAQ: 政府/医療サイトに制限（2023年8月）
+  - SpecialAnnouncement: 非推奨（2025年7月）
 
-### AI Search Optimization (GEO)
-New for 2026 - optimize for:
+### AI検索最適化 (GEO)
+2026年の新機能 - 以下に対する最適化:
 - Google AI Overviews
-- ChatGPT web search
+- ChatGPT ウェブ検索
 - Perplexity
-- Other AI-powered search
+- その他のAI搭載検索
 
-### Quality Gates
-- Warning at 30+ location pages
-- Hard stop at 50+ location pages
-- Thin content detection per page type
-- Doorway page prevention
+### 品質ゲート
+- 30以上のロケーションページで警告
+- 50以上のロケーションページで強制停止
+- ページタイプ別の薄いコンテンツ検出
+- ドアウェイページの防止
 
-## Architecture
+## アーキテクチャ
 
 ```
-~/.claude/skills/seo/         # Main skill
-~/.claude/skills/seo-*/       # Sub-skills (12 total)
-~/.claude/agents/seo-*.md     # Subagents (6 total)
+~/.claude/skills/seo/         # メインスキル
+~/.claude/skills/seo-*/       # サブスキル（全12個）
+~/.claude/agents/seo-*.md     # サブエージェント（全6個）
 ```
 
-### Video & Live Schema (New)
-Additional schema types for video content, live streaming, and key moments:
-- VideoObject — Video page markup with thumbnails, duration, upload date
-- BroadcastEvent — LIVE badge support for live streaming content
-- Clip — Key moments / chapters within videos
-- SeekToAction — Enable seek functionality in video rich results
-- SoftwareSourceCode — Open source and code repository pages
+### Video & Live Schema（新機能）
+動画コンテンツ、ライブ配信、キーモーメント用の追加schemaタイプ:
+- VideoObject — サムネイル、再生時間、アップロード日付を含む動画ページマークアップ
+- BroadcastEvent — ライブ配信コンテンツ用のLIVEバッジサポート
+- Clip — 動画内のキーモーメント/チャプター
+- SeekToAction — 動画リッチリザルトでのシーク機能の有効化
+- SoftwareSourceCode — オープンソースおよびコードリポジトリページ
 
-See `schema/templates.json` for ready-to-use JSON-LD snippets.
+すぐに使えるJSON-LDスニペットは `schema/templates.json` を参照してください。
 
-### Recently Added
-- Programmatic SEO skill (`/seo programmatic`)
-- Competitor comparison pages skill (`/seo competitor-pages`)
-- Multi-language hreflang validation (`/seo hreflang`)
-- Video & Live schema types (VideoObject, BroadcastEvent, Clip, SeekToAction)
-- Google SEO quick-reference guide
+### 最近の追加機能
+- プログラマティックSEOスキル (`/seo programmatic`)
+- 競合比較ページスキル (`/seo competitor-pages`)
+- 多言語 hreflang 検証 (`/seo hreflang`)
+- Video & Live schema タイプ (VideoObject, BroadcastEvent, Clip, SeekToAction)
+- Google SEO クイックリファレンスガイド
 
-## Requirements
+## 要件
 
 - Python 3.8+
 - Claude Code CLI
-- Optional: Playwright for screenshots
+- オプション: スクリーンショット用の Playwright
 
-## Uninstall
+## アンインストール
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/claude-seo/main/uninstall.sh | bash
 ```
 
-### MCP Integrations
+### MCP連携
 
-Integrates with MCP servers for live SEO data — including official servers from **Ahrefs** (`@ahrefs/mcp`) and **Semrush**, plus community servers for Google Search Console, PageSpeed Insights, and DataForSEO. See [MCP Integration Guide](docs/MCP-INTEGRATION.md) for setup.
+MCPサーバーと連携してライブSEOデータを取得します。**Ahrefs** (`@ahrefs/mcp`) や **Semrush** の公式サーバー、および Google Search Console、PageSpeed Insights、DataForSEO のコミュニティサーバーに対応しています。セットアップについては [MCP連携ガイド](docs/MCP-INTEGRATION.md) を参照してください。
 
-## Documentation
+## ドキュメント
 
-- [Installation Guide](docs/INSTALLATION.md)
-- [Commands Reference](docs/COMMANDS.md)
-- [Architecture](docs/ARCHITECTURE.md)
-- [MCP Integration](docs/MCP-INTEGRATION.md)
-- [Troubleshooting](docs/TROUBLESHOOTING.md)
+- [インストールガイド](docs/INSTALLATION.md)
+- [コマンドリファレンス](docs/COMMANDS.md)
+- [アーキテクチャ](docs/ARCHITECTURE.md)
+- [MCP連携](docs/MCP-INTEGRATION.md)
+- [トラブルシューティング](docs/TROUBLESHOOTING.md)
 
-## License
+## ライセンス
 
-MIT License - see [LICENSE](LICENSE) for details.
+MIT License - 詳細は [LICENSE](LICENSE) を参照してください。
 
-## Contributing
+## コントリビューション
 
-Contributions welcome! Please read the guidelines in `docs/` before submitting PRs.
+コントリビューション歓迎！PRを提出する前に `docs/` 内のガイドラインをお読みください。
 
 ---
 
-Built for Claude Code by [@AgriciDaniel](https://github.com/AgriciDaniel)
+Claude Code 向けに [@AgriciDaniel](https://github.com/AgriciDaniel) が開発

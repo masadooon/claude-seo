@@ -2,58 +2,58 @@
 ---
 name: seo-images
 description: >
-  Image optimization analysis for SEO and performance. Checks alt text, file
-  sizes, formats, responsive images, lazy loading, and CLS prevention. Use when
-  user says "image optimization", "alt text", "image SEO", "image size",
-  or "image audit".
+  SEOとパフォーマンスのための画像最適化分析。alt テキスト、ファイルサイズ、
+  フォーマット、レスポンシブ画像、遅延読み込み、CLS 防止をチェックします。
+  ユーザーが「画像最適化」「alt テキスト」「画像SEO」「画像サイズ」
+  「画像監査」と言った場合に使用します。
 ---
 
-# Image Optimization Analysis
+# 画像最適化分析
 
-## Checks
+## チェック項目
 
-### Alt Text
-- Present on all `<img>` elements (except decorative: `role="presentation"`)
-- Descriptive: describes the image content, not "image.jpg" or "photo"
-- Includes relevant keywords where natural, not keyword-stuffed
-- Length: 10-125 characters
+### Alt テキスト
+- すべての `<img>` 要素に存在すること（装飾用画像は除く: `role="presentation"`）
+- 説明的であること: 画像の内容を説明し、"image.jpg" や "photo" ではないこと
+- 関連キーワードを自然に含めること。キーワードの詰め込みはしない
+- 長さ: 10〜125文字
 
-**Good examples:**
+**良い例:**
 - "Professional plumber repairing kitchen sink faucet"
 - "Red 2024 Toyota Camry sedan front view"
 - "Team meeting in modern office conference room"
 
-**Bad examples:**
-- "image.jpg" (filename, not description)
-- "plumber plumbing plumber services" (keyword stuffing)
-- "Click here" (not descriptive)
+**悪い例:**
+- "image.jpg"（ファイル名であり、説明ではない）
+- "plumber plumbing plumber services"（キーワードの詰め込み）
+- "Click here"（説明的ではない）
 
-### File Size
+### ファイルサイズ
 
-**Tiered thresholds by image category:**
+**画像カテゴリ別の段階的しきい値:**
 
-| Image Category | Target | Warning | Critical |
+| 画像カテゴリ | 目標 | 警告 | 危険 |
 |----------------|--------|---------|----------|
-| Thumbnails | < 50KB | > 100KB | > 200KB |
-| Content images | < 100KB | > 200KB | > 500KB |
-| Hero/banner images | < 200KB | > 300KB | > 700KB |
+| サムネイル | < 50KB | > 100KB | > 200KB |
+| コンテンツ画像 | < 100KB | > 200KB | > 500KB |
+| ヒーロー/バナー画像 | < 200KB | > 300KB | > 700KB |
 
-Recommend compression to target thresholds where possible without quality loss.
+品質を損なわない範囲で、目標しきい値への圧縮を推奨します。
 
-### Format
-| Format | Browser Support | Use Case |
+### フォーマット
+| フォーマット | ブラウザサポート | 用途 |
 |--------|-----------------|----------|
-| WebP | 97%+ | Default recommendation |
-| AVIF | 92%+ | Best compression, newer |
-| JPEG | 100% | Fallback for photos |
-| PNG | 100% | Graphics with transparency |
-| SVG | 100% | Icons, logos, illustrations |
+| WebP | 97%以上 | デフォルトの推奨 |
+| AVIF | 92%以上 | 最高の圧縮率、より新しい |
+| JPEG | 100% | 写真のフォールバック |
+| PNG | 100% | 透過のあるグラフィック |
+| SVG | 100% | アイコン、ロゴ、イラスト |
 
-Recommend WebP/AVIF over JPEG/PNG. Check for `<picture>` element with format fallbacks.
+JPEG/PNG よりも WebP/AVIF を推奨します。フォーマットのフォールバック付き `<picture>` 要素を確認してください。
 
-#### Recommended `<picture>` Element Pattern
+#### 推奨される `<picture>` 要素パターン
 
-Use progressive enhancement with the most efficient format first:
+最も効率的なフォーマットを先頭にしたプログレッシブエンハンスメントを使用します:
 
 ```html
 <picture>
@@ -63,16 +63,16 @@ Use progressive enhancement with the most efficient format first:
 </picture>
 ```
 
-The browser will use the first supported format. Current browser support: AVIF 93.8%, WebP 95.3%.
+ブラウザは最初にサポートされているフォーマットを使用します。現在のブラウザサポート: AVIF 93.8%、WebP 95.3%。
 
-#### JPEG XL — Emerging Format
+#### JPEG XL — 新興フォーマット
 
-In November 2025, Google's Chromium team reversed its 2022 decision and announced it will restore JPEG XL support in Chrome using a Rust-based decoder. The implementation is feature-complete but not yet in Chrome stable. JPEG XL offers lossless JPEG recompression (~20% savings with zero quality loss) and competitive lossy compression. Not yet practical for web deployment, but worth monitoring for future adoption.
+2025年11月、Google の Chromium チームは2022年の決定を覆し、Rust ベースのデコーダーを使用して Chrome に JPEG XL サポートを復活させると発表しました。実装は機能的に完了していますが、Chrome の安定版にはまだ搭載されていません。JPEG XL はロスレス JPEG 再圧縮（品質劣化なしで約20%の削減）と競争力のある非可逆圧縮を提供します。Web での実用的な展開にはまだ至っていませんが、将来の普及に向けて注視する価値があります。
 
-### Responsive Images
-- `srcset` attribute for multiple sizes
-- `sizes` attribute matching layout breakpoints
-- Appropriate resolution for device pixel ratios
+### レスポンシブ画像
+- 複数サイズ用の `srcset` 属性
+- レイアウトのブレークポイントに一致する `sizes` 属性
+- デバイスピクセル比に適した解像度
 
 ```html
 <img
@@ -83,87 +83,87 @@ In November 2025, Google's Chromium team reversed its 2022 decision and announce
 >
 ```
 
-### Lazy Loading
-- `loading="lazy"` on below-fold images
-- Do NOT lazy-load above-fold/hero images (hurts LCP)
-- Check for native vs JavaScript-based lazy loading
+### 遅延読み込み
+- ファーストビュー外の画像に `loading="lazy"` を設定
+- ファーストビュー内/ヒーロー画像には遅延読み込みを使用しないこと（LCP に悪影響）
+- ネイティブと JavaScript ベースの遅延読み込みを確認
 
 ```html
-<!-- Below fold - lazy load -->
+<!-- ファーストビュー外 - 遅延読み込み -->
 <img src="photo.jpg" loading="lazy" alt="Description">
 
-<!-- Above fold - eager load (default) -->
+<!-- ファーストビュー内 - 即時読み込み（デフォルト） -->
 <img src="hero.jpg" alt="Hero image">
 ```
 
-### `fetchpriority="high"` for LCP Images
+### LCP 画像への `fetchpriority="high"`
 
-Add `fetchpriority="high"` to your hero/LCP image to prioritize its download in the browser's network queue:
+ブラウザのネットワークキューでダウンロードを優先させるため、ヒーロー/LCP 画像に `fetchpriority="high"` を追加します:
 
 ```html
 <img src="hero.webp" fetchpriority="high" alt="Hero image description" width="1200" height="630">
 ```
 
-**Critical:** Do NOT lazy-load above-the-fold/LCP images. Using `loading="lazy"` on LCP images directly harms LCP scores. Reserve `loading="lazy"` for below-the-fold images only.
+**重要:** ファーストビュー内/LCP 画像には遅延読み込みを使用しないでください。LCP 画像に `loading="lazy"` を使用すると、LCP スコアに直接悪影響を与えます。`loading="lazy"` はファーストビュー外の画像にのみ使用してください。
 
-### `decoding="async"` for Non-LCP Images
+### 非 LCP 画像への `decoding="async"`
 
-Add `decoding="async"` to non-LCP images to prevent image decoding from blocking the main thread:
+画像のデコードがメインスレッドをブロックしないよう、非 LCP 画像に `decoding="async"` を追加します:
 
 ```html
 <img src="photo.webp" alt="Description" width="600" height="400" loading="lazy" decoding="async">
 ```
 
-### CLS Prevention
-- `width` and `height` attributes set on all `<img>` elements
-- `aspect-ratio` CSS as alternative
-- Flag images without dimensions
+### CLS 防止
+- すべての `<img>` 要素に `width` と `height` 属性を設定
+- 代替として `aspect-ratio` CSS を使用
+- サイズ未指定の画像を警告
 
 ```html
-<!-- Good - dimensions set -->
+<!-- 良い例 - サイズ指定あり -->
 <img src="photo.jpg" width="800" height="600" alt="Description">
 
-<!-- Good - CSS aspect ratio -->
+<!-- 良い例 - CSS aspect-ratio -->
 <img src="photo.jpg" style="aspect-ratio: 4/3" alt="Description">
 
-<!-- Bad - no dimensions -->
+<!-- 悪い例 - サイズ指定なし -->
 <img src="photo.jpg" alt="Description">
 ```
 
-### File Names
-- Descriptive: `blue-running-shoes.webp` not `IMG_1234.jpg`
-- Hyphenated, lowercase, no special characters
-- Include relevant keywords
+### ファイル名
+- 説明的にする: `blue-running-shoes.webp` であり `IMG_1234.jpg` ではない
+- ハイフン区切り、小文字、特殊文字なし
+- 関連キーワードを含める
 
-### CDN Usage
-- Check if images served from CDN (different domain, CDN headers)
-- Recommend CDN for image-heavy sites
-- Check for edge caching headers
+### CDN の利用
+- 画像が CDN から配信されているか確認（異なるドメイン、CDN ヘッダー）
+- 画像が多いサイトには CDN を推奨
+- エッジキャッシュヘッダーを確認
 
-## Output
+## 出力
 
-### Image Audit Summary
+### 画像監査サマリー
 
-| Metric | Status | Count |
+| 指標 | ステータス | 件数 |
 |--------|--------|-------|
-| Total Images | - | XX |
-| Missing Alt Text | ❌ | XX |
-| Oversized (>200KB) | ⚠️ | XX |
-| Wrong Format | ⚠️ | XX |
-| No Dimensions | ⚠️ | XX |
-| Not Lazy Loaded | ⚠️ | XX |
+| 画像総数 | - | XX |
+| alt テキスト未設定 | ❌ | XX |
+| 過大サイズ（>200KB） | ⚠️ | XX |
+| 不適切なフォーマット | ⚠️ | XX |
+| サイズ未指定 | ⚠️ | XX |
+| 遅延読み込み未設定 | ⚠️ | XX |
 
-### Prioritized Optimization List
+### 優先度順の最適化リスト
 
-Sorted by file size impact (largest savings first):
+ファイルサイズの影響順にソート（削減量が大きい順）:
 
-| Image | Current Size | Format | Issues | Est. Savings |
+| 画像 | 現在のサイズ | フォーマット | 問題点 | 推定削減量 |
 |-------|--------------|--------|--------|--------------|
 | ... | ... | ... | ... | ... |
 
-### Recommendations
-1. Convert X images to WebP format (est. XX KB savings)
-2. Add alt text to X images
-3. Add dimensions to X images
-4. Enable lazy loading on X below-fold images
-5. Compress X oversized images
+### 推奨事項
+1. X 枚の画像を WebP フォーマットに変換（推定 XX KB 削減）
+2. X 枚の画像に alt テキストを追加
+3. X 枚の画像にサイズを追加
+4. ファーストビュー外の X 枚の画像に遅延読み込みを有効化
+5. X 枚の過大サイズ画像を圧縮

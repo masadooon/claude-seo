@@ -1,214 +1,213 @@
-# E-E-A-T Evaluation Framework
-## Updated per Google Quality Rater Guidelines — September 11, 2025
-## Plus December 2025 Core Update Implications
+# E-E-A-T 評価フレームワーク
+## Google Quality Rater Guidelines（2025年9月11日版）に基づく更新
+## 2025年12月コアアップデートの影響を含む
 
-## Overview
+## 概要
 
 E-E-A-T = **E**xperience, **E**xpertise, **A**uthoritativeness, **T**rustworthiness
 
-Trustworthiness is the most important factor. It is assessed based on the
-other three signals plus direct trust indicators.
+Trustworthiness は最も重要な要素であり、他の3つのシグナルと直接的な信頼指標に基づいて評価される。
 
-## CRITICAL: December 2025 Core Update
+## 重要: 2025年12月コアアップデート
 
-> **E-E-A-T now applies to ALL competitive queries, not just YMYL.**
+> **E-E-A-T は YMYL だけでなく、すべての競合クエリに適用されるようになった。**
 
-The December 2025 core update was described as a "watershed moment" that:
-- Extended E-E-A-T evaluation to virtually all competitive queries
-- Made author attribution standards tighter across all categories
-- Penalized anonymous or generic authorship even for non-YMYL content
-- Significantly improved AI content quality detection
+2025年12月のコアアップデートは「転換点」と評され、以下の変更をもたらした:
+- E-E-A-T 評価が事実上すべての競合クエリに拡大された
+- すべてのカテゴリで著者帰属の基準が厳格化された
+- YMYL 以外のコンテンツでも匿名または一般的な著者表示がペナルティ対象となった
+- AIコンテンツの品質検出が大幅に向上した
 
-**Impact by industry:**
-| Industry | Traffic Drops |
+**業界別の影響:**
+| 業界 | トラフィック減少率 |
 |----------|--------------|
-| Affiliate sites | 71% average decline |
-| Health/YMYL | 67% average decline |
-| E-commerce | 52% average decline |
+| アフィリエイトサイト | 平均71%減 |
+| 健康/YMYL | 平均67%減 |
+| Eコマース | 平均52%減 |
 
-**Key takeaway:** Even entertainment and lifestyle content now requires demonstrated expertise. Generic content no longer ranks.
+**主な結論:** エンターテインメントやライフスタイルのコンテンツであっても、実証された専門性が求められるようになった。一般的なコンテンツはもはやランキングされない。
 
 ## YMYL (Your Money or Your Life)
 
-Topics requiring **highest** E-E-A-T standards (but E-E-A-T now matters everywhere):
-- Health and safety
-- Financial advice and transactions
-- Legal information
-- News and current events
-- **Elections and civic trust** (added Sept 2025)
-- **Democratic processes** (added Sept 2025)
-- Groups of people (potential for harm)
+**最高水準の** E-E-A-T が求められるトピック（ただし E-E-A-T は現在あらゆる分野で重要）:
+- 健康と安全
+- 金融アドバイスおよび取引
+- 法律情報
+- ニュースと時事問題
+- **選挙と市民の信頼**（2025年9月追加）
+- **民主主義プロセス**（2025年9月追加）
+- 特定の集団（被害の可能性があるもの）
 
 ---
 
-## Experience (Weight: 20%)
+## Experience（重み: 20%）
 
-First-hand knowledge and personal involvement with the topic.
+トピックに関する直接的な知識および個人的な関与。
 
-### Signals to Check
-- [ ] Author has demonstrable first-hand experience with the topic
-- [ ] Content includes original photos, screenshots, or data
-- [ ] Case studies or real-world examples with specific details
-- [ ] Personal process documentation or methodology descriptions
-- [ ] Before/after results or outcome data
-- [ ] Specific anecdotes that couldn't be fabricated
+### 確認すべきシグナル
+- [ ] 著者がそのトピックについて実証可能な直接体験を持っている
+- [ ] オリジナルの写真、スクリーンショット、またはデータが含まれている
+- [ ] 具体的な詳細を伴うケーススタディや実例がある
+- [ ] 個人のプロセスの記録や方法論の説明がある
+- [ ] ビフォー/アフターの結果や成果データがある
+- [ ] 捏造しえない具体的なエピソードがある
 
-### Scoring
-- **Strong**: Multiple first-hand experience signals, original content
-- **Moderate**: Some personal experience evident
-- **Weak**: Generic information, no personal touch
-- **None**: Clearly AI-generated or scraped content
-
----
-
-## Expertise (Weight: 25%)
-
-Formal qualifications, training, and demonstrated knowledge.
-
-### Signals to Check
-- [ ] Author credentials relevant to topic (bio, certifications)
-- [ ] Technical accuracy and depth appropriate for audience
-- [ ] Claims supported by evidence or sources
-- [ ] Specialized vocabulary used correctly
-- [ ] Up-to-date with current developments in the field
-- [ ] Byline with author name and credentials visible
-
-### Scoring
-- **Strong**: Verified credentials, deep technical accuracy
-- **Moderate**: Demonstrable knowledge, some credentials
-- **Weak**: Surface-level information, no credentials
-- **None**: Factual errors, misinformation
+### スコアリング
+- **Strong**: 複数の直接体験シグナルがあり、オリジナルコンテンツがある
+- **Moderate**: ある程度の個人的な体験が見受けられる
+- **Weak**: 一般的な情報であり、個人的な要素がない
+- **None**: 明らかにAI生成またはスクレイピングされたコンテンツ
 
 ---
 
-## Authoritativeness (Weight: 25%)
+## Expertise（重み: 25%）
 
-Recognition by others as a go-to source.
+正式な資格、研修、および実証された知識。
 
-### Signals to Check
-- [ ] Site recognized as authority in its niche
-- [ ] Author recognized as expert (external citations, speaking, publications)
-- [ ] Content cited by other authoritative sources
-- [ ] Industry awards, certifications, or accreditations
-- [ ] Consistent publication history in the topic area
-- [ ] Featured in reputable media outlets
-- [ ] Professional affiliations
+### 確認すべきシグナル
+- [ ] トピックに関連する著者の資格情報（略歴、認定資格）
+- [ ] 対象読者に適した技術的な正確性と深さ
+- [ ] 根拠やソースに裏付けられた主張
+- [ ] 専門用語が正しく使われている
+- [ ] その分野の最新動向に対応している
+- [ ] 著者名と資格情報が記載された署名欄がある
 
-### Scoring
-- **Strong**: Widely recognized authority, cited by others
-- **Moderate**: Growing recognition, some external validation
-- **Weak**: No external recognition
-- **None**: Negative reputation, known for misinformation
-
----
-
-## Trustworthiness (Weight: 30%)
-
-The most important factor — overall reliability and transparency.
-
-### Signals to Check
-- [ ] Clear contact information (physical address, phone, email)
-- [ ] Privacy policy and terms of service
-- [ ] HTTPS with valid certificate
-- [ ] Transparent about who creates content and why
-- [ ] Customer reviews and testimonials
-- [ ] Corrections and update history visible
-- [ ] No deceptive practices (hidden ads, clickbait)
-- [ ] Secure payment processing (for e-commerce)
-- [ ] Return/refund policy visible
-
-### Scoring
-- **Strong**: Full transparency, verified business, positive reputation
-- **Moderate**: Good trust signals, minor gaps
-- **Weak**: Missing key trust signals
-- **None**: Deceptive practices, scam indicators
+### スコアリング
+- **Strong**: 検証済みの資格情報があり、高い技術的正確性がある
+- **Moderate**: 実証可能な知識があり、一部の資格情報がある
+- **Weak**: 表面的な情報であり、資格情報がない
+- **None**: 事実誤認、誤情報がある
 
 ---
 
-## September 2025 QRG Updates
+## Authoritativeness（重み: 25%）
 
-### AI Content Assessment
-Raters now formally evaluate whether content appears AI-generated:
-- AI content is **acceptable** if it demonstrates genuine E-E-A-T
-- Low-quality AI content (generic, no unique value) is penalized
-- The presence of AI-generated content is not inherently penalizing
-- What matters: does the content provide unique value regardless of creation method?
+他者から第一の情報源として認知されていること。
 
-### Markers of Low-Quality AI Content
-- Generic phrasing without specificity
-- Lack of original insight or unique perspective
-- No first-hand experience signals
-- Factual inaccuracies
-- Repetitive structure across multiple pages
-- No author attribution or expertise signals
+### 確認すべきシグナル
+- [ ] サイトがそのニッチにおける権威として認知されている
+- [ ] 著者が専門家として認知されている（外部からの引用、講演、出版物）
+- [ ] コンテンツが他の権威あるソースから引用されている
+- [ ] 業界賞、認定資格、またはアクレディテーションがある
+- [ ] そのトピック領域での一貫した発信履歴がある
+- [ ] 信頼性の高いメディアで取り上げられている
+- [ ] 専門的な団体への所属がある
 
-### New Spam Categories
-- **Expired domain abuse**: Buying expired domains for their backlinks
-- **Site reputation abuse**: Using reputable site to host low-quality content
-- **Scaled content abuse**: Mass-producing content without value
+### スコアリング
+- **Strong**: 広く認知された権威であり、他者から引用されている
+- **Moderate**: 認知度が高まっており、一部の外部からの評価がある
+- **Weak**: 外部からの認知がない
+- **None**: 否定的な評判があり、誤情報で知られている
 
-### AI Overview Evaluation
-Raters assess quality of AI-generated summaries in search results.
+---
+
+## Trustworthiness（重み: 30%）
+
+最も重要な要素 -- 全体的な信頼性と透明性。
+
+### 確認すべきシグナル
+- [ ] 明確な連絡先情報（住所、電話番号、メールアドレス）
+- [ ] プライバシーポリシーと利用規約
+- [ ] 有効な証明書を持つ HTTPS
+- [ ] コンテンツの作成者とその目的が透明である
+- [ ] カスタマーレビューと推薦の声
+- [ ] 訂正および更新履歴が確認できる
+- [ ] 欺瞞的な手法がない（隠し広告、クリックベイト）
+- [ ] 安全な決済処理（Eコマースの場合）
+- [ ] 返品・返金ポリシーが確認できる
+
+### スコアリング
+- **Strong**: 完全な透明性、認証済みのビジネス、良好な評判
+- **Moderate**: 良好な信頼シグナルがあるが、若干の不足がある
+- **Weak**: 主要な信頼シグナルが欠けている
+- **None**: 欺瞞的な手法、詐欺の兆候がある
+
+---
+
+## 2025年9月 QRG アップデート
+
+### AIコンテンツの評価
+評価者はコンテンツがAI生成であるかどうかを正式に評価するようになった:
+- AIコンテンツは、真の E-E-A-T を示していれば**許容される**
+- 低品質なAIコンテンツ（一般的で独自の価値がないもの）はペナルティ対象
+- AI生成コンテンツの存在自体がペナルティになるわけではない
+- 重要なのは: 作成方法に関係なく、そのコンテンツが独自の価値を提供しているか
+
+### 低品質AIコンテンツの特徴
+- 具体性のない一般的な表現
+- オリジナルの洞察や独自の視点の欠如
+- 直接体験のシグナルがない
+- 事実の不正確さ
+- 複数ページにわたる反復的な構造
+- 著者帰属や専門性のシグナルがない
+
+### 新しいスパムカテゴリ
+- **Expired domain abuse**: 被リンクを目的とした期限切れドメインの購入
+- **Site reputation abuse**: 信頼性の高いサイトを利用した低品質コンテンツのホスティング
+- **Scaled content abuse**: 価値のないコンテンツの大量生産
+
+### AI Overview の評価
+評価者は検索結果におけるAI生成サマリーの品質を評価する。
 
 ### RSL 1.0 (Really Simple Licensing)
-New machine-readable content licensing standard (December 2025) for AI training:
-- Backed by: Reddit, Yahoo, Medium, Quora, Cloudflare, Akamai, Creative Commons
-- Allows publishers to specify AI licensing terms
-- Augments robots.txt for AI-specific permissions
+AIトレーニング向けの新しい機械可読コンテンツライセンス規格（2025年12月）:
+- 支持: Reddit, Yahoo, Medium, Quora, Cloudflare, Akamai, Creative Commons
+- パブリッシャーがAIライセンス条件を指定可能
+- AI固有の権限に関して robots.txt を補完
 
 ---
 
-## Experience Signals Are Critical Differentiators
+## Experience シグナルは重要な差別化要因
 
-The December 2025 update elevated the "Experience" dimension as a key differentiator:
-- First-person narrative ("I tested this...", "In my experience...")
-- Original photos and screenshots (not stock images)
-- Specific examples with verifiable details
-- Process documentation showing actual work done
+2025年12月のアップデートにより「Experience」の次元が主要な差別化要因として重視されるようになった:
+- 一人称の語り（「私はこれをテストした...」「私の経験では...」）
+- オリジナルの写真やスクリーンショット（ストック画像ではない）
+- 検証可能な詳細を含む具体例
+- 実際に行った作業を示すプロセスの記録
 
-**Why:** AI can generate expertise-sounding content but cannot fabricate genuine experience.
+**理由:** AIは専門的に聞こえるコンテンツを生成できるが、本物の体験を捏造することはできない。
 
 ---
 
-## Overall Scoring Guide
+## 総合スコアリングガイド
 
-| Score | Description |
+| スコア | 説明 |
 |-------|-------------|
-| 90-100 | Exceptional E-E-A-T — authority site, recognized expert, full transparency |
-| 70-89 | Strong E-E-A-T — demonstrated expertise, good trust signals |
-| 50-69 | Moderate E-E-A-T — some signals, room for improvement |
-| 30-49 | Weak E-E-A-T — minimal signals, significant gaps |
-| 0-29 | Very low E-E-A-T — no visible signals, potential trust issues |
+| 90-100 | 卓越した E-E-A-T -- 権威あるサイト、認知された専門家、完全な透明性 |
+| 70-89 | 強い E-E-A-T -- 実証された専門性、良好な信頼シグナル |
+| 50-69 | 中程度の E-E-A-T -- 一部のシグナルあり、改善の余地あり |
+| 30-49 | 弱い E-E-A-T -- 最小限のシグナル、大きな欠陥あり |
+| 0-29 | 非常に低い E-E-A-T -- 目に見えるシグナルなし、信頼性の問題の可能性あり |
 
 ---
 
-## Improvement Recommendations by Score
+## スコア別の改善提案
 
-### 0-29 (Critical)
-1. Add contact information and about page
-2. Establish author identity with credentials
-3. Implement HTTPS
-4. Remove deceptive elements
+### 0-29（致命的）
+1. 連絡先情報とアバウトページを追加する
+2. 資格情報を伴う著者のアイデンティティを確立する
+3. HTTPS を導入する
+4. 欺瞞的な要素を除去する
 
-### 30-49 (Major)
-1. Add author bios with credentials
-2. Include first-hand experience content
-3. Get external citations/mentions
-4. Add customer testimonials
+### 30-49（重大）
+1. 資格情報付きの著者プロフィールを追加する
+2. 直接体験に基づくコンテンツを含める
+3. 外部からの引用・言及を獲得する
+4. カスタマーの推薦の声を追加する
 
-### 50-69 (Moderate)
-1. Deepen content with original research
-2. Build topical authority through content clusters
-3. Pursue industry recognition
-4. Document processes and methodologies
+### 50-69（中程度）
+1. 独自のリサーチでコンテンツを深化させる
+2. コンテンツクラスターを通じてトピカルオーソリティを構築する
+3. 業界での認知を追求する
+4. プロセスや方法論を記録する
 
-### 70-89 (Minor)
-1. Maintain freshness with regular updates
-2. Expand author presence across platforms
-3. Pursue speaking/publication opportunities
-4. Add video/multimedia demonstrating expertise
+### 70-89（軽微）
+1. 定期的な更新で鮮度を維持する
+2. プラットフォーム全体で著者のプレゼンスを拡大する
+3. 講演・出版の機会を追求する
+4. 専門性を示す動画やマルチメディアを追加する
 
-### 90-100 (Maintenance)
-1. Continue publishing high-quality content
-2. Monitor and respond to reputation issues
-3. Keep credentials and certifications current
+### 90-100（維持）
+1. 高品質なコンテンツの発信を継続する
+2. レピュテーションの問題を監視し対応する
+3. 資格情報と認定資格を最新に保つ

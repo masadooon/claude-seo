@@ -1,107 +1,107 @@
 ---
 name: seo-audit
 description: >
-  Full website SEO audit with parallel subagent delegation. Crawls up to 500
-  pages, detects business type, delegates to 6 specialists, generates health
-  score. Use when user says "audit", "full SEO check", "analyze my site",
-  or "website health check".
+  サブエージェントを並列に活用したWebサイトの総合SEO監査。最大500ページを
+  クロールし、ビジネスタイプを自動判定、6つの専門エージェントに委任して
+  ヘルススコアを生成します。「監査」「SEO全体チェック」「サイト分析」
+  「サイトの健全性チェック」などのリクエストに対応します。
 ---
 
-# Full Website SEO Audit
+# Webサイト総合SEO監査
 
-## Process
+## プロセス
 
-1. **Fetch homepage** — use `scripts/fetch_page.py` to retrieve HTML
-2. **Detect business type** — analyze homepage signals per seo orchestrator
-3. **Crawl site** — follow internal links up to 500 pages, respect robots.txt
-4. **Delegate to subagents** (if available, otherwise run inline sequentially):
-   - `seo-technical` — robots.txt, sitemaps, canonicals, Core Web Vitals, security headers
-   - `seo-content` — E-E-A-T, readability, thin content, AI citation readiness
-   - `seo-schema` — detection, validation, generation recommendations
-   - `seo-sitemap` — structure analysis, quality gates, missing pages
-   - `seo-performance` — LCP, INP, CLS measurements
-   - `seo-visual` — screenshots, mobile testing, above-fold analysis
-5. **Score** — aggregate into SEO Health Score (0-100)
-6. **Report** — generate prioritized action plan
+1. **トップページの取得** — `scripts/fetch_page.py` を使用してHTMLを取得
+2. **ビジネスタイプの判定** — SEOオーケストレーターの基準に基づきトップページのシグナルを分析
+3. **サイトクロール** — 内部リンクをたどり最大500ページまでクロール、robots.txt を遵守
+4. **サブエージェントへの委任**（利用可能な場合。利用不可の場合は順次実行）:
+   - `seo-technical` — robots.txt、sitemap、canonical、Core Web Vitals、セキュリティヘッダー
+   - `seo-content` — E-E-A-T、可読性、低品質コンテンツ、AI引用対応度
+   - `seo-schema` — 検出、バリデーション、生成に関する推奨事項
+   - `seo-sitemap` — 構造分析、品質基準、欠落ページ
+   - `seo-performance` — LCP、INP、CLS の計測
+   - `seo-visual` — スクリーンショット、モバイルテスト、ファーストビュー分析
+5. **スコアリング** — SEOヘルススコア（0〜100）に集約
+6. **レポート作成** — 優先度付きのアクションプランを生成
 
-## Crawl Configuration
+## クロール設定
 
 ```
-Max pages: 500
-Respect robots.txt: Yes
-Follow redirects: Yes (max 3 hops)
-Timeout per page: 30 seconds
-Concurrent requests: 5
-Delay between requests: 1 second
+最大ページ数: 500
+robots.txt の遵守: はい
+リダイレクトの追跡: はい（最大3ホップ）
+ページあたりのタイムアウト: 30秒
+同時リクエスト数: 5
+リクエスト間の遅延: 1秒
 ```
 
-## Output Files
+## 出力ファイル
 
-- `FULL-AUDIT-REPORT.md` — Comprehensive findings
-- `ACTION-PLAN.md` — Prioritized recommendations (Critical → High → Medium → Low)
-- `screenshots/` — Desktop + mobile captures (if Playwright available)
+- `FULL-AUDIT-REPORT.md` — 総合的な調査結果
+- `ACTION-PLAN.md` — 優先度付きの推奨事項（Critical → High → Medium → Low）
+- `screenshots/` — デスクトップ＋モバイルのキャプチャ（Playwright が利用可能な場合）
 
-## Scoring Weights
+## スコアリングの重み付け
 
-| Category | Weight |
-|----------|--------|
-| Technical SEO | 25% |
-| Content Quality | 25% |
-| On-Page SEO | 20% |
-| Schema / Structured Data | 10% |
-| Performance (CWV) | 10% |
-| Images | 5% |
-| AI Search Readiness | 5% |
+| カテゴリ | 重み |
+|----------|------|
+| テクニカルSEO | 25% |
+| コンテンツ品質 | 25% |
+| オンページSEO | 20% |
+| Schema / 構造化データ | 10% |
+| パフォーマンス (CWV) | 10% |
+| 画像 | 5% |
+| AI検索対応度 | 5% |
 
-## Report Structure
+## レポート構成
 
-### Executive Summary
-- Overall SEO Health Score (0-100)
-- Business type detected
-- Top 5 critical issues
-- Top 5 quick wins
+### エグゼクティブサマリー
+- SEOヘルススコア総合評価（0〜100）
+- 判定されたビジネスタイプ
+- 重大な問題 トップ5
+- すぐに改善できる項目 トップ5
 
-### Technical SEO
-- Crawlability issues
-- Indexability problems
-- Security concerns
-- Core Web Vitals status
+### テクニカルSEO
+- クロールに関する問題
+- インデックスに関する問題
+- セキュリティ上の懸念事項
+- Core Web Vitals のステータス
 
-### Content Quality
-- E-E-A-T assessment
-- Thin content pages
-- Duplicate content issues
-- Readability scores
+### コンテンツ品質
+- E-E-A-T 評価
+- 低品質コンテンツのページ
+- 重複コンテンツの問題
+- 可読性スコア
 
-### On-Page SEO
-- Title tag issues
-- Meta description problems
-- Heading structure
-- Internal linking gaps
+### オンページSEO
+- title タグの問題
+- meta description の問題
+- 見出し構造
+- 内部リンクの不足
 
-### Schema & Structured Data
-- Current implementation
-- Validation errors
-- Missing opportunities
+### Schema と構造化データ
+- 現在の実装状況
+- バリデーションエラー
+- 未対応の機会
 
-### Performance
-- LCP, INP, CLS scores
-- Resource optimization needs
-- Third-party script impact
+### パフォーマンス
+- LCP、INP、CLS のスコア
+- リソース最適化の必要性
+- サードパーティスクリプトの影響
 
-### Images
-- Missing alt text
-- Oversized images
-- Format recommendations
+### 画像
+- alt テキストの欠落
+- サイズ過大の画像
+- フォーマットに関する推奨事項
 
-### AI Search Readiness
-- Citability score
-- Structural improvements
-- Authority signals
+### AI検索対応度
+- 引用適性スコア
+- 構造面の改善点
+- 権威性シグナル
 
-## Priority Definitions
+## 優先度の定義
 
-- **Critical**: Blocks indexing or causes penalties (fix immediately)
-- **High**: Significantly impacts rankings (fix within 1 week)
-- **Medium**: Optimization opportunity (fix within 1 month)
-- **Low**: Nice to have (backlog)
+- **Critical**: インデックスの妨げやペナルティの原因となる問題（即時対応）
+- **High**: 検索順位に大きく影響する問題（1週間以内に対応）
+- **Medium**: 最適化の機会（1ヶ月以内に対応）
+- **Low**: あれば望ましい改善（バックログ）

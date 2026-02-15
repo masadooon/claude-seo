@@ -1,231 +1,230 @@
 ---
 name: seo-geo
 description: >
-  Optimize content for AI Overviews (formerly SGE), ChatGPT web search,
-  Perplexity, and other AI-powered search experiences. Generative Engine
-  Optimization (GEO) analysis including brand mention signals, AI crawler
-  accessibility, llms.txt compliance, passage-level citability scoring, and
-  platform-specific optimization. Use when user says "AI Overviews", "SGE",
-  "GEO", "AI search", "LLM optimization", "Perplexity", "AI citations",
-  "ChatGPT search", or "AI visibility".
+  AI Overviews（旧SGE）、ChatGPT ウェブ検索、Perplexity、その他のAI搭載検索体験向けに
+  コンテンツを最適化します。Generative Engine Optimization（GEO）分析には、
+  ブランド言及シグナル、AIクローラーのアクセシビリティ、llms.txt準拠、
+  パッセージレベルの引用可能性スコアリング、プラットフォーム別の最適化が含まれます。
+  ユーザーが「AI Overviews」「SGE」「GEO」「AI検索」「LLM最適化」「Perplexity」
+  「AI引用」「ChatGPT検索」「AI可視性」と言った場合に使用してください。
 ---
 
-# AI Search / GEO Optimization (February 2026)
+# AI検索 / GEO最適化（2026年2月）
 
-## Key Statistics
+## 主要統計データ
 
-| Metric | Value | Source |
-|--------|-------|--------|
-| AI Overviews reach | 1.5 billion users/month across 200+ countries | Google |
-| AI Overviews query coverage | 50%+ of all queries | Industry data |
-| AI-referred sessions growth | 527% (Jan-May 2025) | SparkToro |
-| ChatGPT weekly active users | 900 million | OpenAI |
-| Perplexity monthly queries | 500+ million | Perplexity |
+| 指標 | 値 | 出典 |
+|------|-----|------|
+| AI Overviews のリーチ | 200以上の国で月間15億ユーザー | Google |
+| AI Overviews のクエリカバレッジ | 全クエリの50%以上 | 業界データ |
+| AI経由セッション成長率 | 527%（2025年1月〜5月） | SparkToro |
+| ChatGPT 週間アクティブユーザー | 9億人 | OpenAI |
+| Perplexity 月間クエリ数 | 5億以上 | Perplexity |
 
-## Critical Insight: Brand Mentions > Backlinks
+## 重要な知見：ブランド言及 > 被リンク
 
-**Brand mentions correlate 3× more strongly with AI visibility than backlinks.**
-(Ahrefs December 2025 study of 75,000 brands)
+**ブランド言及は、被リンクよりもAI可視性との相関が3倍強い。**
+（Ahrefs 2025年12月の75,000ブランドを対象とした調査）
 
-| Signal | Correlation with AI Citations |
-|--------|------------------------------|
-| YouTube mentions | ~0.737 (strongest) |
-| Reddit mentions | High |
-| Wikipedia presence | High |
-| LinkedIn presence | Moderate |
-| Domain Rating (backlinks) | ~0.266 (weak) |
+| シグナル | AI引用との相関 |
+|----------|---------------|
+| YouTube での言及 | 約0.737（最強） |
+| Reddit での言及 | 高い |
+| Wikipedia での存在 | 高い |
+| LinkedIn での存在 | 中程度 |
+| Domain Rating（被リンク） | 約0.266（弱い） |
 
-**Only 11% of domains** are cited by both ChatGPT and Google AI Overviews for the same query — platform-specific optimization is essential.
-
----
-
-## GEO Analysis Criteria (Updated)
-
-### 1. Citability Score (25%)
-
-**Optimal passage length: 134-167 words** for AI citation.
-
-**Strong signals:**
-- Clear, quotable sentences with specific facts/statistics
-- Self-contained answer blocks (can be extracted without context)
-- Direct answer in first 40-60 words of section
-- Claims attributed with specific sources
-- Definitions following "X is..." or "X refers to..." patterns
-- Unique data points not found elsewhere
-
-**Weak signals:**
-- Vague, general statements
-- Opinion without evidence
-- Buried conclusions
-- No specific data points
-
-### 2. Structural Readability (20%)
-
-**92% of AI Overview citations come from top-10 ranking pages**, but 47% come from pages ranking below position 5 — demonstrating different selection logic.
-
-**Strong signals:**
-- Clean H1→H2→H3 heading hierarchy
-- Question-based headings (matches query patterns)
-- Short paragraphs (2-4 sentences)
-- Tables for comparative data
-- Ordered/unordered lists for step-by-step or multi-item content
-- FAQ sections with clear Q&A format
-
-**Weak signals:**
-- Wall of text with no structure
-- Inconsistent heading hierarchy
-- No lists or tables
-- Information buried in paragraphs
-
-### 3. Multi-Modal Content (15%)
-
-Content with multi-modal elements sees **156% higher selection rates**.
-
-**Check for:**
-- Text + relevant images
-- Video content (embedded or linked)
-- Infographics and charts
-- Interactive elements (calculators, tools)
-- Structured data supporting media
-
-### 4. Authority & Brand Signals (20%)
-
-**Strong signals:**
-- Author byline with credentials
-- Publication date and last-updated date
-- Citations to primary sources (studies, official docs, data)
-- Organization credentials and affiliations
-- Expert quotes with attribution
-- Entity presence in Wikipedia, Wikidata
-- Mentions on Reddit, YouTube, LinkedIn
-
-**Weak signals:**
-- Anonymous authorship
-- No dates
-- No sources cited
-- No brand presence across platforms
-
-### 5. Technical Accessibility (20%)
-
-**AI crawlers do NOT execute JavaScript** — server-side rendering is critical.
-
-**Check for:**
-- Server-side rendering (SSR) vs client-only content
-- AI crawler access in robots.txt
-- llms.txt file presence and configuration
-- RSL 1.0 licensing terms
+**ドメインのわずか11%** のみが、同じクエリに対してChatGPTとGoogle AI Overviewsの両方から引用されています — プラットフォーム別の最適化が不可欠です。
 
 ---
 
-## AI Crawler Detection
+## GEO分析基準（更新版）
 
-Check `robots.txt` for these AI crawlers:
+### 1. 引用可能性スコア（25%）
 
-| Crawler | Owner | Purpose |
-|---------|-------|---------|
-| GPTBot | OpenAI | ChatGPT web search |
-| OAI-SearchBot | OpenAI | OpenAI search features |
-| ChatGPT-User | OpenAI | ChatGPT browsing |
-| ClaudeBot | Anthropic | Claude web features |
-| PerplexityBot | Perplexity | Perplexity AI search |
-| CCBot | Common Crawl | Training data (often blocked) |
-| anthropic-ai | Anthropic | Claude training |
+**AI引用に最適なパッセージ長：134〜167語**
+
+**強いシグナル：**
+- 具体的な事実・統計を含む、明確で引用しやすい文章
+- 自己完結型の回答ブロック（文脈なしで抽出可能）
+- セクション冒頭40〜60語以内での直接的な回答
+- 具体的な出典が明記された主張
+- 「Xとは…」「Xは…を指す」パターンに従った定義
+- 他にはないユニークなデータポイント
+
+**弱いシグナル：**
+- 曖昧で一般的な記述
+- 根拠のない意見
+- 結論が埋もれている
+- 具体的なデータポイントがない
+
+### 2. 構造的な可読性（20%）
+
+**AI Overview引用の92%はトップ10にランクインするページから** 来ていますが、47%は5位以下のページから来ており — 異なる選択ロジックが働いていることを示しています。
+
+**強いシグナル：**
+- H1→H2→H3の整った見出し階層
+- 質問ベースの見出し（クエリパターンに一致）
+- 短い段落（2〜4文）
+- 比較データ用のテーブル
+- ステップバイステップや複数項目のコンテンツ用の順序付き/順序なしリスト
+- 明確なQ&A形式のFAQセクション
+
+**弱いシグナル：**
+- 構造のないテキストの壁
+- 一貫性のない見出し階層
+- リストやテーブルがない
+- 段落内に情報が埋もれている
+
+### 3. マルチモーダルコンテンツ（15%）
+
+マルチモーダル要素を含むコンテンツは、**選択率が156%向上** します。
+
+**確認項目：**
+- テキスト＋関連画像
+- 動画コンテンツ（埋め込みまたはリンク）
+- インフォグラフィックやチャート
+- インタラクティブ要素（計算ツール、ツール類）
+- メディアを補完する構造化データ
+
+### 4. 権威性とブランドシグナル（20%）
+
+**強いシグナル：**
+- 資格情報付きの著者署名
+- 公開日と最終更新日
+- 一次情報源への引用（研究、公式ドキュメント、データ）
+- 組織の資格と所属
+- 帰属付きの専門家の引用
+- Wikipedia、Wikidataでのエンティティ存在
+- Reddit、YouTube、LinkedInでの言及
+
+**弱いシグナル：**
+- 匿名の著者
+- 日付なし
+- 出典の引用なし
+- プラットフォーム全体でのブランド存在感がない
+
+### 5. 技術的なアクセシビリティ（20%）
+
+**AIクローラーはJavaScriptを実行しません** — サーバーサイドレンダリングが重要です。
+
+**確認項目：**
+- サーバーサイドレンダリング（SSR）vs クライアントのみのコンテンツ
+- robots.txtでのAIクローラーアクセス
+- llms.txtファイルの存在と設定
+- RSL 1.0ライセンス条件
+
+---
+
+## AIクローラー検出
+
+`robots.txt`で以下のAIクローラーを確認してください：
+
+| クローラー | 所有者 | 用途 |
+|-----------|--------|------|
+| GPTBot | OpenAI | ChatGPT ウェブ検索 |
+| OAI-SearchBot | OpenAI | OpenAI 検索機能 |
+| ChatGPT-User | OpenAI | ChatGPT ブラウジング |
+| ClaudeBot | Anthropic | Claude ウェブ機能 |
+| PerplexityBot | Perplexity | Perplexity AI検索 |
+| CCBot | Common Crawl | トレーニングデータ（ブロックされることが多い） |
+| anthropic-ai | Anthropic | Claude トレーニング |
 | Bytespider | ByteDance | TikTok/Douyin AI |
-| cohere-ai | Cohere | Cohere models |
+| cohere-ai | Cohere | Cohere モデル |
 
-**Recommendation:** Allow GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot for AI search visibility. Block CCBot and training crawlers if desired.
+**推奨事項：** AI検索での可視性のために、GPTBot、OAI-SearchBot、ClaudeBot、PerplexityBotを許可してください。必要に応じてCCBotやトレーニング用クローラーをブロックしてください。
 
 ---
 
-## llms.txt Standard
+## llms.txt標準
 
-The emerging **llms.txt** standard provides AI crawlers with structured content guidance.
+新興の**llms.txt**標準は、AIクローラーに構造化されたコンテンツガイダンスを提供します。
 
-**Location:** `/llms.txt` (root of domain)
+**配置場所：** `/llms.txt`（ドメインのルート）
 
-**Format:**
+**フォーマット：**
 ```
-# Title of site
-> Brief description
+# サイトのタイトル
+> 簡単な説明
 
-## Main sections
-- [Page title](url): Description
-- [Another page](url): Description
+## メインセクション
+- [ページタイトル](url): 説明
+- [別のページ](url): 説明
 
-## Optional: Key facts
-- Fact 1
-- Fact 2
+## オプション：主要な事実
+- 事実1
+- 事実2
 ```
 
-**Check for:**
-- Presence of `/llms.txt`
-- Structured content guidance
-- Key page highlights
-- Contact/authority information
+**確認項目：**
+- `/llms.txt`の存在
+- 構造化されたコンテンツガイダンス
+- 主要ページのハイライト
+- 連絡先・権威情報
 
 ---
 
-## RSL 1.0 (Really Simple Licensing)
+## RSL 1.0（Really Simple Licensing）
 
-New standard (December 2025) for machine-readable AI licensing terms.
+AI向けの機械可読ライセンス条件のための新しい標準（2025年12月）。
 
-**Backed by:** Reddit, Yahoo, Medium, Quora, Cloudflare, Akamai, Creative Commons
+**支持組織：** Reddit、Yahoo、Medium、Quora、Cloudflare、Akamai、Creative Commons
 
-**Check for:** RSL implementation and appropriate licensing terms.
-
----
-
-## Platform-Specific Optimization
-
-| Platform | Key Citation Sources | Optimization Focus |
-|----------|---------------------|-------------------|
-| **Google AI Overviews** | Top-10 ranking pages (92%) | Traditional SEO + passage optimization |
-| **ChatGPT** | Wikipedia (47.9%), Reddit (11.3%) | Entity presence, authoritative sources |
-| **Perplexity** | Reddit (46.7%), Wikipedia | Community validation, discussions |
-| **Bing Copilot** | Bing index, authoritative sites | Bing SEO, IndexNow |
+**確認項目：** RSLの実装と適切なライセンス条件。
 
 ---
 
-## Output
+## プラットフォーム別最適化
 
-Generate `GEO-ANALYSIS.md` with:
-
-1. **GEO Readiness Score: XX/100**
-2. **Platform breakdown** (Google AIO, ChatGPT, Perplexity scores)
-3. **AI Crawler Access Status** (which crawlers allowed/blocked)
-4. **llms.txt Status** (present, missing, recommendations)
-5. **Brand Mention Analysis** (presence on Wikipedia, Reddit, YouTube, LinkedIn)
-6. **Passage-Level Citability** (optimal 134-167 word blocks identified)
-7. **Server-Side Rendering Check** (JavaScript dependency analysis)
-8. **Top 5 Highest-Impact Changes**
-9. **Schema Recommendations** (for AI discoverability)
-10. **Content Reformatting Suggestions** (specific passages to rewrite)
+| プラットフォーム | 主要な引用元 | 最適化の焦点 |
+|-----------------|-------------|-------------|
+| **Google AI Overviews** | トップ10ランキングページ（92%） | 従来のSEO＋パッセージ最適化 |
+| **ChatGPT** | Wikipedia（47.9%）、Reddit（11.3%） | エンティティの存在、権威ある情報源 |
+| **Perplexity** | Reddit（46.7%）、Wikipedia | コミュニティでの検証、ディスカッション |
+| **Bing Copilot** | Bingインデックス、権威あるサイト | Bing SEO、IndexNow |
 
 ---
 
-## Quick Wins
+## 出力
 
-1. Add "What is [topic]?" definition in first 60 words
-2. Create 134-167 word self-contained answer blocks
-3. Add question-based H2/H3 headings
-4. Include specific statistics with sources
-5. Add publication/update dates
-6. Implement Person schema for authors
-7. Allow key AI crawlers in robots.txt
+以下の内容で`GEO-ANALYSIS.md`を生成してください：
 
-## Medium Effort
+1. **GEO対応スコア：XX/100**
+2. **プラットフォーム別スコア**（Google AIO、ChatGPT、Perplexityのスコア）
+3. **AIクローラーアクセス状況**（許可/ブロックされているクローラー）
+4. **llms.txtステータス**（存在、未設定、推奨事項）
+5. **ブランド言及分析**（Wikipedia、Reddit、YouTube、LinkedInでの存在）
+6. **パッセージレベルの引用可能性**（最適な134〜167語ブロックの特定）
+7. **サーバーサイドレンダリングチェック**（JavaScript依存性の分析）
+8. **最もインパクトの大きい変更トップ5**
+9. **Schema推奨事項**（AI発見可能性のため）
+10. **コンテンツ再構成の提案**（書き直すべき具体的なパッセージ）
 
-1. Create `/llms.txt` file
-2. Add author bio with credentials + Wikipedia/LinkedIn links
-3. Ensure server-side rendering for key content
-4. Build entity presence on Reddit, YouTube
-5. Add comparison tables with data
-6. Implement FAQ sections (structured, not schema for commercial sites)
+---
 
-## High Impact
+## すぐに実行できる改善
 
-1. Create original research/surveys (unique citability)
-2. Build Wikipedia presence for brand/key people
-3. Establish YouTube channel with content mentions
-4. Implement comprehensive entity linking (sameAs across platforms)
-5. Develop unique tools or calculators
+1. セクション冒頭60語以内に「[トピック]とは？」の定義を追加
+2. 134〜167語の自己完結型回答ブロックを作成
+3. 質問ベースのH2/H3見出しを追加
+4. 出典付きの具体的な統計データを含める
+5. 公開日/更新日を追加
+6. 著者にPerson schemaを実装
+7. robots.txtで主要なAIクローラーを許可
+
+## 中程度の工数
+
+1. `/llms.txt`ファイルを作成
+2. 資格情報＋Wikipedia/LinkedInリンク付きの著者紹介を追加
+3. 主要コンテンツのサーバーサイドレンダリングを確保
+4. Reddit、YouTubeでのエンティティ存在を構築
+5. データ付きの比較テーブルを追加
+6. FAQセクションを実装（商用サイトにはschemaではなく構造化された形式で）
+
+## 高インパクト
+
+1. オリジナルの調査・アンケートを作成（ユニークな引用可能性）
+2. ブランド/主要人物のWikipedia存在を構築
+3. コンテンツ言及を含むYouTubeチャンネルを開設
+4. 包括的なエンティティリンクを実装（プラットフォーム間のsameAs）
+5. ユニークなツールや計算ツールを開発

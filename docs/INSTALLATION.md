@@ -1,15 +1,15 @@
-# Installation Guide
+# インストールガイド
 
-## Prerequisites
+## 前提条件
 
-- **Python 3.8+** with pip
-- **Git** for cloning the repository
-- **Claude Code CLI** installed and configured
+- **Python 3.8+** （pip を含む）
+- **Git** （リポジトリのクローンに使用）
+- **Claude Code CLI** がインストール・設定済みであること
 
-Optional:
-- **Playwright** for screenshot capabilities
+任意:
+- **Playwright** （スクリーンショット機能に使用）
 
-## Quick Install
+## クイックインストール
 
 ### Unix/macOS/Linux
 
@@ -23,67 +23,67 @@ curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/claude-seo/main/instal
 irm https://raw.githubusercontent.com/AgriciDaniel/claude-seo/main/install.ps1 | iex
 ```
 
-## Manual Installation
+## 手動インストール
 
-1. **Clone the repository**
+1. **リポジトリをクローンする**
 
 ```bash
 git clone https://github.com/AgriciDaniel/claude-seo.git
 cd claude-seo
 ```
 
-2. **Run the installer**
+2. **インストーラーを実行する**
 
 ```bash
 ./install.sh
 ```
 
-3. **Install Python dependencies** (if not done automatically)
+3. **Python の依存パッケージをインストールする**（自動でインストールされなかった場合）
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. **Install Playwright browsers** (optional, for screenshots)
+4. **Playwright のブラウザをインストールする**（任意、スクリーンショット機能に必要）
 
 ```bash
 pip install playwright
 playwright install chromium
 ```
 
-## Installation Paths
+## インストール先のパス
 
-The installer copies files to:
+インストーラーは以下の場所にファイルをコピーします:
 
-| Component | Path |
+| コンポーネント | パス |
 |-----------|------|
-| Main skill | `~/.claude/skills/seo/` |
-| Sub-skills | `~/.claude/skills/seo-*/` |
-| Subagents | `~/.claude/agents/seo-*.md` |
+| メインスキル | `~/.claude/skills/seo/` |
+| サブスキル | `~/.claude/skills/seo-*/` |
+| サブエージェント | `~/.claude/agents/seo-*.md` |
 
-## Verify Installation
+## インストールの確認
 
-1. Start Claude Code:
+1. Claude Code を起動します:
 
 ```bash
 claude
 ```
 
-2. Check that the skill is loaded:
+2. スキルが読み込まれていることを確認します:
 
 ```
 /seo
 ```
 
-You should see a help message or prompt for a URL.
+ヘルプメッセージまたは URL の入力を求めるプロンプトが表示されるはずです。
 
-## Uninstallation
+## アンインストール
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/claude-seo/main/uninstall.sh | bash
 ```
 
-Or manually:
+または手動で行う場合:
 
 ```bash
 rm -rf ~/.claude/skills/seo
@@ -102,49 +102,49 @@ rm -rf ~/.claude/skills/seo-technical
 rm -f ~/.claude/agents/seo-*.md
 ```
 
-## Upgrading
+## アップグレード
 
-To upgrade to the latest version:
+最新バージョンにアップグレードするには:
 
 ```bash
-# Uninstall current version
+# 現在のバージョンをアンインストール
 curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/claude-seo/main/uninstall.sh | bash
 
-# Install new version
+# 新しいバージョンをインストール
 curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/claude-seo/main/install.sh | bash
 ```
 
-## Troubleshooting
+## トラブルシューティング
 
-### "Skill not found" error
+### 「Skill not found」エラー
 
-Ensure the skill is installed in the correct location:
+スキルが正しい場所にインストールされていることを確認してください:
 
 ```bash
 ls ~/.claude/skills/seo/SKILL.md
 ```
 
-If the file doesn't exist, re-run the installer.
+ファイルが存在しない場合は、インストーラーを再実行してください。
 
-### Python dependency errors
+### Python の依存パッケージに関するエラー
 
-Install dependencies manually:
+依存パッケージを手動でインストールしてください:
 
 ```bash
 pip install beautifulsoup4 requests lxml playwright Pillow urllib3 validators
 ```
 
-### Playwright screenshot errors
+### Playwright のスクリーンショットに関するエラー
 
-Install Chromium browser:
+Chromium ブラウザをインストールしてください:
 
 ```bash
 playwright install chromium
 ```
 
-### Permission errors on Unix
+### Unix でのパーミッションエラー
 
-Make sure scripts are executable:
+スクリプトに実行権限が付与されていることを確認してください:
 
 ```bash
 chmod +x ~/.claude/skills/seo/scripts/*.py

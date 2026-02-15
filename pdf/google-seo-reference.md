@@ -1,139 +1,139 @@
 <!-- Updated: 2026-02-07 -->
-# Google SEO Quick Reference (February 2026)
+# Google SEO クイックリファレンス (2026年2月)
 
-Concise reference guide for subagents. Summarizes key Google Search concepts,
-requirements, and best practices. Not a reproduction of Google's documentation —
-see Official Documentation Links at the bottom for full details.
+サブエージェント向けの簡潔なリファレンスガイド。Google Search の主要な概念、
+要件、ベストプラクティスをまとめたもの。Google の公式ドキュメントの複製ではなく、
+詳細については末尾の公式ドキュメントリンクを参照してください。
 
 ---
 
-## How Google Search Works
+## Google Search の仕組み
 
-Google Search operates in three stages: **Crawling** (Googlebot discovers pages by following links and reading sitemaps), **Indexing** (Google processes and stores page content, metadata, and signals in its search index), and **Serving** (when a user searches, Google's algorithms rank indexed pages by relevance, quality, and usability to return the most useful results). Pages must be crawlable and indexable to appear in search results.
+Google Search は3つの段階で動作します: **Crawling**(Googlebot がリンクをたどり、sitemap を読み取ることでページを発見する)、**Indexing**(Google がページのコンテンツ、メタデータ、シグナルを処理し、検索インデックスに保存する)、**Serving**(ユーザーが検索すると、Google のアルゴリズムがインデックスされたページを関連性、品質、ユーザビリティに基づいてランク付けし、最も有用な結果を返す)。検索結果に表示されるためには、ページがクロール可能かつインデックス可能である必要があります。
 
 ---
 
 ## Google Search Essentials
 
-Formerly known as "Webmaster Guidelines." Key requirements:
+旧称「Webmaster Guidelines」。主な要件:
 
-### Technical Requirements
-- Pages must be accessible to Googlebot (not blocked by robots.txt or noindex)
-- Pages must return HTTP 200 status for indexable content
-- Content must be in a format Google can process (HTML preferred, JS-rendered content supported but slower)
-- Pages must be served over HTTPS
+### 技術的要件
+- ページが Googlebot からアクセス可能であること(robots.txt や noindex でブロックされていないこと)
+- インデックス対象のコンテンツは HTTP 200 ステータスを返すこと
+- コンテンツは Google が処理可能な形式であること(HTML 推奨、JS レンダリングコンテンツもサポートされるが処理が遅い)
+- ページは HTTPS で配信されること
 
 ### Spam Policies
-- No cloaking (showing different content to Googlebot vs users)
-- No doorway pages (pages created solely to rank for specific queries)
-- No hidden text or links
-- No keyword stuffing
-- No link spam (buying links, excessive link exchanges)
-- No scraped or auto-generated content without added value
-- No sneaky redirects
-- No thin affiliate pages
+- Cloaking の禁止(Googlebot とユーザーに異なるコンテンツを表示すること)
+- Doorway pages の禁止(特定のクエリでランク付けするためだけに作成されたページ)
+- 隠しテキストや隠しリンクの禁止
+- Keyword stuffing の禁止
+- Link spam の禁止(リンクの購入、過度なリンク交換)
+- 付加価値のないスクレイピングコンテンツや自動生成コンテンツの禁止
+- 不正なリダイレクトの禁止
+- 内容の薄いアフィリエイトページの禁止
 
-### Key Best Practices
-- Create content for users, not search engines
-- Make your site easy to navigate with a clear hierarchy
-- Use descriptive, unique titles and meta descriptions per page
-- Use heading tags (H1-H6) to structure content logically
-- Optimize images with alt text and appropriate file sizes
-- Ensure mobile-friendly responsive design
-- Improve page load speed (Core Web Vitals)
-- Submit an XML sitemap to Google Search Console
-- Use structured data (JSON-LD) to help Google understand content
+### 主なベストプラクティス
+- 検索エンジンではなく、ユーザーのためにコンテンツを作成する
+- 明確な階層構造でサイトをナビゲートしやすくする
+- ページごとに説明的でユニークなタイトルと meta description を使用する
+- 見出しタグ(H1-H6)を使用してコンテンツを論理的に構造化する
+- alt テキストと適切なファイルサイズで画像を最適化する
+- モバイルフレンドリーなレスポンシブデザインを確保する
+- ページの読み込み速度を改善する(Core Web Vitals)
+- XML sitemap を Google Search Console に送信する
+- Structured Data(JSON-LD)を使用して Google がコンテンツを理解できるようにする
 
 ---
 
-## Content Quality Signals
+## コンテンツ品質シグナル
 
-Google evaluates content quality through the E-E-A-T framework:
+Google は E-E-A-T フレームワークを通じてコンテンツの品質を評価します:
 
-- **Experience**: Does the content creator have first-hand experience with the topic? (Original photos, personal stories, demonstrated use)
-- **Expertise**: Does the creator have relevant knowledge or credentials? (Professional background, technical depth, accurate sourcing)
-- **Authoritativeness**: Is the creator or site recognized as a go-to source? (Industry citations, brand mentions, expert recognition)
-- **Trustworthiness**: Is the content and site reliable and transparent? (Contact info, secure site, editorial standards, accurate claims)
+- **Experience(経験)**: コンテンツ作成者はそのトピックについて実体験を持っているか?(オリジナル写真、個人的な体験談、実際の使用実績)
+- **Expertise(専門性)**: 作成者は関連する知識や資格を持っているか?(専門的な経歴、技術的な深さ、正確な情報源)
+- **Authoritativeness(権威性)**: 作成者やサイトはその分野の信頼できる情報源として認められているか?(業界での引用、ブランドへの言及、専門家としての評価)
+- **Trustworthiness(信頼性)**: コンテンツとサイトは信頼でき、透明性があるか?(連絡先情報、安全なサイト、編集基準、正確な主張)
 
-> **YMYL Note**: "Your Money or Your Life" topics (health, finance, safety, legal) are held to the highest E-E-A-T standards. Inaccurate YMYL content can cause real-world harm, so Google applies stricter quality thresholds.
+> **YMYL に関する注記**: 「Your Money or Your Life」トピック(健康、金融、安全、法律)には、最も高い E-E-A-T 基準が適用されます。不正確な YMYL コンテンツは現実世界に害を及ぼす可能性があるため、Google はより厳格な品質基準を適用します。
 
-> **December 2025 Update**: E-E-A-T evaluation now extends to ALL competitive queries, not just YMYL topics. Every page competing for ranking is assessed on these signals.
+> **2025年12月アップデート**: E-E-A-T の評価が YMYL トピックだけでなく、すべての競合クエリに拡大されました。ランキングを競うすべてのページがこれらのシグナルで評価されます。
 
 ---
 
 ## Core Web Vitals
 
-Measured at the 75th percentile of real user data (field data).
+実際のユーザーデータ(フィールドデータ)の75パーセンタイルで測定されます。
 
-| Metric | Good | Needs Improvement | Poor |
+| 指標 | 良好 | 改善が必要 | 不良 |
 |--------|------|-------------------|------|
 | **LCP** (Largest Contentful Paint) | ≤ 2.5s | 2.5s – 4.0s | > 4.0s |
 | **INP** (Interaction to Next Paint) | ≤ 200ms | 200ms – 500ms | > 500ms |
 | **CLS** (Cumulative Layout Shift) | ≤ 0.1 | 0.1 – 0.25 | > 0.25 |
 
-**Key facts:**
-- INP replaced FID (First Input Delay) on March 12, 2024. FID was fully removed from all Chrome tools (CrUX API, PageSpeed Insights, Lighthouse) on September 9, 2024. Do NOT reference FID.
-- Core Web Vitals are a confirmed ranking signal (since June 2021)
-- Field data (CrUX) is preferred over lab data (Lighthouse) for assessment
-- Passing all three metrics at "Good" is the target
+**重要事項:**
+- INP は2024年3月12日に FID (First Input Delay) を置き換えました。FID は2024年9月9日にすべての Chrome ツール(CrUX API、PageSpeed Insights、Lighthouse)から完全に削除されました。FID を参照しないでください。
+- Core Web Vitals は確定的なランキングシグナルです(2021年6月以降)
+- 評価にはラボデータ(Lighthouse)よりもフィールドデータ(CrUX)が優先されます
+- 3つの指標すべてで「良好」を達成することが目標です
 
-**Measurement tools:**
-- Google PageSpeed Insights (field + lab data)
-- Chrome User Experience Report (CrUX) — field data
-- Lighthouse (lab data only)
-- Google Search Console Core Web Vitals report
-
----
-
-## Structured Data Best Practices
-
-- **JSON-LD is Google's preferred format** (over Microdata and RDFa)
-- Place JSON-LD in `<script type="application/ld+json">` tags in the `<head>` or `<body>`
-- Always include `@context` and `@type` properties
-- **Required properties** must be present for rich result eligibility
-- **Recommended properties** improve rich result quality but aren't mandatory
-- Only mark up content that is visible on the page
-- Use Google's Rich Results Test to validate before deployment
-- Do not mark up content that is misleading or hidden from users
-- Keep schema current — update when page content changes
-
-### Deprecated/Restricted Types (as of Feb 2026)
-- **HowTo**: Rich results removed (September 2023)
-- **FAQ**: Restricted to government and healthcare authority sites (August 2023)
-- **SpecialAnnouncement**: Deprecated (July 31, 2025)
-- **CourseInfo, EstimatedSalary, LearningVideo**: Retired (June 2025)
-- **ClaimReview**: Retired (June 2025)
-- **VehicleListing**: Retired (June 2025)
+**測定ツール:**
+- Google PageSpeed Insights (フィールドデータ + ラボデータ)
+- Chrome User Experience Report (CrUX) — フィールドデータ
+- Lighthouse (ラボデータのみ)
+- Google Search Console Core Web Vitals レポート
 
 ---
 
-## Common Penalties & How to Avoid Them
+## Structured Data のベストプラクティス
+
+- **JSON-LD が Google の推奨形式です**(Microdata や RDFa よりも優先)
+- JSON-LD は `<script type="application/ld+json">` タグ内に `<head>` または `<body>` に配置する
+- 常に `@context` と `@type` プロパティを含める
+- **必須プロパティ**は Rich Results の対象となるために存在する必要がある
+- **推奨プロパティ**は Rich Results の品質を向上させるが、必須ではない
+- ページ上に表示されているコンテンツのみをマークアップする
+- デプロイ前に Google の Rich Results Test で検証する
+- ユーザーに対して誤解を招くコンテンツや非表示のコンテンツをマークアップしない
+- Schema を最新の状態に保つ — ページコンテンツの変更時に更新する
+
+### 廃止・制限された型 (2026年2月時点)
+- **HowTo**: Rich Results が削除されました(2023年9月)
+- **FAQ**: 政府機関および医療機関のサイトに制限されました(2023年8月)
+- **SpecialAnnouncement**: 廃止されました(2025年7月31日)
+- **CourseInfo, EstimatedSalary, LearningVideo**: 廃止されました(2025年6月)
+- **ClaimReview**: 廃止されました(2025年6月)
+- **VehicleListing**: 廃止されました(2025年6月)
+
+---
+
+## 一般的なペナルティと回避方法
 
 ### Manual Actions
-Google Search Console notifications for violations. Common causes:
-- **Unnatural links** (buying/selling links): Disavow bad links, request reconsideration
-- **Thin content**: Add substantial unique value to affected pages
-- **Cloaking/sneaky redirects**: Remove deceptive serving, request reconsideration
-- **User-generated spam**: Moderate comments/forums, add nofollow to user links
-- **Structured data issues**: Fix misleading or spam markup
+Google Search Console での違反通知。一般的な原因:
+- **不自然なリンク**(リンクの売買): 不正なリンクを Disavow し、再審査リクエストを送信する
+- **内容の薄いコンテンツ**: 影響を受けたページに実質的な独自の価値を追加する
+- **Cloaking/不正なリダイレクト**: 欺瞞的な配信を削除し、再審査リクエストを送信する
+- **ユーザー生成スパム**: コメント/フォーラムをモデレートし、ユーザーリンクに nofollow を追加する
+- **Structured Data の問題**: 誤解を招くマークアップやスパムマークアップを修正する
 
-### Algorithmic Demotions
-No manual notification — detected through ranking drops. Common causes:
-- **Helpful Content System**: Merged into Google's core ranking in March 2024 — no longer a standalone system. Helpfulness signals are now evaluated within every core update. Low-value, AI-generated, or unhelpful content at scale still triggers demotions via core updates.
-- **Core Updates**: Broad quality reassessment across all signals
-- **Spam Updates**: Automated detection of spam patterns
-- **Link Spam Updates**: Devaluation of manipulative link patterns
+### アルゴリズムによる降格
+手動通知なし — ランキングの低下によって検出されます。一般的な原因:
+- **Helpful Content System**: 2024年3月に Google の Core Ranking に統合され、独立したシステムではなくなりました。有用性シグナルは、すべての Core Update 内で評価されるようになりました。大量の低品質な AI 生成コンテンツや有用でないコンテンツは、Core Update を通じて依然として降格の対象となります。
+- **Core Updates**: すべてのシグナルにわたる包括的な品質再評価
+- **Spam Updates**: スパムパターンの自動検出
+- **Link Spam Updates**: 操作的なリンクパターンの価値低下
 
-### Recovery Steps
-1. Identify the issue (Search Console, ranking timeline analysis)
-2. Fix the root cause (remove spam, improve content, clean links)
-3. For manual actions: submit reconsideration request via Search Console
-4. For algorithmic: improve quality, wait for next core update reassessment
-5. Monitor recovery in Search Console performance reports
+### 回復手順
+1. 問題を特定する(Search Console、ランキングのタイムライン分析)
+2. 根本原因を修正する(スパムの除去、コンテンツの改善、リンクのクリーンアップ)
+3. Manual Actions の場合: Search Console から再審査リクエストを送信する
+4. アルゴリズムの場合: 品質を改善し、次の Core Update での再評価を待つ
+5. Search Console のパフォーマンスレポートで回復を監視する
 
 ---
 
-## Official Documentation Links
+## 公式ドキュメントリンク
 
 - [Google Search Essentials](https://developers.google.com/search/docs/essentials)
 - [How Google Search Works](https://developers.google.com/search/docs/fundamentals/how-search-works)
@@ -148,4 +148,4 @@ No manual notification — detected through ranking drops. Common causes:
 - [Spam Policies](https://developers.google.com/search/docs/essentials/spam-policies)
 - [E-E-A-T and Quality Rater Guidelines](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
 
-> **Mobile-first indexing** is 100% complete as of July 5, 2024. Google now crawls and indexes ALL websites exclusively with the mobile Googlebot user-agent.
+> **Mobile-first indexing** は2024年7月5日に100%完了しました。Google は現在、すべてのウェブサイトをモバイル版の Googlebot ユーザーエージェントのみでクロールおよびインデックスしています。
